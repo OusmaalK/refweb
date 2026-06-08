@@ -26,7 +26,7 @@ export default function Navigation({ t, locale }: NavigationProps) {
 
   return (
     <nav 
-      className={`hidden lg:flex items-center gap-6 xl:gap-8 text-xs xl:text-sm font-bold tracking-widest ${
+      className={`hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-bold tracking-widest ${
         isRTL ? 'flex-row-reverse' : 'flex-row'
       }`}
     >

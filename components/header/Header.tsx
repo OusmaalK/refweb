@@ -17,30 +17,30 @@ export default function Header({ t, locale, changeLanguage }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-900 bg-[#0f172a] shadow-xl">
       <div 
-        className={`w-full max-w-[100vw] overflow-x-hidden flex h-24 items-center justify-between px-4 sm:px-8 lg:px-12 ${
+        className={`w-full max-w-[100vw] overflow-x-hidden flex h-24 items-center justify-between px-2 sm:px-4 lg:px-6 ${
           isRTL ? 'flex-row-reverse' : 'flex-row'
         }`}
       >
-        {/* À gauche : Logo agrandi en hauteur et décalé vers l'extérieur */}
-        <div className={`flex items-center shrink-0 ${isRTL ? 'lg:-mr-4' : 'lg:-ml-4'}`}>
+        {/* Logo */}
+        <div className={`flex items-center shrink-0 ${isRTL ? 'lg:-mr-2' : 'lg:-ml-2'}`}>
           <Link href={`/${locale}`} className="flex items-center">
             <Image 
               src="/icons/logo.svg"
               alt="Algeria Metal Export Logo"
-              width={280}
-              height={90}
+              width={200}
+              height={65}
               priority              
-              className="object-contain max-h-[80px]"
+              className="object-contain max-h-[60px]"
             />
           </Link>
         </div>
 
-        {/* Zone centrale : Liens de navigation */}
-        <div className="flex-1 flex justify-center px-6">
+        {/* Navigation */}
+        <div className="flex-1 flex justify-center px-4">
           <Navigation t={t} locale={locale} />
         </div>
 
-        {/* À droite : Bouton + Sélecteur alignés */}
+        {/* Actions */}
         <div className="flex items-center shrink-0">
           <Actions t={t} locale={locale} changeLanguage={changeLanguage} />
         </div>
