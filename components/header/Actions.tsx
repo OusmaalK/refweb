@@ -1,14 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ActionsProps {
   t: any;
   locale: string;
-  changeLanguage: (newLocale: 'en' | 'fr' | 'ar') => void;
 }
 
-export default function Actions({ t, locale, changeLanguage }: ActionsProps) {
+export default function Actions({ t, locale }: ActionsProps) {
+  const { changeLanguage } = useTranslation();
   const isRTL = locale === 'ar';
 
   return (

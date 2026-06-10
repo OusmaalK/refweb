@@ -7,12 +7,12 @@ import Footer from '@/components/footer/Footer';
 import { Mail, Phone, Linkedin, Award, ShieldCheck, Globe, Leaf, Users, Target } from 'lucide-react';
 
 export default function TeamPage() {
-  const { t, locale, changeLanguage } = useTranslation();
+  const { t, locale } = useTranslation(); // ✅ changeLanguage supprimé
   const isRTL = locale === 'ar';
 
   return (
     <div className={`min-h-screen bg-[#0f172a] text-white ${isRTL ? 'rtl' : 'ltr'}`}>
-      <Header t={t} locale={locale} changeLanguage={changeLanguage} />
+      <Header t={t} locale={locale} /> {/* ✅ changeLanguage supprimé */}
       
       <main className="container mx-auto px-6 py-12 space-y-16">
         
@@ -242,6 +242,7 @@ export default function TeamPage() {
 
       </main>
 
+      <Footer t={t} locale={locale} />
     </div>
   );
 }
