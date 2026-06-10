@@ -242,7 +242,6 @@ export default function TeamPage() {
 
       </main>
 
-      <Footer t={t} locale={locale} />
     </div>
   );
 }
