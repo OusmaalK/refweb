@@ -1,31 +1,21 @@
-// app/[locale]/page.tsx
+// app/[locale]/layout.tsx
 'use client';
 
 import { useTranslation } from '@/hooks/useTranslation';
-import Hero from '@/components/hero/Hero';
-import Stats from '@/components/stats/Stats';
-import Products from '@/components/products/Products';
-import Logistics from '@/components/logistics/Logistics';
-import Quality from '@/components/quality/Quality';
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
 
-export default function Home() {
+export default function LocaleLayout({ children }: { children: React.ReactNode }) {
   const { t, locale } = useTranslation();
-
-  if (!t || Object.keys(t).length === 0) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#f97316]"></div>
-      </div>
-    );
-  }
+  const isRTL = locale === 'ar';
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900">
-      <Hero />
-      <Stats t={t} locale={locale} />
-      <Products t={t} locale={locale} />
-      <Logistics t={t} locale={locale} />
-      <Quality t={t} locale={locale} />
+    <div className={`min-h-screen bg-[#0f172a] text-white ${isRTL ? 'rtl' : 'ltr'}`}>
+      <Header t={t} locale={locale} />
+      <div className="pt-20 md:pt-24">
+        {children}
+      </div>
+      <Footer t={t} locale={locale} />
     </div>
   );
 }
