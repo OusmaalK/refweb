@@ -5,6 +5,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import Hero from '@/components/hero/Hero';
 import Stats from '@/components/stats/Stats';
 import Products from '@/components/products/Products';
+import { LocalMarket } from '@/components/local-market/LocalMarket'; // ✅ Import du composant
 import Logistics from '@/components/logistics/Logistics';
 import Quality from '@/components/quality/Quality';
 
@@ -21,9 +22,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
-      <Hero />      
+      <Hero />
       <Stats t={t} locale={locale} />
       <Products t={t} locale={locale} />
+      <LocalMarket t={t} locale={locale} /> {/* ✅ Nouvelle section */}
       <Logistics t={t} locale={locale} />
       <Quality t={t} locale={locale} />
     </div>

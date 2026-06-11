@@ -341,7 +341,7 @@ export default {
     manager_name: 'Boulaioune Abdelkader',
     manager_role: 'CEO & Founder',
     manager_initials: 'BA',
-    manager_bio: 'With 20 years of experience in metallurgy and logistics, Abdelkader Boulaioune founded Shlang Metal in 2026 with a clear vision: connecting Algeria to international markets with impeccable quality standards. He has led over 300,000 tons of exports to Europe, the Middle East, and Africa.',
+    manager_bio: "B2B expertise. Unwavering commitment. Technical and logistics mastery. A long-term vision with our clients.",
     cmanager_name: 'Akrour Mansour',
     cmanager_role: 'Co-CEO & Operations Director',
     cmanager_initials: 'AM',
@@ -376,6 +376,19 @@ export default {
     cta_title: 'Want to talk to our experts?',
     cta_subtitle: 'We ll respond within 24 hours',
     cta_button: 'Contact our team'
+  },
+  local_market: {
+    title: 'Local Mastery of the Metal Market in Algeria',
+    subtitle: 'Committed leadership, recognized expertise',
+    anchor_title: 'Local Anchoring',
+    anchor_desc: 'Based in Algeria, our team has a precise knowledge of the national metal market\'s specificities.',
+    anchor_alt: 'Map of Algeria with influence points',
+    leadership_title: 'Committed Leadership',
+    leadership_desc: 'We take initiatives to structure the sector and support local players.',
+    leadership_alt: 'Team on site in Algeria',
+    mastery_title: 'Domain Mastery',
+    mastery_desc: 'In-depth knowledge of products, standards, and supply chains in Algeria.',
+    mastery_alt: 'Storage site in Algeria'
   },
   legal: {
     title: 'Legal Notice',

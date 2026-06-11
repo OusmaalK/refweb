@@ -363,7 +363,7 @@
       "manager_name": "Boulaioune Abdelkader",
       "manager_role": "Gérant & Fondateur",
       "manager_initials": "BA",
-      "manager_bio": "Fort de 20 ans d'expérience dans les filières métallurgiques et logistiques, Abdelkader Boulaioune a fondé Shlang Metal en 2026 avec une vision claire : connecter l'Algérie aux marchés internationaux avec des standards de qualité irréprochables. Diplômé de l'École Polytechnique d'Alger, il a piloté plus de 300 000 tonnes d'exportation vers l'Europe, le Moyen-Orient et l'Afrique.",
+      "manager_bio": "Expertise B2B. Engagement sans faille. Maîtrise technique et logistique. Une vision à long terme avec nos clients.",
       "cmanager_name": "Akrour Mansour",
       "cmanager_role": "Cogérant & Directeur des Opérations",
       "cmanager_initials": "AM",
@@ -399,6 +399,19 @@
       "cta_subtitle": "Réponse sous 24h",
       "cta_button": "Contactez notre équipe"
     },
+    "local_market": {
+    "title": "Une maîtrise locale du marché des métaux en Algérie",
+    "subtitle": "Un leadership engagé, une expertise reconnue",
+    "anchor_title": "Ancrage Local",
+    "anchor_desc": "Implantée en Algérie, notre équipe connaît les spécificités du marché national des métaux.",
+    "anchor_alt": "Carte de l'Algérie avec points d'influence",
+    "leadership_title": "Leadership Engagé",
+    "leadership_desc": "Nous prenons des initiatives pour structurer la filière et accompagner les acteurs locaux.",
+    "leadership_alt": "Équipe sur site en Algérie",
+    "mastery_title": "Maîtrise du Domaine",
+    "mastery_desc": "Une connaissance approfondie des produits, des normes et des circuits d'approvisionnement en Algérie.",
+    "mastery_alt": "Site de stockage en Algérie"
+  },
     "products_page": {
       "title": "NOS PRODUITS",
       "hero_subtitle": "Produits en ferraille de haute qualité disponibles en vrac avec des spécifications constantes et des prix compétitifs.",
