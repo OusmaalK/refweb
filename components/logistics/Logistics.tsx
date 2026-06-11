@@ -20,7 +20,7 @@ export default function Logistics({ t, locale }: LogisticsProps) {
   ];
 
   return (
-    <section id="logistics" className="py-25 bg-gray-50">
+    <section id="logistics" className="py-10 bg-gray-50">
       <div className="container mx-auto px-6">
         
         {/* Titre de section adaptatif : bordure à gauche en LTR, à droite en RTL */}

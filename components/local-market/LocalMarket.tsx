@@ -45,11 +45,11 @@ export const LocalMarket = memo(({ t: propT, locale: propLocale }: LocalMarketPr
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-[#0f172a] text-white relative overflow-hidden">
+    <section className="py-8 md:py-10 bg-[#0f172a] text-white relative overflow-hidden mt-16 md:mt-24">
       <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             {t?.local_market?.title || 'Une maîtrise locale du marché des métaux en Algérie'}
           </h2>
