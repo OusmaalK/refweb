@@ -1,651 +1,533 @@
-export default {
-  locale: 'fr',
-  dir: 'ltr',
+// data/translations/fr.ts
+export const translations = {
   nav: {
-    home: 'ACCUEIL',
-    products: 'PRODUITS',
-    logistics: 'LOGISTIQUE',
-    quality: 'QUALITÉ & CERTIFICATION',
-    about: 'À PROPOS',
-    contact: 'CONTACT',
-    quotation: 'DEMANDE DE DEVIS',
-    language: 'Langue'
+    home: 'Accueil',
+    about: 'À propos',
+    services: 'Prestations',
+    sectors: 'Secteurs',
+    organization: 'Organisation',
+    contact: 'Contact',
   },
   hero: {
-    tag: 'FERRAILLE INDUSTRIELLE',
-    title: 'Approvisionnement fiable. Qualité certifiée. Livraison mondiale.',
-    subtitle: 'Votre partenaire de confiance pour l\'exportation de ferraille premium depuis l\'Algérie vers le monde.',
-    certified_quality: 'QUALITÉ CERTIFIÉE',
-    fast_shipping: 'EXPÉDITION RAPIDE',
-    large_capacity: 'GRANDE CAPACITÉ',
-    global_reach: 'PORTÉE MONDIALE',
-    rfq: 'DEMANDE DE DEVIS (RFQ)',
-    catalogue: 'TÉLÉCHARGER LE CATALOGUE'
+    tag: 'LE CONSEIL PAR EXCELLENCE',
+    title: 'Consulting en Audit & Prévention des Risques Industriels',
+    subtitle: 'Courtage d’assurance agréé par le Ministère des Finances',
+    cta_audit: 'Solliciter un audit',
+    cta_services: 'Découvrir nos prestations',
   },
-  strategic: {
-    title: 'AVANTAGE STRATÉGIQUE',
-    subtitle: 'Plus proche de l\'Europe, plus fort ensemble',
-    description: 'Distance maritime réduite vers l\'Europe par rapport à l\'Asie',
-    distance: 'JUSQU\'À\nDISTANCE MARITIME PLUS COURTE',
-    percent: '50%'
+  home: {
+    sections: {
+      why_us: 'Pourquoi nous choisir ?',
+      why_us_desc: 'Une équipe d\'experts à votre service pour sécuriser vos actifs et optimiser votre gestion des risques.',
+    },
   },
-  stats: {
-    capacity: 'TONNES DE CAPACITÉ ANNUELLE',
-    ports: 'PRINCIPAUX PORTS DE CHARGEMENT',
-    countries: 'PAYS APPROVISIONNÉS',
-    response: 'TEMPS DE RÉPONSE RFQ'
+  about: {
+    page_title: 'À propos de nous',
+    tag: 'Qui sommes-nous ?',
+    title: 'À propos de RFC Assurance',
+    summary: 'Fondée en 2014, RFC Assurance est une société de courtage d\'assurance et de conseil en gestion des risques. Nous accompagnons les entreprises dans la protection de leurs actifs et la prévention des risques industriels.',
+    cta: 'En savoir plus',
+    full_description: 'RFC Assurance est une entreprise algérienne spécialisée dans le courtage d\'assurance et le conseil en gestion des risques industriels. Avec plus de 10 ans d\'expérience, nous accompagnons les entreprises de tous secteurs dans la protection de leurs actifs.',
+    full_description_2: 'Notre équipe d\'experts vous aide à identifier vos risques, à optimiser vos contrats d\'assurance et à mettre en place des stratégies de prévention efficaces.',
+    cta_contact: 'Contactez-nous',
+    cta_services: 'Nos services',
+    mission: 'Notre mission',
+    mission_desc: 'Offrir à nos clients une protection optimale à un coût maîtrisé, grâce à une expertise technique et une connaissance approfondie du marché de l\'assurance.',
+    values: 'Nos valeurs',
+    values_section_title: 'Nos valeurs',
+    values_section_desc: 'Ce qui nous guide au quotidien',
+    value_1: 'Transparence',
+    value_1_desc: 'Une relation de confiance avec nos clients',
+    value_2: 'Expertise',
+    value_2_desc: 'Une équipe de professionnels qualifiés',
+    value_3: 'Engagement',
+    value_3_desc: 'Un suivi personnalisé à chaque étape',
+    value_4: 'Innovation',
+    value_4_desc: 'Des solutions adaptées à vos besoins',
+    stats_title: 'Nos chiffres clés',
+    stats_desc: 'Une expertise au service de vos projets',
+    stat_1_title: 'Création de RFC',
+    stat_1_desc: 'Expertise historique',
+    stat_2_title: 'Années d\'expertise',
+    stat_2_desc: 'Approche éprouvée',
+    stat_3_title: 'Partenaires Corporate',
+    stat_3_desc: 'Références de confiance',
+    stat_4_title: 'Pôles d\'expertise',
+    stat_4_desc: 'Intervention globale',
+    why_us_title: 'Pourquoi nous choisir ?',
+    why_us_1: 'Expertise reconnue depuis 2014',
+    why_us_2: 'Approche sur-mesure et indépendante',
+    why_us_3: 'Défense exclusive de vos intérêts',
+    why_us_4: 'Suivi global de la souscription au sinistre',
+    cta_rfcapp: 'Découvrir RFC-App',
   },
-  products: {
-    title: 'NOS PRODUITS',
-    view_all: 'VOIR TOUS LES PRODUITS',
-    hms: {
-      title: 'HMS 1 & 2',
-      subtitle: '(80:20)',
-      description: 'Ferraille lourde\n80% Acier / 20% Fer\nTaille : 500x500 mm max',
-      specs: 'VOIR LES SPÉCIFICATIONS',
-      type: 'Matière Première / Ferraille de Recyclage',
-      full_description: 'Mélange standardisé de ferrailles lourdes d\'acier et de fer forgé noir, préparé pour une fusion optimale dans les fours électriques à arc (EAF). Le HMS 1 comprend des structures d\'une épaisseur ≥ 6 mm, tandis que le HMS 2 intègre des pièces d\'épaisseur ≥ 4 mm.',
-      apps_title: 'Applications Principales',
-      apps: [
-        'Refusion directe en aciérie',
-        'Production de billettes d\'acier',
-        'Matière première de recyclage industriel',
-        'Construction métallique et structures'
-      ],
-      specs_title: 'Spécifications Techniques',
-      specs_list: [
-        { label: 'Norme Internationale', value: 'ISRI 200-206' },
-        { label: 'Épaisseur HMS 1', value: '≥ 6 mm' },
-        { label: 'Épaisseur HMS 2', value: '≥ 4 mm' },
-        { label: 'Taux de Pureté', value: 'Fe ≥ 99%' }
-      ]
-    },
-    shredded: {
-      title: 'Ferraille Déchiquetée',
-      subtitle: '(CISAILLÉE / DÉCHIQUETÉE)',
-      description: 'Ferraille cisailée / déchiquetée\nTaille : 50x50 mm max\nPréparée et propre',
-      specs: 'VOIR LES SPÉCIFICATIONS',
-      type: 'Ferraille Homogénéisée Haute Densité',
-      full_description: 'Ferraille d\'acier de nuance supérieure, passée au broyeur puis triée magnétiquement pour éliminer toutes les impuretés et métaux non-ferreux. Offre une efficacité de fusion exceptionnelle et une densité de chargement maximale.',
-      apps_title: 'Applications Principales',
-      apps: [
-        'Alimentation rapide de fours à induction',
-        'Aciéries exigeant un faible taux d\'impuretés',
-        'Coulée continue haute performance',
-        'Composant de charge propre pour la densité'
-      ],
-      specs_title: 'Spécifications Techniques',
-      specs_list: [
-        { label: 'Norme de référence', value: 'ISRI 210-212 (Shredded)' },
-        { label: 'Densité apparente', value: '≥ 1.2 tonnes/m³' },
-        { label: 'Taille des fragments', value: '50x50 mm max' },
-        { label: 'Taux de stériles', value: '< 0.5%' }
-      ]
-    },
-    rebar: {
-      title: 'Ferraille de Barres d\'Acier',
-      subtitle: '(BARRES D\'ACIER)',
-      description: 'Ferraille de barres d\'acier\nDiamètre : 8mm – 32mm\nLongueur : 1m max',
-      specs: 'VOIR LES SPÉCIFICATIONS',
-      type: 'Ferraille d\'Acier de Structure',
-      full_description: 'Chutes neuves et propres de ronds à béton et de structures en acier à haute résistance mécanique. Soigneusement triées par nuance et coupées en longueurs courtes spécifiques pour faciliter la manutention et la refusion directe.',
-      apps_title: 'Applications Principales',
-      apps: [
-        'Refusion pour produire de nouvelles sections et ronds',
-        'Composants d\'armatures recyclés',
-        'Alimentation directe pour aciéries de construction',
-        'Opérations industrielles de forge'
-      ],
-      specs_title: 'Spécifications Techniques',
-      specs_list: [
-        { label: 'Gamme de diamètres', value: '8 mm à 32 mm' },
-        { label: 'Nuance d\'acier d\'origine', value: 'B500B / Grade 60' },
-        { label: 'Longueur de coupe', value: '1 mètre max' },
-        { label: 'Avantage technique', value: 'Haute adhérence mécanique' }
-      ]
-    },
-    cast_iron: {
-      title: 'Ferraille de Fonte',
-      subtitle: '(FONDERIE)',
-      description: 'Ferraille de fonte\nRetours de fonderie\nTaille : 300mm max',
-      specs: 'VOIR LES SPÉCIFICATIONS',
-      type: 'Ferraille de fonte pour Fonderies',
-      full_description: 'Blocs et pièces propres de ferraille de fonte grise ou malléable et retours de fonderie mécanique. Caractérisée par une composition chimique stable avec des niveaux de carbone optimaux pour assurer une fusion homogène dans les cubilots ou fours à induction.',
-      apps_title: 'Applications Principales',
-      apps: [
-        'Coulée de nouvelles pièces mécaniques',
-        'Production de blocs moteurs et cadres de machines lourdes',
-        'Fonderies de métaux ferreux de haute précision',
-        'Ajustement des niveaux de carbone en métallurgie'
-      ],
-      specs_title: 'Spécifications Techniques',
-      specs_list: [
-        { label: 'Type de fonte', value: 'Grise / Malléable' },
-        { label: 'Taille max des pièces', value: '300 mm' },
-        { label: 'Carbone typique', value: '3.2% - 4.2%' },
-        { label: 'Contamination', value: 'Totalement exempte de chrome et de plomb' }
-      ]
-    }
+  bridge: {
+    title: 'Une plateforme de gestion conçue pour les courtiers d\'assurance',
+    subtitle: 'Plans Essentiel, Pro & Expert pour optimiser la gestion de vos clients, contrats et sinistres.',
+    cta: 'Accéder à mon espace',
+    hero_title: 'Gérez votre portefeuille d\'assurance en toute simplicité',
+    about_title: 'Déjà plus de 100 courtiers équipés',
+    services_title: 'Un plan pour chaque niveau d\'expertise',
+    sectors_title: 'Une solution unique pour tous les secteurs',
+    contact_title: 'Prêt à passer au niveau supérieur ?',
   },
-  logistics: {
-    title: 'APPROVISIONNEMENT & LOGISTIQUE',
-    ports: {
-      title: 'PORTS DE CHARGEMENT',
-      items: ['Port de Skikda', 'Port d\'Oran', 'Port d\'Alger', 'Plus de ports disponibles sur demande']
-    },
-    markets: {
-      title: 'PRINCIPAUX MARCHÉS',
-      items: ['Europe', 'Moyen-Orient', 'Afrique du Nord', 'Asie', 'Afrique de l\'Ouest']
-    },
-    shipping: {
-      title: 'TEMPS D\'EXPÉDITION (VERS L\'EUROPE)',
-      items: ['Espagne : 3-5 jours', 'Italie : 4-6 jours', 'France : 4-6 jours', 'Turquie : 3-5 jours']
-    },
-    incoterms: {
-      title: 'INCOTERMS',
-      items: ['FOB', 'CIF', 'CFR', 'Autres termes sur demande']
-    },
-    process: {
-      title: 'NOTRE PROCESSUS D\'EXPORTATION',
-      steps: [
-        { title: '01. DEMANDE', description: 'Vous nous envoyez votre demande' },
-        { title: '02. CONFIRMATION', description: 'Nous vérifions la disponibilité et envoyons le devis' },
-        { title: '03. INSPECTION', description: 'Contrôle qualité par SGS, BV ou autres' },
-        { title: '04. CHARGEMENT', description: 'Chargement professionnel et documentation' },
-        { title: '05. EXPÉDITION', description: 'Livraison à temps vers votre destination' }
-      ]
-    }
-  },
-  quality: {
-    title: 'QUALITÉ & CERTIFICATIONS',
-    view_all: 'VOIR TOUT',
-    items: [
-      { name: 'SGS', description: 'Inspection disponible' },
-      { name: 'Bureau Veritas', description: 'Inspection disponible' },
-      { name: 'ISO 9001', description: 'Système de management de la qualité' },
-      { name: 'Normes ASTM', description: 'Qualités conformes' },
-      { name: 'Normes EN', description: 'Qualités conformes' }
-    ]
-  },
-  quality_page: {
-    title: 'QUALITÉ & CERTIFICATION',
-    hero_subtitle: 'Normes internationales, tests de laboratoire stricts et traçabilité complète pour chaque expédition.',
-    certified_quality: 'QUALITÉ\nCERTIFIÉE',
-    certified_desc: 'ASTM / EN / ISO\nCertificat 3.1',
-    traceable_documents: 'DOCUMENTS\nTRACABLES',
-    traceable_desc: 'Certificats d\'usine\nSuivi des lots',
-    global_standards: 'NORMES\nMONDIALES',
-    global_desc: 'EN 10025 / ASTM\nISO 9001:2015',
-    third_party: 'INSPECTION\nTIERS PARTIE',
-    third_party_desc: 'SGS / Bureau Veritas\nTUV',
-    card1_title: 'Conformité Chimique\net Mécanique',
-    card1_desc: 'Chaque lot subit une analyse spectroscopique rigoureuse et des tests mécaniques pour garantir une composition chimique exacte et une intégrité structurelle.',
-    card2_title: 'Normes\nInternationales',
-    card2_desc: 'Nos produits d\'exportation respectent strictement les exigences industrielles mondiales, permettant une intégration transparente dans les chaînes d\'approvisionnement européennes, africaines et mondiales.',
-    card3_title: 'Inspection\nIndépendante',
-    card3_desc: 'Pour garantir une transparence absolue, nous nous associons à des agences d\'inspection tierces de renommée mondiale avant le chargement des navires.',
-    table1: {
-      parameter: 'Paramètre',
-      guarantee: 'Garantie Standard',
-      traceability: 'Traçabilité',
-      traceability_val: 'Numéro de chaleur / coulée complet',
-      steel_grade: 'Qualité d\'acier',
-      steel_grade_val: 'Conforme aux normes EN / ASTM',
-      radioactivity: 'Radioactivité',
-      radioactivity_val: '100% Certifié exempt'
-    },
-    table2: {
-      region: 'Région',
-      standard: 'Norme Applicable',
-      europe: 'Europe',
-      europe_val: 'EN 10025 / EN 10080',
-      usa: 'États-Unis',
-      usa_val: 'Spécifications ASTM',
-      global: 'Monde',
-      global_val: 'ISO 9001:2015 Qualité Mgmt'
-    },
-    table3: {
-      agency: 'Agence',
-      inspection: 'Type d\'inspection',
-      sgs: 'SGS / Bureau Veritas',
-      sgs_val: 'Audit de quantité et qualité',
-      cotecna: 'Cotecna / TUV',
-      cotecna_val: 'Inspection pré-expédition',
-      documentation: 'Documentation',
-      documentation_val: 'Certificat d\'usine 3.1'
-    },
-    download_btn: 'TÉLÉCHARGER L\'ÉCHANTILLON DE CERTIFICAT D\'USINE (PDF)',
-    cta_title: 'Besoin d\'exigences de qualité spécifiques ou de tests personnalisés ?',
-    cta_subtitle: 'Notre laboratoire peut correspondre à vos spécifications industrielles exactes.',
-    cta_request: 'DEMANDER UNE FICHE DE SPÉCIFICATION QUALITÉ',
-    cta_whatsapp: 'DISCUTER DES TERMES TECHNIQUES SUR WHATSAPP'
-  },
-  footer: {
-    cta: {
-      title: 'Prêt à commencer votre prochaine expédition ?',
-      description: 'Contactez notre équipe dès aujourd\'hui pour recevoir un devis compétitif.',
-      contact: 'CONTACTEZ-NOUS',
-      whatsapp: 'CHATTER SUR WHATSAPP'
-    },
-    quick_links: 'Liens rapides',
-    contact_info: 'Informations de contact',
-    follow_us: 'Suivez-nous',
-    copyright: '© 2026 Algeria Metal Export Solutions. Tous droits réservés.',
-    map_title: "Notre Localisation",
-    view_map: "Voir sur Google Maps",
-    legal_links: "Informations légales",
-    privacy: "Politique de confidentialité",
-    terms: "Conditions Générales",
-    terms_of_use: "CGU",
-    cookies: "Politique de cookies",
-    faq: "FAQ"
-  },
-  legal: {
-    title: 'Mentions Légales',
-    company_name_label: 'Dénomination :',
-    company_name: 'Shlang Metal',
-    legal_form_label: 'Forme juridique :',
-    legal_form: 'Société à Responsabilité Limitée (SARL)',
-    address_label: 'Adresse :',
-    address: 'Hai Baba Ali, Section 09, Groupe de propriété n° 67, Rez-de-chaussée, Commune de Bir Touta',
-    location_label: 'Lieu :',
-    location: 'Alger',
-    capital_label: 'Capital social :',
-    capital: '1 200 000,00 DA',
-    start_date_label: 'Début d\'activité :',
-    start_date: '04/05/2026',
-    commercial_base_label: 'Base commerciale :',
-    commercial_base: 'Création',
-    premises_label: 'Local commercial :',
-    premises: 'Équipé/Préparé (en bon état)',
-    registration_number_label: 'Numéro d\'immatriculation :',
-    registration_number: '26 B 1205761 - 16 / 00',
-    registration_date_label: 'Date d\'immatriculation :',
-    registration_date: '04/05/2026'
-  },
-  privacy: {
-    title: "Politique de Confidentialité",
-    section1_title: "1. Informations que nous collectons",
-    section1_desc: "Nous collectons les informations personnelles que vous nous fournissez directement, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et le nom de votre entreprise lorsque vous soumettez une demande de devis ou nous contactez.",
-    section2_title: "2. Comment nous utilisons vos informations",
-    section2_desc: "Nous utilisons les informations que nous collectons pour fournir, maintenir et améliorer nos services, pour communiquer avec vous et pour répondre à vos demandes.",
-    section3_title: "3. Conservation des données",
-    section3_desc: "Nous conservons vos informations personnelles uniquement aussi longtemps que nécessaire pour atteindre les objectifs pour lesquels elles ont été collectées, y compris les obligations légales, comptables ou de déclaration.",
-    section4_title: "4. Vos droits",
-    section4_desc: "Vous avez le droit d'accéder, de corriger, de mettre à jour ou de supprimer vos informations personnelles à tout moment. Veuillez nous contacter pour exercer ces droits.",
-    section5_title: "5. Contactez-nous",
-    section5_desc: "Si vous avez des questions ou des préoccupations concernant cette politique de confidentialité, veuillez nous contacter à info@algeriametal.com."
-  },
-  cookies: {
-    title: "Politique de Cookies",
-    section1_title: "1. Que sont les cookies",
-    section1_desc: "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez notre site web. Ils nous aident à comprendre comment vous utilisez notre site et à améliorer votre expérience.",
-    section2_title: "2. Types de cookies que nous utilisons",
-    essential: "Cookies essentiels",
-    essential_desc: "Nécessaires au bon fonctionnement du site.",
-    analytics: "Cookies d'analyse",
-    analytics_desc: "Nous aident à comprendre comment les visiteurs interagissent avec notre site.",
-    functional: "Cookies fonctionnels",
-    functional_desc: "Permettent des fonctionnalités et une personnalisation améliorées.",
-    section3_title: "3. Comment gérer les cookies",
-    section3_desc: "Vous pouvez gérer ou supprimer les cookies via les paramètres de votre navigateur. Veuillez noter que la désactivation des cookies peut affecter la fonctionnalité de notre site.",
-    section4_title: "4. Cookies tiers",
-    section4_desc: "Nous pouvons utiliser des services tiers qui déposent des cookies sur notre site. Cela inclut les fournisseurs d'analyse, les réseaux publicitaires et les plateformes de médias sociaux.",
-    section5_title: "5. Contactez-nous",
-    section5_desc: "Si vous avez des questions concernant notre politique de cookies, veuillez nous contacter à info@algeriametal.com."
-  },
-  faq: {
-    title: "Foire Aux Questions",
-    no_items: "Aucune FAQ disponible pour le moment.",
-    items: [
-      {
-        question: "Quels types de ferraille exportez-vous ?",
-        answer: "Nous exportons une large gamme de ferrailles ferreuses et non ferreuses, y compris HMS 1 & 2, la ferraille déchiquetée, la ferraille de barres d'acier, la ferraille de fonte et divers produits en acier."
+  rfc_app: {
+    top_header: {
+      subtitle: 'EXPERTS EN ASSURANCE ET GESTION DES RISQUES',
+      items: {
+        expertise: 'EXPERTISE MÉTIER',
+        security: 'SÉCURITÉ DES DONNÉES',
+        performance: 'PERFORMANCE OPÉRATIONNELLE',
+        support: 'ACCOMPAGNEMENT PERSONNALISÉ',
       },
-      {
-        question: "Quelles sont vos conditions de paiement ?",
-        answer: "Nous acceptons les paiements par T/T (virement télégraphique) ou L/C (lettre de crédit). Des conditions flexibles peuvent être négociées en fonction du volume de la commande et de l'historique du client."
+    },
+    badge: 'NOUVEAU',
+    subtitle: 'LA SUITE LOGICIELLE MÉTIER DES PROFESSIONNELS DE L\'ASSURANCE',
+    description: 'Une solution intégrée et intelligente pour digitaliser, automatiser et piloter l\'ensemble de vos activités d\'assurance.',
+    features: {
+      clients: {
+        title: 'GESTION CLIENTS',
+        desc: '360° client, contrats, interactions',
       },
-      {
-        question: "Combien de temps dure l'expédition vers l'Europe ?",
-        answer: "L'expédition vers l'Europe prend généralement 3 à 6 jours à compter de la date de chargement dans les ports algériens, en fonction du port de destination et des conditions météorologiques."
+      contracts: {
+        title: 'GESTION DES CONTRATS',
+        desc: 'Souscription, avenants, renouvellements',
       },
-      {
-        question: "Fournissez-vous une certification de qualité ?",
-        answer: "Oui, tous nos produits sont accompagnés de certificats d'usine 3.1. Nous proposons également des services d'inspection par des tiers (SGS, BV ou TUV) sur demande."
+      claims: {
+        title: 'GESTION DES SINISTRES',
+        desc: 'Déclaration, suivi, règlement',
       },
-      {
-        question: "Quels sont vos incoterms d'expédition ?",
-        answer: "Nous travaillons avec tous les principaux incoterms, y compris FOB, CIF et CFR. Nous pouvons également nous adapter à d'autres conditions après négociation."
-      }
-    ]
+      dashboard: {
+        title: 'TABLEAUX DE BORD',
+        desc: 'Indicateurs clés, reporting et pilotage en temps réel',
+      },
+    },
+    arguments: {
+      expert: {
+        title: 'CONÇU PAR DES EXPERTS MÉTIER',
+        desc: 'Pour des experts métier',
+      },
+      custom: {
+        title: '100% ADAPTÉ À VOS BESOINS',
+        desc: 'À vos besoins métier',
+      },
+      secure: {
+        title: 'SÉCURISÉ',
+        desc: 'Hébergement cloud haute disponibilité',
+      },
+      integrated: {
+        title: 'INTÉGRÉ',
+        desc: 'Interopérable avec vos outils existants',
+      },
+    },
+    cta_final: {
+      title: 'CONÇU PAR DES EXPERTS MÉTIER, POUR DES EXPERTS MÉTIER',
+      desc: 'Rejoignez les professionnels de l\'assurance qui font confiance à RFC-App.',
+      button: 'DEMANDEZ UNE DÉMO ET DÉCOUVREZ RFC-APP',
+    },
+    footer: 'RFC-App, la performance digitale au service de l\'excellence en assurance.',
   },
-  terms: {
-    title: "Conditions Générales de Vente",
-    section1_title: "1. Informations Générales",
-    section1_desc: "Les présentes Conditions Générales de Vente régissent la vente de produits par Algeria Metal Export Solutions (ci-après dénommée « la Société ») aux clients. En passant une commande, vous acceptez ces conditions dans leur intégralité.",
-    section2_title: "2. Produits et Spécifications",
-    section2_desc: "Tous les produits vendus par la Société sont des ferrailles et produits en acier. Les spécifications sont fournies de bonne foi mais peuvent varier légèrement en raison des variations naturelles des matériaux. Les clients sont responsables de vérifier que les produits répondent à leurs exigences.",
-    section3_title: "3. Prix et Paiement",
-    section3_desc: "Tous les prix sont indiqués en Dinar Algérien (DZD) ou en Dollars Américains (USD) selon l'accord. Les conditions de paiement sont T/T (Virement Télégraphique) ou L/C (Lettre de Crédit). Le paiement doit être reçu avant l'expédition sauf convention contraire.",
-    section4_title: "4. Expédition et Livraison",
-    section4_desc: "L'expédition est organisée depuis les ports algériens (Skikda, Oran, Alger). Les délais de livraison sont des estimations et non garantis. Le risque de perte est transféré au client lors du chargement sur le navire.",
-    section5_title: "5. Qualité et Inspection",
-    section5_desc: "Tous les produits sont accompagnés d'un certificat d'usine 3.1. Les clients peuvent demander une inspection par un tiers (SGS, BV, TUV) à leurs frais. Les réclamations doivent être soumises dans les 7 jours suivant la livraison.",
-    section6_title: "6. Limitation de Responsabilité",
-    section6_desc: "La Société ne sera pas responsable des dommages indirects, accessoires ou consécutifs découlant de l'utilisation ou de l'impossibilité d'utiliser les produits. La responsabilité totale de la Société ne dépassera pas le prix d'achat des produits.",
-    section7_title: "7. Droit Applicable",
-    section7_desc: "Les présentes conditions sont régies par le droit algérien. Tout litige sera résolu par arbitrage ou devant les tribunaux d'Alger, Algérie.",
-    section8_title: "8. Informations de Contact",
-    section8_desc: "Pour toute question concernant les présentes Conditions Générales de Vente, veuillez nous contacter à info@algeriametal.com."
+  services: {
+    tag: 'Expertise métier',
+    title: 'NOS PRESTATIONS',
+    subtitle: 'Une offre complète pour une protection à 360°',
+    protect_assets: 'PROTÉGER LES ACTIFS',
+    protect_liabilities: 'PROTÉGER LES RESPONSABILITÉS',
+    protect_projects: 'PROTÉGER LES PROJETS',
+    protect_employees: 'PROTÉGER LES COLLABORATEURS',
+    cta: 'Demander un devis',
   },
-  terms_of_use: {
-    title: 'Conditions Générales d\'Utilisation',
-    section1_title: '1. Acceptation des Conditions',
-    section1_desc: 'En accédant et en utilisant ce site web, vous acceptez et vous engagez à respecter les présentes Conditions Générales d\'Utilisation. Si vous n\'acceptez pas ces conditions, veuillez ne pas utiliser le site.',
-    section2_title: '2. Propriété Intellectuelle',
-    section2_desc: 'Tout le contenu de ce site web, y compris les textes, graphiques, logos et images, est la propriété de Algeria Metal Export Solutions et est protégé par les lois internationales sur le droit d\'auteur et les marques.',
-    section3_title: '3. Conduite de l\'utilisateur',
-    section3_desc: 'Vous acceptez d\'utiliser ce site web uniquement à des fins légales. Vous ne pouvez pas poster ou transmettre de contenu illégal, nuisible ou violant les droits d\'autrui.',
-    section4_title: '4. Limitation de Responsabilité',
-    section4_desc: 'Algeria Metal Export Solutions ne sera pas responsable des dommages directs, indirects, accessoires ou consécutifs découlant de votre utilisation de ce site web.',
-    section5_title: '5. Liens vers des sites tiers',
-    section5_desc: 'Ce site web peut contenir des liens vers des sites web tiers. Ces liens sont fournis pour votre commodité uniquement, et nous n\'approuvons ni n\'assumons aucune responsabilité pour le contenu de ces sites.',
-    section6_title: '6. Modifications des conditions',
-    section6_desc: 'Nous nous réservons le droit de mettre à jour ou de modifier les présentes Conditions Générales d\'Utilisation à tout moment sans préavis. Votre utilisation continue du site web constitue une acceptation des conditions mises à jour.',
-    section7_title: '7. Droit Applicable',
-    section7_desc: 'Les présentes Conditions Générales d\'Utilisation sont régies par le droit algérien. Tout litige sera résolu par les tribunaux d\'Alger, Algérie.',
-    section8_title: '8. Informations de Contact',
-    section8_desc: 'Si vous avez des questions concernant les présentes Conditions Générales d\'Utilisation, veuillez nous contacter à info@algeriametal.com.'
+  sectors: {
+    risks_title: 'Risques clés',
+    solutions_title: 'Solutions',
+    tag: 'Expertise sectorielle',
+    title: 'SECTEURS D\'ACTIVITÉ',
+    subtitle: 'DES EXPERTISES ADAPTÉES À VOS SECTEURS',
+    banner: 'Pour chaque secteur, une étude macro des risques et des solutions sur mesure.',
+    cta: 'Voir tous nos secteurs',
+    cta_banner: 'Demander une étude',
+    
+    // Agroalimentaire
+    agroalimentaire: {
+      title: 'AGROALIMENTAIRE',
+      desc: 'Maîtrise des risques liés à la production, la transformation et la distribution alimentaire.',
+      risks: {
+        contamination: 'Contamination (bactérienne, chimique, allergènes)',
+        recall: 'Rappel de produits (coûts, logistique)',
+        traceability: 'Traçabilité (défaut de traçabilité, perte de données)',
+        storage: 'Stockage (température, humidité, détérioration)',
+      },
+      solutions: {
+        recall: 'Assurance rappel de produits',
+        loss: 'Assurance pertes d\'exploitation',
+        rc: 'RC produits (dommages aux tiers)',
+        transport: 'Assurance stockage et transport',
+      },
+    },
+    
+    // Chimie
+    chimie: {
+      title: 'CHIMIE',
+      desc: 'Gestion des risques chimiques, industriels et environnementaux spécifiques.',
+      risks: {
+        atex: 'ATEX (atmosphère explosive)',
+        toxic: 'Rejets toxiques (sol, air, eau)',
+        transport: 'Transport de matières dangereuses (ADR)',
+        waste: 'Déchets industriels (traitement, stockage)',
+      },
+      solutions: {
+        rc: 'Assurance RC exploitation',
+        environment: 'Assurance environnementale (atteinte à l\'environnement)',
+        transport: 'Assurance transport de matières dangereuses',
+        waste: 'Assurance stockage de déchets industriels',
+      },
+    },
+    
+    // BTP & Construction
+    constructions: {
+      title: 'BTP & CONSTRUCTION',
+      desc: 'Solutions pour les risques de chantiers, ouvrages et responsabilités décennales.',
+      risks: {
+        site: 'Chantiers complexes (accès, sécurité, délais)',
+        subcontractors: 'Sous-traitants (défauts, non-conformité)',
+        works: 'Ouvrages (effondrement, malfaçons)',
+        delays: 'Délais (pénalités, pertes financières)',
+      },
+      solutions: {
+        decennial: 'RC décennale (garantie décennale)',
+        all_risks: 'Tous risques chantier (TRC)',
+        works: 'Assurance dommages ouvrage',
+        loss: 'Assurance pertes d\'exploitation (délais)',
+      },
+    },
+    
+    // Oil & Gas
+    energie: {
+      title: 'OIL & GAS',
+      desc: 'Accompagnement des acteurs de l\'énergie sur des risques complexes et sensibles.',
+      risks: {
+        forage: 'Forages (explosion, effondrement)',
+        platform: 'Plateformes (incendie, collision, tempête)',
+        pipeline: 'Pipelines (corrosion, fuite, sabotage)',
+        production: 'Pertes de production (panne, arrêt technique)',
+      },
+      solutions: {
+        all_risks: 'Assurance toutes risques (plateformes, forages)',
+        production_loss: 'Assurance pertes de production',
+        rc: 'Assurance RC (pollution, dommages aux tiers)',
+        transport: 'Assurance transport (pipe, maritime)',
+      },
+    },
+  },
+  organization: {
+    tag: 'Gouvernance',
+    title: 'Notre Organisation',
+    subtitle: 'Une structure d\'excellence au service de vos risques',
+    cta: 'Contactez-nous',
+    mission: {
+      title: 'Notre Mission',
+      desc: 'Accompagner nos clients dans la protection de leurs actifs et la prévention des risques industriels, avec une approche sur-mesure et indépendante.',
+    },
+    vision: {
+      title: 'Notre Vision',
+      desc: 'Devenir le courtier d\'assurance de référence en Algérie, reconnu pour notre expertise technique et notre engagement envers l\'excellence.',
+    },
+    values: {
+      title: 'Nos Valeurs',
+      integrity: 'Intégrité',
+      integrity_desc: 'Transparence et honnêteté dans toutes nos actions.',
+      excellence: 'Excellence',
+      excellence_desc: 'Recherche constante de la qualité et de la performance.',
+      collaboration: 'Collaboration',
+      collaboration_desc: 'Travail d\'équipe et partage d\'expertise.',
+      innovation: 'Innovation',
+      innovation_desc: 'Veille technologique et amélioration continue.',
+    },
+    leadership: {
+      title: 'Notre Leadership',
+      ceo: 'Président Directeur Général',
+      director: 'Directrice Générale Adjointe',
+      risk: 'Directeur des Risques',
+      brokerage: 'Directeur du Courtage',
+    },
+    stats: {
+      title: 'Nos Chiffres Clés',
+      years_experience: 'Années d\'expérience',
+      clients: 'Clients',
+      partners: 'Partenaires',
+      satisfaction: 'Satisfaction client',
+    },
+    contact: {
+      title: 'Contact & Localisation',
+      address: '21 rue Debussy, Alger Centre',
+      phone: '+213 775 22 18 69',
+      email: 'contact@rfc-assurance.dz',
+    },
+  },
+  references: {
+    tag: '07',
+    title: 'ILS NOUS FONT CONFIANCE',
+    subtitle: 'Nous accompagnons des entreprises leaders dans leurs secteurs.',
+  },
+  approach: {
+    tag: '08',
+    title: 'NOTRE APPROCHE',
+    subtitle: 'Une démarche indépendante et orientée résultats.',
+    step: {
+      analysis: {
+        title: 'Analyse approfondie',
+        desc: 'De vos risques',
+      },
+      recommendations: {
+        title: 'Recommandations',
+        desc: 'Sur mesure et adaptées',
+      },
+      implementation: {
+        title: 'Mise en place',
+        desc: 'Des solutions optimales',
+      },
+      followup: {
+        title: 'Suivi et défense',
+        desc: 'De vos intérêts jusqu\'au sinistre',
+      },
+    },
+  },
+  ambitions: {
+    tag: '09',
+    title: 'NOS AMBITIONS 2025',
+    subtitle: 'Être l\'accompagnateur de référence des entreprises en croissance.',
+    ambition: {
+      startups: {
+        title: 'Accompagner les startups',
+        desc: 'Et l\'innovation',
+      },
+      deployment: {
+        title: 'Déploiement',
+        desc: 'Dans les pôles économiques algériens',
+      },
+      export: {
+        title: 'Développer le conseil',
+        desc: 'À l\'export et à l\'international',
+      },
+      expertise: {
+        title: 'Renforcer notre expertise',
+        desc: 'Et innover en continu',
+      },
+    },
   },
   team: {
-    hero_title: 'Notre Équipe de Direction',
-    hero_subtitle: 'Des experts engagés pour une métallurgie d\'avenir',
-    manager_name: 'Boulaioune Abdelkader',
-    manager_role: 'Gérant & Fondateur',
-    manager_initials: 'BA',
-    manager_bio: "Expertise B2B. Engagement sans faille. Maîtrise technique et logistique. Une vision à long terme avec nos clients.",
-    cmanager_name: 'Akrour Mansour',
-    cmanager_role: 'Cogérant & Directeur des Opérations',
-    cmanager_initials: 'AM',
-    cmanager_bio: 'Mansour Akrour apporte une expertise terrain essentielle à Shlang Metal. Véritable artisan de la fluidité logistique, il supervise l\'approvisionnement, le contrôle qualité et les opérations portuaires. Avec plus de 15 ans de pratique dans la gestion de parcs à ferraille, il a su transformer des contraintes d\'approvisionnement en opportunités stratégiques.',
-    ethics_title: 'Notre Engagement',
-    ethics_transparency: 'Transparence',
-    ethics_transparency_desc: 'Toutes nos transactions sont documentées et traçables, du chargement jusqu\'à la livraison.',
-    ethics_compliance: 'Conformité',
-    ethics_compliance_desc: 'Nous respectons les normes internationales ASTM, EN et ISO 9001:2015.',
-    ethics_ethics: 'Éthique',
-    ethics_ethics_desc: 'Pratiques commerciales loyales, respect des réglementations douanières et fiscales.',
-    ethics_responsibility: 'Responsabilité',
-    ethics_responsibility_desc: 'Promotion de l\'économie circulaire et du recyclage des métaux.',
-    value_integrity: 'Intégrité',
-    value_integrity_desc: 'La confiance se gagne par la transparence.',
-    value_expertise: 'Expertise',
-    value_expertise_desc: 'La maîtrise du produit et du marché.',
-    value_partnership: 'Partenariat',
-    value_partnership_desc: 'Une vision à long terme avec nos clients.',
-    stat_exp: 'Expérience combinée (années)',
-    stat_ports: 'Ports opérés',
-    stat_countries: 'Pays desservis',
-    stat_volume: 'Volume annuel (tonnes)',
-    skill_1: 'Logistique internationale',
-    skill_2: 'Négociation internationale',
-    skill_3: 'Conformité & Normes',
-    skill_4: 'Réseau mondial',
-    skill_5: 'Gestion opérationnelle',
-    skill_6: 'Contrôle qualité',
-    skill_7: 'Logistique terrain',
-    skill_8: 'Relation fournisseurs',
-    cta_title: 'Envie d\'échanger avec nos experts ?',
-    cta_subtitle: 'Réponse sous 24h',
-    cta_button: 'Contactez notre équipe'
-  },
-  local_market: {
-    title: 'Une maîtrise locale du marché des métaux en Algérie',
-    subtitle: 'Un leadership engagé, une expertise reconnue',
-    anchor_title: 'Ancrage Local',
-    anchor_desc: 'Implantée en Algérie, notre équipe connaît les spécificités du marché national des métaux.',
-    anchor_alt: 'Carte de l\'Algérie avec points d\'influence',
-    leadership_title: 'Leadership Engagé',
-    leadership_desc: 'Nous prenons des initiatives pour structurer la filière et accompagner les acteurs locaux.',
-    leadership_alt: 'Équipe sur site en Algérie',
-    mastery_title: 'Maîtrise du Domaine',
-    mastery_desc: 'Une connaissance approfondie des produits, des normes et des circuits d\'approvisionnement en Algérie.',
-    mastery_alt: 'Site de stockage en Algérie',
-    anchor_detail: "Notre implantation en Algérie nous permet d'anticiper les fluctuations du marché local. Nous entretenons des relations privilégiées avec les collecteurs et les sites de stockage à travers le pays, garantissant un approvisionnement stable et de qualité.",
-    leadership_detail: "Nous prenons des décisions stratégiques pour structurer la filière métallurgique algérienne. Notre leadership se manifeste par une veille constante, des investissements ciblés et un accompagnement personnalisé des acteurs locaux.",
-    mastery_detail: "Notre maîtrise du domaine couvre l'ensemble de la chaîne de valeur : de la collecte à l'export, en passant par le contrôle qualité et la logistique. Une expertise reconnue par nos partenaires internationaux.",
-  },
-  products_page: {
-    title: 'NOS PRODUITS',
-    hero_subtitle: 'Produits en ferraille de haute qualité disponibles en vrac avec des spécifications constantes et des prix compétitifs.',
-    consistent_quality: 'QUALITÉ\nCONSTANTE',
-    consistent_desc: 'Contrôle qualité strict et inspection',
-    certified_products: 'PRODUITS\nCERTIFIÉS',
-    certified_desc: 'Conformes aux normes internationales',
-    large_capacity: 'GRANDE\nCAPACITÉ',
-    large_desc: 'Stock régulier et approvisionnement en vrac',
-    customized_solutions: 'SOLUTIONS\nPERSONNALISÉES',
-    customized_desc: 'Spécifications adaptées sur demande',
-    all_products: 'TOUS LES PRODUITS',
-    ferrous_scrap: 'Ferraille ferreuse',
-    non_ferrous_scrap: 'Ferraille non ferreuse',
-    shredded_scrap: 'Ferraille déchiquetée',
-    foundry_scrap: 'Ferraille de fonderie',
-    steel_products: 'Produits en acier',
-    download_catalogue: 'TÉLÉCHARGER LE CATALOGUE',
-    view_specs: 'VOIR LES SPÉCIFICATIONS',
-    size: 'Taille',
-    thickness: 'Épaisseur',
-    density: 'Densité',
-    moisture: 'Humidité',
-    packaging: 'Emballage',
-    origin: 'Origine',
-    length: 'Longueur',
-    condition: 'État',
-    composition: 'Composition',
-    packaging_options: {
-      title: 'EMBALLAGE\nOPTIONS',
-      desc: 'Vrac / En vrac\nConteneurs / En vrac'
+    tag: '06',
+    title: 'UNE ÉQUIPE D\'EXPERTS À VOTRE SERVICE',
+    subtitle: 'Des compétences pluridisciplinaires pour vous apporter les meilleures solutions.',
+    expertise_label: 'Domaines d\'expertise',
+    engineers: {
+      title: 'Ingénieurs',
+      desc: 'Spécialisés en risques industriels',
     },
-    monthly_capacity: {
-      title: 'CAPACITÉ\nMENSUELLE',
-      desc: '100 000+ Tonnes\nApprovisionnement constant'
+    specialists: {
+      title: 'Spécialistes',
+      desc: 'En assurances et réassurances',
     },
-    quality_standard: {
-      title: 'QUALITÉ\nSTANDARD',
-      desc: 'ASTM / EN / ISO\nProduits certifiés'
+    lawyers: {
+      title: 'Juristes',
+      desc: 'Experts en responsabilité et conformité',
     },
-    inspection: {
-      title: 'INSPECTION',
-      desc: 'SGS / BV / TUV\nInspection par tierce partie'
+    adjusters: {
+      title: 'Gestionnaires',
+      desc: 'De sinistres dédiés',
     },
-    payment_terms: {
-      title: 'CONDITIONS\nDE PAIEMENT',
-      desc: 'T/T / L/C\nConditions flexibles'
+    stat_1: 'Années d\'expérience',
+    stat_2: 'Projets accompagnés',
+    stat_3: 'Satisfaction client',
+    stat_4: 'Support disponible',
+    cta: 'Rencontrer notre équipe',
+  },
+  contact: {
+    tag: 'Contact',
+    title: 'Contactez-nous',
+    subtitle: 'Une équipe d\'experts à votre écoute pour répondre à toutes vos questions.',
+    form_title: 'Envoyez-nous un message',
+    form_name: 'Nom complet',
+    form_name_placeholder: 'Votre nom',
+    form_email: 'Email',
+    form_email_placeholder: 'votre@email.com',
+    form_phone: 'Téléphone',
+    form_phone_placeholder: 'Votre numéro',
+    form_message: 'Message',
+    form_message_placeholder: 'Votre message...',
+    form_submit: 'Envoyer le message',
+    form_success: 'Message envoyé !',
+    footer: 'Nous sommes disponibles pour vous accompagner dans vos projets.',
+  },
+  footer: {
+    description: 'Votre partenaire de confiance pour la protection de vos actifs et la gestion de vos risques.',
+    quick_links: 'Liens rapides',
+    contact_info: 'Informations de contact',
+    legal_info: 'Informations légales',
+    links: {
+      home: 'Accueil',
+      products: 'Produits',
+      logistics: 'Logistique',
+      quality: 'Qualité & Certification',
+      about: 'À propos',
+      contact: 'Contact',
+      team: 'Équipe',
     },
-    cta: {
-      title: 'Prêt à obtenir un devis pour votre produit ?',
-      subtitle: 'Envoyez-nous vos besoins et recevez une offre compétitive sous 24h.',
-      request: 'DEMANDE DE DEVIS (RFQ)',
-      whatsapp: 'CHATTER SUR WHATSAPP'
-    }
+    legal: {
+      mentions: 'Mentions légales',
+      privacy: 'Politique de confidentialité',
+      terms: 'Conditions Générales',
+      cgu: 'CGU',
+      cookies: 'Politique de cookies',
+      faq: 'FAQ',
+    },
+    copyright: 'Tous droits réservés.',
   },
-  logistics_page: {
-    title: 'LOGISTIQUE & EXPÉDITION',
-    hero_subtitle: 'Stratégiquement située en Méditerranée, l\'Algérie offre une expédition plus rapide et plus rentable vers l\'Europe, le MENA et l\'Afrique.',
-    stat1: 'PORTS\nMAJEURS',
-    stat2: 'TONNES',
-    stat3: 'PAYS',
-    stat4: 'JOURS',
-    stat5: 'FLEXIBLE',
-    stat5_desc: 'INCOTERMS',
-    stat6: 'CERTIFIÉ',
-    ports_title: 'PORTS DE CHARGEMENT',
-    main_products: 'Produits principaux',
-    port_skikda_name: 'PORT DE SKIKDA',
-    port_skikda_detail1: 'Port en eau profonde',
-    port_skikda_detail2: 'Équipements modernes',
-    port_skikda_detail3: 'Manutention rapide des navires',
-    port_skikda_products: 'Toutes les qualités de ferraille',
-    port_oran_name: 'PORT D\'ORAN',
-    port_oran_detail1: 'Port stratégique de l\'Ouest algérien',
-    port_oran_detail2: 'Accès facile à l\'Europe',
-    port_oran_detail3: 'Grande capacité de stockage',
-    port_oran_products: 'HMS, Broyé, Barres d\'acier, Fonte',
-    port_algiers_name: 'PORT D\'ALGER',
-    port_algiers_detail1: 'Port de la capitale',
-    port_algiers_detail2: 'Lignes maritimes régulières',
-    port_algiers_detail3: 'Dédouanement efficace',
-    port_algiers_products: 'Toutes les qualités de ferraille',
-    markets_title: 'MARCHÉS PRINCIPAUX',
-    market_europe: 'EUROPE',
-    market_middleeast: 'MOYEN-ORIENT',
-    market_africa: 'AFRIQUE',
-    market_asia: 'ASIE',
-    process_title: 'NOTRE PROCESSUS D\'EXPORTATION',
-    process_step1_title: 'DEMANDE',
-    process_step1_desc: 'Vous nous envoyez\nvotre demande',
-    process_step2_title: 'CONFIRMATION',
-    process_step2_desc: 'Nous confirmons\ndisponibilité',
-    process_step3_title: 'INSPECTION',
-    process_step3_desc: 'Contrôle qualité\npar SGS',
-    process_step4_title: 'CHARGEMENT',
-    process_step4_desc: 'Chargement\nprofessionnel',
-    process_step5_title: 'EXPÉDITION',
-    process_step5_desc: 'Livraison à\ntemps',
-    shipping_title: 'INFORMATIONS D\'EXPÉDITION',
-    ship_incoterms: 'INCOTERMS',
-    ship_incoterms_val: 'FOB / CIF / CFR',
-    ship_payment: 'CONDITIONS DE PAIEMENT',
-    ship_payment_val: 'T/T (Virement télégraphique) / L/C',
-    ship_loading: 'DÉLAI DE CHARGEMENT',
-    ship_loading_val: '3 – 5 Jours après confirmation',
-    ship_freight: 'TYPE DE FRET',
-    ship_freight_val: 'Vrac / Break Bulk / Conteneur',
-    ship_packaging: 'EMBALLAGE',
-    ship_packaging_val: 'Vrac / En vrac / Balles / Conteneurs',
-    ship_inspection: 'INSPECTION',
-    ship_inspection_val: 'SGS / BV / TUV – Au chargement',
-    ship_documents: 'DOCUMENTS',
-    ship_documents_val: 'Facture commerciale, Liste de colisage, B/L, Certificat d\'origine, Certificat d\'usine (3.1)'
+  legal: {
+    back: 'Retour à l\'accueil',
+    last_update: 'Dernière mise à jour le',
+    
+    // Mentions légales
+    mentions_title: 'Mentions légales',
+    mentions_date: '1er janvier 2025',
+    mentions_content: `
+      <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé que :</p>
+      
+      <h3>1. Édition du site</h3>
+      <p>Le site est édité par <strong>RFC Assurance</strong>, société de courtage d'assurance.</p>
+      
+      <h3>2. Directeur de la publication</h3>
+      <p>Le directeur de la publication est <strong>M. Khalidou S.</strong></p>
+      
+      <h3>3. Siège social</h3>
+      <p>21, Rue Claud Debussy, Alger, Algérie.</p>
+      
+      <h3>4. Contact</h3>
+      <p>Email : contact@rfc-assurance.dz<br>Téléphone : +213 775 22 18 69</p>
+      
+      <h3>5. Hébergement</h3>
+      <p>Le site est hébergé par Vercel Inc.</p>
+    `,
+    
+    // Politique de confidentialité
+    privacy_title: 'Politique de confidentialité',
+    privacy_date: '1er janvier 2025',
+    privacy_content: `
+      <p>Nous attachons une grande importance à la protection de vos données personnelles. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.</p>
+      
+      <h3>1. Données collectées</h3>
+      <p>Nous collectons uniquement les informations nécessaires à la gestion de votre demande :</p>
+      <ul>
+        <li>Nom et prénom</li>
+        <li>Adresse email</li>
+        <li>Numéro de téléphone</li>
+        <li>Message (contenu de votre demande)</li>
+      </ul>
+      
+      <h3>2. Utilisation des données</h3>
+      <p>Vos données sont utilisées exclusivement pour :</p>
+      <ul>
+        <li>Répondre à vos demandes</li>
+        <li>Vous proposer nos services</li>
+        <li>Améliorer notre site</li>
+      </ul>
+      
+      <h3>3. Conservation des données</h3>
+      <p>Vos données sont conservées pendant une durée de 3 ans à compter de votre dernière demande.</p>
+      
+      <h3>4. Vos droits</h3>
+      <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous à privacy@rfc-assurance.dz.</p>
+    `,
+    
+    // Conditions Générales
+    terms_title: 'Conditions Générales',
+    terms_date: '1er janvier 2025',
+    terms_content: `
+      <p>Les présentes conditions générales régissent l'utilisation du site RFC Assurance.</p>
+      
+      <h3>1. Objet</h3>
+      <p>Les présentes conditions ont pour objet de définir les conditions d'utilisation du site par les utilisateurs.</p>
+      
+      <h3>2. Acceptation</h3>
+      <p>En utilisant ce site, vous acceptez sans réserve les présentes conditions.</p>
+      
+      <h3>3. Modifications</h3>
+      <p>RFC Assurance se réserve le droit de modifier ces conditions à tout moment. Les modifications prennent effet dès leur publication.</p>
+      
+      <h3>4. Responsabilité</h3>
+      <p>RFC Assurance ne peut être tenue responsable des dommages résultant de l'utilisation du site.</p>
+      
+      <h3>5. Droit applicable</h3>
+      <p>Les présentes conditions sont régies par le droit algérien.</p>
+    `,
+    
+    // CGU
+    cgu_title: 'CGU',
+    cgu_date: '1er janvier 2025',
+    cgu_content: `
+      <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du site internet et de la plateforme RFC Assurance.</p>
+      
+      <h3>1. Acceptation des CGU</h3>
+      <p>En accédant au site, vous acceptez sans réserve les présentes CGU. Si vous n'acceptez pas ces conditions, vous devez cesser d'utiliser le site.</p>
+      
+      <h3>2. Accès au site</h3>
+      <p>Le site est accessible gratuitement à tout utilisateur. RFC Assurance se réserve le droit de suspendre ou de modifier l'accès sans préavis.</p>
+      
+      <h3>3. Compte utilisateur</h3>
+      <p>Certaines fonctionnalités peuvent nécessiter la création d'un compte. Vous êtes responsable de la confidentialité de vos identifiants.</p>
+      
+      <h3>4. Utilisation du site</h3>
+      <p>Vous vous engagez à utiliser le site conformément aux lois et règlements en vigueur. Toute utilisation frauduleuse ou illégale est interdite.</p>
+      
+      <h3>5. Propriété intellectuelle</h3>
+      <p>Tous les contenus du site (textes, images, logos) sont la propriété exclusive de RFC Assurance.</p>
+      
+      <h3>6. Limitation de responsabilité</h3>
+      <p>RFC Assurance ne peut être tenue responsable des dommages résultant de l'utilisation du site.</p>
+      
+      <h3>7. Modification des CGU</h3>
+      <p>RFC Assurance se réserve le droit de modifier les CGU à tout moment. Les modifications prennent effet dès leur publication.</p>
+      
+      <h3>8. Droit applicable</h3>
+      <p>Les présentes CGU sont régies par le droit algérien. Tout litige relèvera des tribunaux d'Alger.</p>
+    `,
+    
+    // Politique de cookies
+    cookies_title: 'Politique de cookies',
+    cookies_date: '1er janvier 2025',
+    cookies_content: `
+      <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site.</p>
+      
+      <h3>1. Types de cookies</h3>
+      <ul>
+        <li>Cookies essentiels : nécessaires au fonctionnement du site.</li>
+        <li>Cookies analytiques : nous aident à comprendre comment vous utilisez le site.</li>
+      </ul>
+      
+      <h3>2. Gestion des cookies</h3>
+      <p>Vous pouvez gérer vos préférences de cookies via les paramètres de votre navigateur.</p>
+      
+      <h3>3. Consentement</h3>
+      <p>En continuant à naviguer sur le site, vous acceptez l'utilisation de cookies.</p>
+    `,
+    
+    // FAQ
+    faq_title: 'FAQ',
+    faq_subtitle: 'Trouvez rapidement les réponses à vos questions.',
+    faq_search_placeholder: 'Rechercher une question...',
+    faq_no_results: 'Aucune question trouvée.',
+    faq_1_q: 'Quels sont les horaires d\'ouverture ?',
+    faq_1_a: 'Nous sommes ouverts du dimanche au jeudi de 8h30 à 17h30.',
+    faq_2_q: 'Comment obtenir un devis ?',
+    faq_2_a: 'Vous pouvez remplir le formulaire de contact ou nous appeler au +213 775 22 18 69.',
+    faq_3_q: 'Quels secteurs couvrez-vous ?',
+    faq_3_a: 'Nous couvrons l\'industrie, le pétrole & gaz, la construction et les services.',
+    faq_4_q: 'Proposez-vous des services d\'audit ?',
+    faq_4_a: 'Oui, nous proposons des audits complets de vos risques et de vos contrats d\'assurance.',
+    faq_5_q: 'Puis-je résilier mon contrat à tout moment ?',
+    faq_5_a: 'Oui, sous réserve des conditions prévues dans votre contrat.',
+    faq_6_q: 'Comment contacter le support technique ?',
+    faq_6_a: 'Par email à support@rfc-assurance.dz ou par WhatsApp au +213 775 22 18 69.',
   },
-  about_page: {
-    title: 'À PROPOS DE NOUS',
-    hero_subtitle: 'Une force de premier plan dans les exportations de métaux et de produits ferreux de l\'Algérie vers le monde.',
-    feature1_title: 'Qualité Constante',
-    feature1_desc: 'Notre entreprise une qualité constante et des installations professionnelles.',
-    feature2_title: 'Produits Certifiés',
-    feature2_desc: 'Nous disposons de capacités étendues de traitement et d\'utilité industrielle.',
-    feature3_title: 'Industria Entreprise',
-    feature3_desc: 'Notre ferraille organisée sur mesure et répondre aux exigences.',
-    feature4_title: 'Empreinte Mondiale',
-    feature4_desc: 'Réseaux commerciaux internationaux vers les principales régions portuaires.',
-    card1_title: 'Notre Héritage',
-    card1_desc: 'Un bureau professionnel propre, conçu comme une installation moderne ou un bâtiment administratif principal.',
-    card1_item1: 'Étapes clés : Fondée au début des années 2000',
-    card1_item2: 'Expérience principale : 20+ années dans l\'industrie',
-    card1_item3: 'Marchés clés : Portée mondiale établie',
-    card2_title: 'Notre Infrastructure',
-    card2_desc: 'Installations étendues et capacités de traitement, avec un hub de ferraille organisé et une logistique.',
-    card2_item1: 'Installations clés : Espace de parc massif',
-    card2_item2: 'Traitement moderne',
-    card2_item3: 'Centre logistique intégré',
-    card2_item4: 'Transport multimodal',
-    card3_title: 'Empreinte Mondiale',
-    card3_desc: 'Réseaux commerciaux internationaux en exportation, nations et ports vers les régions majeures.',
-    card3_item1: 'Marchés clés desservis : Algérie, Espagne, Inde...',
-    card3_item2: 'Volumes annuels : 2000 volumes',
-    card3_item3: 'Routes multimodales, itinéraires multiples, plus encore',
-    download_btn: 'TÉLÉCHARGER LA BROCHURE D\'ENTREPRISE (PDF)',
-    grid1_title: 'EMBALLAGE',
-    grid1_desc: 'Vrac / En vrac\nConteneurs / En vrac',
-    grid2_title: 'CAPACITÉ\nMENSUELLE',
-    grid2_desc: '100 000+ Tonnes\nApprovisionnement constant',
-    grid3_title: 'TÉLÉPHONE',
-    grid3_desc: '+213 55 12 34 56 78',
-    grid4_title: 'RÉSEAUX',
-    grid4_desc: 'Réseaux\nInternationaux',
-    cta_title: 'Vous cherchez un partenaire d\'approvisionnement fiable à long terme ?',
-    cta_subtitle: 'Contactez-nous aujourd\'hui et construisons ensemble un partenariat solide.',
-    cta_btn1: 'DEVENIR PARTENAIRE',
-    cta_btn2: 'CONTACTER NOTRE ÉQUIPE'
-  },
-  contact_page: {
-    title: 'CONTACT',
-    hero_subtitle: 'Prêt à discuter de votre prochain besoin d\'approvisionnement en métal. Nous sommes là pour vous aider.',
-    card1_title: 'INFORMATIONS DE CONTACT GLOBALES',
-    card1_desc: 'Ligne directe pour les demandes de renseignements, les partenariats et les questions techniques.',
-    card1_email_label: 'EMAIL (DEMANDES)',
-    card1_phone_label: 'TÉLÉPHONE (SIÈGE)',
-    card1_emergency_label: 'URGENCE / APRÈS LES HEURES',
-    card1_address_label: 'ADRESSE',
-    card1_address: '12, Rue des Frères Bouadou,\nBir Mourad Raïs,\nAlger, Algérie',
-    card1_btn: 'PLANIFIER UN APPEL AVEC UN EXPERT',
-    card2_title: 'VISITEZ NOTRE SIÈGE',
-    card2_desc: 'Planifiez une réunion avec notre équipe technique. Découvrez nos capacités de traitement et de logistique.',
-    card2_badge: 'ALGERIA METAL - SIÈGE',
-    card2_hours_label: 'HEURES D\'OUVERTURE',
-    card2_hours_value: 'Dimanche - Jeudi : 8h30 - 17h30 (CET)',
-    card2_closed_label: 'FERMÉ',
-    card2_closed_value: 'Vendredis et jours fériés',
-    card2_parking_label: 'PARKING VISITEURS',
-    card2_parking_value: 'Disponible sur place',
-    card2_accessibility_label: 'ACCESSIBILITÉ',
-    card2_accessibility_value: 'Conformité ADA complète.',
-    download_btn: 'TÉLÉCHARGER LE GUIDE ET LE PLAN DU VISITEUR (PDF)',
-    grid1_title: 'EMBALLAGE',
-    grid1_desc: 'Vrac / En vrac\nConteneurs / En vrac',
-    grid2_title: 'CAPACITÉ\nMENSUELLE',
-    grid2_desc: '100 000+ Tonnes\nApprovisionnement constant',
-    grid3_title: 'TÉLÉPHONE',
-    grid3_desc: '+213 55 12 34 56 78',
-    grid4_title: 'RÉSEAUX',
-    grid4_desc: 'Réseaux\nInternationaux',
-    cta_title: 'Besoin d\'une réponse immédiate à votre question technique ?',
-    cta_subtitle: 'Notre équipe de support technique est prête à vous assister.',
-    cta_btn1: 'CHAT EN DIRECT SUR WHATSAPP',
-    cta_btn2: 'CONTACTER NOTRE ÉQUIPE DE SUPPORT TECHNIQUE'
-  },
-  request_page: {
-    title: 'DEMANDE DE DEVIS',
-    hero_subtitle: 'Prêt à recevoir votre offre compétitive ? Fournissez vos besoins ci-dessous.',
-    section_contact_title: 'DÉTAILS DU PROJET ET CONTACT',
-    contact_company: 'Nom de l\'entreprise',
-    contact_person: 'Personne de contact',
-    contact_email: 'Adresse e-mail',
-    contact_project_type: 'Type de projet',
-    project_type_infrastructure: 'Infrastructure, Construction, Fabrication, etc.',
-    section_shipping_title: 'EXPÉDITION ET LOGISTIQUE',
-    shipping_port_load: 'Port de chargement préféré',
-    shipping_destination: 'Port de destination final',
-    shipping_lead_time: 'Délai souhaité',
-    shipping_incoterm: 'Incoterm préféré',
-    port_skikda: 'Port de Skikda',
-    port_oran: 'Port d\'Oran',
-    port_algiers: 'Port d\'Alger',
-    section_products_title: 'SÉLECTION DES PRODUITS ET CAPACITÉ',
-    product_hms: 'HMS 1 & 2',
-    product_shredded: 'Ferraille Déchiquetée',
-    product_rebar: 'Ferraille de Barres d\'Acier',
-    product_cast_iron: 'Ferraille de Fonte',
-    product_steel: 'Produits en Acier',
-    quantity_label: 'QUANTITÉ (TONNES)',
-    notes_label: 'SPÉCIFICATIONS PERSONNALISÉES OU NOTES SUPPLÉMENTAIRES',
-    select_option: 'Sélectionner...',
-    submit_btn: 'SOUMETTRE LE FORMULAIRE ET RECEVOIR LE DEVIS',
-    download_btn: 'TÉLÉCHARGER LE MODÈLE DE DEVIS (PDF)',
-    grid1_title: 'EMBALLAGE',
-    grid1_desc: 'Vrac / En vrac\nConteneurs / En vrac',
-    grid2_title: 'CAPACITÉ\nMENSUELLE',
-    grid2_desc: '100 000+ Tonnes\nApprovisionnement constant',
-    grid3_title: 'TÉLÉPHONE',
-    grid3_desc: '+213 55 12 34 56 78',
-    grid4_title: 'RÉSEAUX',
-    grid4_desc: 'Réseaux\nInternationaux',
-    cta_title: 'Besoin d\'un support immédiat pour votre demande ?',
-    cta_subtitle: 'Notre équipe de devis est prête à vous assister.',
-    cta_btn1: 'CHAT EN DIRECT SUR WHATSAPP',
-    cta_btn2: 'APPELER NOTRE ÉQUIPE D\'EXPERTS EN DEVIS'
-  }
+  
 };

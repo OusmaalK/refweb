@@ -6,8 +6,11 @@ import "../styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Algeria Metal Export - Solutions d'exportation de métaux",
-  description: "Exportation de métaux et minerais depuis l'Algérie vers le monde entier",
+  title: "RFC Assurance - Courtier d'Assurance en Algérie",
+  description: "Consulting en Audit & Prévention des Risques Industriels - Courtage d'assurance agréé par le Ministère des Finances",
+  icons: {
+    icon: '/static/logo.png',
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" dir="ltr">
+    <html lang="fr" dir="ltr" data-scroll-behavior="smooth">
+
       <body className={inter.className}>
         {children}
       </body>

@@ -1,33 +1,34 @@
 // app/[locale]/page.tsx
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
 import Hero from '@/components/hero/Hero';
-import Stats from '@/components/stats/Stats';
-import Products from '@/components/products/Products';
-import { LocalMarket } from '@/components/local-market/LocalMarket'; // ✅ Import du composant
-import Logistics from '@/components/logistics/Logistics';
-import Quality from '@/components/quality/Quality';
+import Features from '@/components/features/Features';
+import AboutSection from '@/components/about/AboutSection';
+import ServicesSection from '@/components/service/ServiceSection';
+import SectorsSection from '@/components/sectors/SectorsSection';
+import OrganizationSection from '@/components/organization/OrganizationSection';
+import TeamSection from '@/components/team/TeamSection';
+import ReferencesSection from '@/components/references/ReferencesSection';
+import ApproachSection from '@/components/approach/ApproachSection';
+import AmbitionsSection from '@/components/ambitions/AmbitionsSection';
+import BridgeSection from '@/components/bridge/BridgeSection';
+import ContactSection from '@/components/contact/ContactSection';
 
-export default function Home() {
-  const { t, locale } = useTranslation();
-
-  if (!t || Object.keys(t).length === 0) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#f97316]"></div>
-      </div>
-    );
-  }
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900">
+    <main className="min-h-screen bg-[#0a1628]">
       <Hero />
-      <Stats t={t} locale={locale} />
-      <Products t={t} locale={locale} />
-      <LocalMarket t={t} locale={locale} /> {/* ✅ Nouvelle section */}
-      <Logistics t={t} locale={locale} />
-      <Quality t={t} locale={locale} />
-    </div>
+      <Features />
+      <AboutSection />
+      <ServicesSection />
+      <SectorsSection />
+      <OrganizationSection />
+      <TeamSection />
+      <ReferencesSection />
+      <ApproachSection />
+      <AmbitionsSection />
+      <BridgeSection />
+      <ContactSection />
+    </main>
   );
 }

@@ -1,5 +1,8 @@
-import AboutUsPage from '@/components/about/about';
+// app/[locale]/about/page.tsx
+'use client';
 
-export default function AboutPage() {
-  return <AboutUsPage />;
+import AboutPage from '@/components/about/AboutPage'; // ✅ Majuscule
+
+export default function About() {
+  return <AboutPage />;
 }

@@ -1,6 +1,8 @@
-// app/[locale]/legal/page.tsx
-import LegalPage from '@/components/legal/legalpage';
+'use client';
 
-export default function LegalRoute() {
-  return <LegalPage />;
+import LegalPage from '@/components/legal/legalpage';
+import { FileText } from 'lucide-react';
+
+export default function Legal() {
+  return <LegalPage titleKey="mentions_title" contentKey="mentions_content" lastUpdateKey="mentions_date" icon={FileText} />;
 }

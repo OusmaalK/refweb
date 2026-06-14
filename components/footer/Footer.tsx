@@ -2,244 +2,157 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import CtaBanner from './CtaBanner';
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Mail,
-  Phone,
-  MapPin,
-  MessageCircle,
-} from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
+import { Mail, Phone, MessageCircle, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
-export interface FooterProps {
-  t: any;
-  locale: string;
-}
-
-export default function Footer({ t, locale }: FooterProps) {
-  const pathname = usePathname();
-  const currentLocale = pathname.split('/')[1] || 'fr';
+export default function Footer() {
+  const { t, locale } = useTranslation();
   const isRTL = locale === 'ar';
 
-  const align = isRTL ? 'items-end text-right' : 'items-start text-left';
-  const rowDirection = isRTL ? 'flex-row-reverse' : 'flex-row';
-
-  // Liens principaux (navigation)
-  const mainLinks = [
-    { text: t?.nav?.home || 'ACCUEIL', href: `/${currentLocale}` },
-    { text: t?.nav?.products || 'PRODUITS', href: `/${currentLocale}/products` },
-    { text: t?.nav?.logistics || 'LOGISTIQUE', href: `/${currentLocale}/logistics` },
-    { text: t?.nav?.quality || 'QUALITÉ & CERTIFICATION', href: `/${currentLocale}/certification` },
-    { text: t?.nav?.about || 'À PROPOS', href: `/${currentLocale}/about` },
-    { text: t?.nav?.contact || 'CONTACT', href: `/${currentLocale}/contact` },
-    { text: t?.nav?.team || 'ÉQUIPE', href: `/${currentLocale}/team` },
+  const socialLinks = [
+    { icon: Facebook, href: 'https://facebook.com/rfcassurance', label: 'Facebook' },
+    { icon: Instagram, href: 'https://instagram.com/rfcassurance', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/rfcassurance', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/rfcassurance', label: 'Twitter' },
   ];
 
-  // Liens légaux
+  const quickLinks = [
+    { label: 'Accueil', href: `/${locale}` },
+    { label: 'À propos', href: `/${locale}/about` },
+    { label: 'Prestations', href: `/${locale}/services` },
+    { label: 'Secteurs', href: `/${locale}/sectors` },
+    { label: 'Organisation', href: `/${locale}/organization` },
+    { label: 'Contact', href: `/${locale}/#contact` },
+  ];
+
   const legalLinks = [
-    { text: t?.footer?.legal || 'MENTIONS LÉGALES', href: `/${currentLocale}/legal` },
-    { text: t?.footer?.privacy || 'POLITIQUE DE CONFIDENTIALITÉ', href: `/${currentLocale}/privacy` },
-    { text: t?.footer?.terms || 'CONDITIONS GÉNÉRALES', href: `/${currentLocale}/terms` },
-    { text: t?.footer?.terms_of_use || 'CGU', href: `/${currentLocale}/termsofuse` },
-    { text: t?.footer?.cookies || 'POLITIQUE DE COOKIES', href: `/${currentLocale}/cookies` },
-    { text: t?.footer?.faq || 'FAQ', href: `/${currentLocale}/faq` },
+    { label: t.footer?.legal?.mentions || 'Mentions légales', href: `/${locale}/legal` },
+    { label: t.footer?.legal?.privacy || 'Politique de confidentialité', href: `/${locale}/privacy` },
+    { label: t.footer?.legal?.terms || 'Conditions Générales', href: `/${locale}/terms` },
+    { label: t.footer?.legal?.cgu || 'CGU', href: `/${locale}/cgu` },
+    { label: t.footer?.legal?.cookies || 'Politique de cookies', href: `/${locale}/cookies` },
+    { label: t.footer?.legal?.faq || 'FAQ', href: `/${locale}/faq` },
   ];
 
-  // URL de la carte Google Maps avec l'adresse précise
-  const mapUrl =
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.166538!2d3.0588!3d36.7538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128f2e3e5e5e5e5f%3A0x7e7e7e7e7e7e7e7e!2s12%20Rue%20des%20Fr%C3%A8res%20Bouadou%2C%20Bir%20Mourad%20Ra%C3%AFs%2C%20Alger%2C%20Algeria!5e0!3m2!1sen!2sus!4v1630000000000!5m2!1sen!2sus';
+  const contactInfo = [
+    { icon: Mail, label: 'Email', value: 'contact@rfc-assurance.dz' },
+    { icon: Phone, label: 'Téléphone', value: '+213 775 22 18 69' },
+    { icon: MessageCircle, label: 'WhatsApp', value: '+213 775 22 18 69' },
+    { icon: MapPin, label: 'Adresse', value: '21, Rue Claud Debussy, Alger, Algérie' },
+  ];
 
   return (
-    <footer
-      dir={isRTL ? 'rtl' : 'ltr'}
-      className="bg-[#0f172a] text-gray-300 pt-12 pb-6 border-t border-gray-800"
-    >
-      <div className="container mx-auto px-6">
-
-        {/* CTA */}
-        <CtaBanner t={t} locale={locale} />
-
-        {/* SECTION PRINCIPALE */}
-        <div className="py-12 border-b border-gray-800">
-          <div
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ${
-              isRTL ? 'lg:[direction:rtl]' : ''
-            }`}
-          >
-
-            {/* COLONNE 1 : LOGO + DESCRIPTION + RÉSEAUX */}
-            <div className={`flex flex-col ${align}`}>
-              <div className="mb-4">
-                <Link href={`/${currentLocale}`}>
-                  <Image
-                    src="/icons/logo.png"
-                    alt="Algeria Metal Export Logo"
-                    width={180}
-                    height={60}
-                    priority
-                    className="object-contain h-15 w-auto"
-                  />
-                </Link>
-              </div>
-              <p className="text-sm text-gray-400 mb-4 max-w-xs">
-                {t?.footer?.description ||
-                  "Votre partenaire de confiance pour l'exportation de ferraille premium depuis l'Algérie vers le monde."}
-              </p>
-              <div className={`flex gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <Link href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-orange-500 transition-colors flex items-center justify-center text-white">
-                  <Facebook size={18} />
-                </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-orange-500 transition-colors flex items-center justify-center text-white">
-                  <Instagram size={18} />
-                </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-orange-500 transition-colors flex items-center justify-center text-white">
-                  <Linkedin size={18} />
-                </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-orange-500 transition-colors flex items-center justify-center text-white">
-                  <Twitter size={18} />
-                </Link>
-              </div>
-            </div>
-
-            {/* COLONNE 2 : LIENS RAPIDES */}
-            <div className={`flex flex-col ${align}`}>
-              <h4 className="text-white font-bold text-lg mb-4 border-b border-orange-500 pb-2 inline-block">
-                {t?.footer?.quick_links || 'Liens rapides'}
-              </h4>
-              <ul className="space-y-2 text-sm">
-                {mainLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      className={`text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-2 ${
-                        isRTL ? 'flex-row-reverse justify-end' : ''
-                      }`}
-                    >
-                      <span className="text-orange-500 text-xs">
-                        {isRTL ? '◂' : '▸'}
-                      </span>
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* COLONNE 3 : CONTACT + CARTE */}
-            <div className={`flex flex-col ${align}`}>
-              <h4 className="text-white font-bold text-lg mb-4 border-b border-orange-500 pb-2 inline-block">
-                {t?.footer?.contact_info || 'Contact'}
-              </h4>
-              <ul className="space-y-3 text-sm mb-4">
-                <li className={`flex items-center gap-3 ${rowDirection}`}>
-                  <Mail className="w-5 h-5 text-orange-500 shrink-0" />
-                  <span>contact@shlang.dz</span>
-                </li>
-                <li className={`flex items-center gap-3 ${rowDirection}`}>
-                  <Phone className="w-5 h-5 text-orange-500 shrink-0" />
-                  <span>+213 770 684 184</span>
-                </li>
-                <li className={`flex items-center gap-3 ${rowDirection}`}>
-                  <MessageCircle className="w-5 h-5 text-orange-500 shrink-0" />
-                  <Link
-                    href="https://wa.me/+213 775 22 18 69"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    WhatsApp
-                  </Link>
-                </li>
-                <li className={`flex items-center gap-3 ${rowDirection}`}>
-                  <MapPin className="w-5 h-5 text-orange-500 shrink-0" />
-                  <span>{t?.footer?.address || 'Algiers, Algeria'}</span>
-                </li>
-              </ul>
-              
-              {/* CARTE DE LOCALISATION */}
-              <div className="w-full h-40 rounded-lg overflow-hidden border border-gray-700 shadow-lg">
-                <iframe
-                  src={mapUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Algeria Metal - Location"
-                  className="w-full h-full"
+    <footer className="bg-[#0a1628] text-white border-t border-white/10">
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 ${isRTL ? 'rtl' : 'ltr'}`}>
+          
+          {/* Colonne 1 : Logo + description */}
+          <div className="space-y-8">
+            <Link href={`/${locale}`} className="inline-block">
+            <Image
+                src="/static/logo-white.png"
+                alt="RFC Assurance"
+                width={640}
+                height={240}
+                className="h-30 w-auto object-contain"
+                priority // ✅ Ajouté pour charger l'image en priorité
                 />
-              </div>
-              <div className={`mt-2 w-full ${isRTL ? 'text-right' : 'text-left'}`}>
-                <Link
-                  href="https://www.google.com/maps/place/Algiers,+Algeria"
+            </Link>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              {t.footer?.description || 'Votre partenaire de confiance pour la protection de vos actifs et la gestion de vos risques.'}
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-xs text-orange-500 hover:text-orange-400 transition-colors inline-flex items-center gap-1 ${
-                    isRTL ? 'flex-row-reverse' : ''
-                  }`}
+                  className="bg-white/10 hover:bg-[#eab308] p-2 rounded-full transition"
                 >
-                  <span>📍</span>
-                  {t?.footer?.view_map || 'Voir sur Google Maps'}
-                </Link>
-              </div>
+                  <social.icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
-
-            {/* COLONNE 4 : LIENS LÉGAUX */}
-            <div className={`flex flex-col ${align}`}>
-              <h4 className="text-white font-bold text-lg mb-4 border-b border-orange-500 pb-2 inline-block">
-                {t?.footer?.legal_links || 'Informations légales'}
-              </h4>
-              <ul className="space-y-2 text-sm">
-                {legalLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      className={`text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-2 ${
-                        isRTL ? 'flex-row-reverse justify-end' : ''
-                      }`}
-                    >
-                      <span className="text-orange-500 text-xs">
-                        {isRTL ? '◂' : '▸'}
-                      </span>
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
           </div>
+
+          {/* Colonne 2 : Liens rapides */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold border-b border-[#eab308] pb-2 inline-block">
+              {t.footer?.quick_links || 'Liens rapides'}
+            </h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-[#eab308] transition flex items-center gap-2"
+                  >
+                    <span className="w-1.5 h-1.5 bg-[#eab308] rounded-full" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Colonne 3 : Informations de contact + MAP */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold border-b border-[#eab308] pb-2 inline-block">
+              {t.footer?.contact_info || 'Informations de contact'}
+            </h3>
+            <ul className="space-y-3">
+              {contactInfo.map((item, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <item.icon className="w-4 h-4 text-[#eab308] mt-1 shrink-0" />
+                  <span className="text-sm text-gray-400">{item.value}</span>
+                </li>
+              ))}
+            </ul>
+            
+            {/* ✅ Carte Google Maps avec votre code */}
+            <div className="mt-3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d51150.09067255737!2d3.0605311239709487!3d36.749435346471266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s21%2C%20Rue%20Claud%20Debussy%2C%20Alger!5e0!3m2!1sfr!2sdz!4v1781443959277!5m2!1sfr!2sdz"
+                width="100%"
+                height="150"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+
+          {/* Colonne 4 : Informations légales */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold border-b border-[#eab308] pb-2 inline-block">
+              {t.footer?.legal_info || 'Informations légales'}
+            </h3>
+            <ul className="space-y-2">
+              {legalLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-[#eab308] transition flex items-center gap-2"
+                  >
+                    <span className="w-1.5 h-1.5 bg-[#eab308] rounded-full" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
 
-        {/* PARTENAIRES - CENTRÉ */}
-        <div className="py-6 border-b border-gray-800">
-          <div className="text-center">
-            <p className="text-sm text-gray-400">
-              <span className="text-gray-300">
-                {t?.footer?.partners || 'Partenaires :'}
-              </span>{' '}
-              <span className="text-orange-500 font-semibold">BELLARA</span>,{' '}
-              <span className="text-orange-500 font-semibold">TOSYALI</span>{' '}
-              <span className="text-gray-400">
-                {t?.footer?.partners_text || 'et autres partenaires du domaine métallurgique, nationaux et internationaux.'}
-              </span>
-            </p>
-          </div>
-        </div>
-
-        {/* COPYRIGHT - CENTRÉ */}
-        <div className="pt-6 text-center text-xs text-gray-500">
-          <p>
-            {t?.footer?.copyright ||
-              '© 2026 Algeria Metal Export Solutions. Tous droits réservés.'}
+        {/* Footer bottom */}
+        <div className="border-t border-white/10 mt-8 md:mt-12 pt-4 text-center">
+          <p className="text-xs text-gray-500">
+            &copy; {new Date().getFullYear()} RFC Assurance. {t.footer?.copyright || 'Tous droits réservés.'}
           </p>
         </div>
-
       </div>
     </footer>
   );

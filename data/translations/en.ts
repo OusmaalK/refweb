@@ -1,652 +1,532 @@
-export default {
-  locale: 'en',
-  dir: 'ltr',
+// data/translations/en.ts
+export const translations = {
   nav: {
-    home: 'HOME',
-    products: 'PRODUCTS',
-    logistics: 'LOGISTICS',
-    quality: 'QUALITY & CERTIFICATION',
-    about: 'ABOUT',
-    contact: 'CONTACT',
-    quotation: 'REQUEST QUOTE',
-    language: 'Language'
+    home: 'Home',
+    about: 'About',
+    services: 'Services',
+    sectors: 'Sectors',
+    organization: 'Organization',
+    contact: 'Contact',
   },
   hero: {
-    tag: 'INDUSTRIAL SCRAP',
-    title: 'Reliable Supply. Certified Quality. Global Delivery.',
-    subtitle: 'Your trusted partner for premium scrap metal export from Algeria to the world.',
-    certified_quality: 'CERTIFIED QUALITY',
-    fast_shipping: 'FAST SHIPPING',
-    large_capacity: 'LARGE CAPACITY',
-    global_reach: 'GLOBAL REACH',
-    rfq: 'REQUEST FOR QUOTE (RFQ)',
-    catalogue: 'DOWNLOAD CATALOG'
+    tag: 'EXCELLENCE IN CONSULTING',
+    title: 'Consulting in Audit & Industrial Risk Prevention',
+    subtitle: 'Insurance brokerage approved by the Ministry of Finance',
+    cta_audit: 'Request an audit',
+    cta_services: 'Discover our services',
   },
-  strategic: {
-    title: 'STRATEGIC ADVANTAGE',
-    subtitle: 'Closer to Europe, Stronger Together',
-    description: 'Reduced maritime distance to Europe compared to Asia',
-    distance: 'UP TO\nSHORTER MARITIME DISTANCE',
-    percent: '50%'
+  home: {
+    sections: {
+      why_us: 'Why choose us?',
+      why_us_desc: 'A team of experts at your service to secure your assets and optimize your risk management.',
+    },
   },
-  stats: {
-    capacity: 'TONS ANNUAL CAPACITY',
-    ports: 'MAJOR LOADING PORTS',
-    countries: 'COUNTRIES SUPPLIED',
-    response: 'RFQ RESPONSE TIME'
+  about: {
+    page_title: 'About Us',
+    tag: 'Who are we?',
+    title: 'About RFC Assurance',
+    summary: 'Founded in 2014, RFC Assurance is an insurance brokerage and risk management consulting firm. We support companies in protecting their assets and preventing industrial risks.',
+    cta: 'Learn more',
+    full_description: 'RFC Assurance is an Algerian company specializing in insurance brokerage and industrial risk management consulting. With over 10 years of experience, we support companies across all sectors in protecting their assets.',
+    full_description_2: 'Our team of experts helps you identify your risks, optimize your insurance contracts, and implement effective prevention strategies.',
+    cta_contact: 'Contact Us',
+    cta_services: 'Our Services',
+    mission: 'Our Mission',
+    mission_desc: 'To offer our clients optimal protection at a controlled cost, thanks to technical expertise and in-depth knowledge of the insurance market.',
+    values: 'Our Values',
+    values_section_title: 'Our Values',
+    values_section_desc: 'What guides us every day',
+    value_1: 'Transparency',
+    value_1_desc: 'A relationship of trust with our clients',
+    value_2: 'Expertise',
+    value_2_desc: 'A team of qualified professionals',
+    value_3: 'Commitment',
+    value_3_desc: 'Personalized follow-up at every stage',
+    value_4: 'Innovation',
+    value_4_desc: 'Solutions adapted to your needs',
+    stats_title: 'Key Figures',
+    stats_desc: 'Expertise at the service of your projects',
+    stat_1_title: 'RFC Creation',
+    stat_1_desc: 'Historical expertise',
+    stat_2_title: 'Years of expertise',
+    stat_2_desc: 'Proven approach',
+    stat_3_title: 'Corporate Partners',
+    stat_3_desc: 'Trusted references',
+    stat_4_title: 'Expertise hubs',
+    stat_4_desc: 'Global intervention',
+    why_us_title: 'Why choose us?',
+    why_us_1: 'Recognized expertise since 2014',
+    why_us_2: 'Tailor-made and independent approach',
+    why_us_3: 'Exclusive defense of your interests',
+    why_us_4: 'Global follow-up from subscription to claim',
+    cta_rfcapp: 'Discover RFC-App',
   },
-  products: {
-    title: 'OUR PRODUCTS',
-    view_all: 'VIEW ALL PRODUCTS',
-    hms: {
-      title: 'HMS 1 & 2',
-      subtitle: '(80:20)',
-      description: 'Heavy Melting Scrap\n80% Steel / 20% Iron\nSize: 500x500 mm max',
-      specs: 'VIEW SPECIFICATIONS',
-      type: 'Raw Material / Recycling Scrap',
-      full_description: 'Standardized mix of heavy steel scrap and black wrought iron, prepared for optimal melting in Electric Arc Furnaces (EAF). HMS 1 includes structures with thickness ≥ 6 mm, while HMS 2 integrates pieces with thickness ≥ 4 mm.',
-      apps_title: 'Main Applications',
-      apps: [
-        'Direct remelting in steel mills',
-        'Production of steel billets',
-        'Industrial recycling raw material',
-        'Metal construction and structures'
-      ],
-      specs_title: 'Technical Specifications',
-      specs_list: [
-        { label: 'International Standard', value: 'ISRI 200-206' },
-        { label: 'HMS 1 Thickness', value: '≥ 6 mm' },
-        { label: 'HMS 2 Thickness', value: '≥ 4 mm' },
-        { label: 'Purity Rate', value: 'Fe ≥ 99%' }
-      ]
-    },
-    shredded: {
-      title: 'Shredded Scrap',
-      subtitle: '(SHEARED / SHREDDED)',
-      description: 'Sheared / Shredded scrap\nSize: 50x50 mm max\nPrepared and clean',
-      specs: 'VIEW SPECIFICATIONS',
-      type: 'High Density Homogenized Scrap',
-      full_description: 'Higher grade steel scrap, processed through a shredder and magnetically sorted to remove all impurities and non-ferrous metals. Offers exceptional melting efficiency and maximum loading density.',
-      apps_title: 'Main Applications',
-      apps: [
-        'Fast feeding of induction furnaces',
-        'Steel mills requiring low impurity rates',
-        'High performance continuous casting',
-        'Clean charge component for density'
-      ],
-      specs_title: 'Technical Specifications',
-      specs_list: [
-        { label: 'Reference Standard', value: 'ISRI 210-212 (Shredded)' },
-        { label: 'Bulk Density', value: '≥ 1.2 tons/m³' },
-        { label: 'Fragment Size', value: '50x50 mm max' },
-        { label: 'Waste Rate', value: '< 0.5%' }
-      ]
-    },
-    rebar: {
-      title: 'Rebar Scrap',
-      subtitle: '(STEEL BARS)',
-      description: 'Steel bars scrap\nDiameter: 8mm – 32mm\nLength: 1m max',
-      specs: 'VIEW SPECIFICATIONS',
-      type: 'Structural Steel Scrap',
-      full_description: 'Clean new offcuts of concrete reinforcing bars and high mechanical strength steel structures. Carefully sorted by grade and cut into specific short lengths to facilitate handling and direct remelting.',
-      apps_title: 'Main Applications',
-      apps: [
-        'Remelting to produce new sections and bars',
-        'Recycled reinforcement components',
-        'Direct feed for construction steel mills',
-        'Industrial forging operations'
-      ],
-      specs_title: 'Technical Specifications',
-      specs_list: [
-        { label: 'Diameter Range', value: '8 mm to 32 mm' },
-        { label: 'Original Steel Grade', value: 'B500B / Grade 60' },
-        { label: 'Cut Length', value: '1 meter max' },
-        { label: 'Technical Advantage', value: 'High mechanical bond' }
-      ]
-    },
-    cast_iron: {
-      title: 'Cast Iron Scrap',
-      subtitle: '(FOUNDRY)',
-      description: 'Cast iron scrap\nFoundry returns\nSize: 300mm max',
-      specs: 'VIEW SPECIFICATIONS',
-      type: 'Cast Iron Scrap for Foundries',
-      full_description: 'Clean blocks and pieces of gray or malleable cast iron scrap and mechanical foundry returns. Characterized by a stable chemical composition with optimal carbon levels to ensure homogeneous melting in cupolas or induction furnaces.',
-      apps_title: 'Main Applications',
-      apps: [
-        'Casting of new mechanical parts',
-        'Production of engine blocks and heavy machinery frames',
-        'High precision ferrous metal foundries',
-        'Adjusting carbon levels in metallurgy'
-      ],
-      specs_title: 'Technical Specifications',
-      specs_list: [
-        { label: 'Cast Iron Type', value: 'Gray / Malleable' },
-        { label: 'Max Part Size', value: '300 mm' },
-        { label: 'Typical Carbon', value: '3.2% - 4.2%' },
-        { label: 'Contamination', value: 'Totally free of chrome and lead' }
-      ]
-    }
+  bridge: {
+    title: 'A management platform designed for insurance brokers',
+    subtitle: 'Essential, Pro & Expert plans to optimize your client, contract and claims management.',
+    cta: 'Access my space',
+    hero_title: 'Manage your insurance portfolio with ease',
+    about_title: 'Already more than 100 brokers equipped',
+    services_title: 'A plan for every level of expertise',
+    sectors_title: 'A unique solution for all sectors',
+    contact_title: 'Ready to take it to the next level?',
   },
-  logistics: {
-    title: 'SUPPLY & LOGISTICS',
-    ports: {
-      title: 'LOADING PORTS',
-      items: ['Port of Skikda', 'Port of Oran', 'Port of Algiers', 'More ports available on request']
-    },
-    markets: {
-      title: 'MAIN MARKETS',
-      items: ['Europe', 'Middle East', 'North Africa', 'Asia', 'West Africa']
-    },
-    shipping: {
-      title: 'SHIPPING TIME (TO EUROPE)',
-      items: ['Spain: 3-5 days', 'Italy: 4-6 days', 'France: 4-6 days', 'Turkey: 3-5 days']
-    },
-    incoterms: {
-      title: 'INCOTERMS',
-      items: ['FOB', 'CIF', 'CFR', 'Other terms on request']
-    },
-    process: {
-      title: 'OUR EXPORT PROCESS',
-      steps: [
-        { title: '01. INQUIRY', description: 'You send us your request' },
-        { title: '02. CONFIRMATION', description: 'We check availability and send quotation' },
-        { title: '03. INSPECTION', description: 'Quality control by SGS, BV or others' },
-        { title: '04. LOADING', description: 'Professional loading and documentation' },
-        { title: '05. SHIPPING', description: 'On-time delivery to your destination' }
-      ]
-    }
-  },
-  quality: {
-    title: 'QUALITY & CERTIFICATIONS',
-    view_all: 'VIEW ALL',
-    items: [
-      { name: 'SGS', description: 'Inspection available' },
-      { name: 'Bureau Veritas', description: 'Inspection available' },
-      { name: 'ISO 9001', description: 'Quality management system' },
-      { name: 'ASTM Standards', description: 'Compliant qualities' },
-      { name: 'EN Standards', description: 'Compliant qualities' }
-    ]
-  },
-  quality_page: {
-    title: 'QUALITY & CERTIFICATION',
-    hero_subtitle: 'International standards, strict laboratory testing, and complete traceability for every shipment.',
-    certified_quality: 'CERTIFIED\nQUALITY',
-    certified_desc: 'ASTM / EN / ISO\n3.1 Certificate',
-    traceable_documents: 'TRACEABLE\nDOCUMENTS',
-    traceable_desc: 'Mill certificates\nBatch tracking',
-    global_standards: 'GLOBAL\nSTANDARDS',
-    global_desc: 'EN 10025 / ASTM\nISO 9001:2015',
-    third_party: 'THIRD PARTY\nINSPECTION',
-    third_party_desc: 'SGS / Bureau Veritas\nTUV',
-    card1_title: 'Chemical & Mechanical\nCompliance',
-    card1_desc: 'Each batch undergoes rigorous spectroscopic analysis and mechanical testing to ensure exact chemical composition and structural integrity.',
-    card2_title: 'International\nStandards',
-    card2_desc: 'Our export products strictly adhere to global industry requirements, allowing seamless integration into European, African, and worldwide supply chains.',
-    card3_title: 'Independent\nInspection',
-    card3_desc: 'To ensure absolute transparency, we partner with world-renowned third-party inspection agencies before vessel loading.',
-    table1: {
-      parameter: 'Parameter',
-      guarantee: 'Standard Guarantee',
-      traceability: 'Traceability',
-      traceability_val: 'Full heat / cast number',
-      steel_grade: 'Steel Grade',
-      steel_grade_val: 'Compliant with EN / ASTM standards',
-      radioactivity: 'Radioactivity',
-      radioactivity_val: '100% Certified free'
-    },
-    table2: {
-      region: 'Region',
-      standard: 'Applicable Standard',
-      europe: 'Europe',
-      europe_val: 'EN 10025 / EN 10080',
-      usa: 'USA',
-      usa_val: 'ASTM Specifications',
-      global: 'Global',
-      global_val: 'ISO 9001:2015 Quality Mgmt'
-    },
-    table3: {
-      agency: 'Agency',
-      inspection: 'Inspection Type',
-      sgs: 'SGS / Bureau Veritas',
-      sgs_val: 'Quantity and quality audit',
-      cotecna: 'Cotecna / TUV',
-      cotecna_val: 'Pre-shipment inspection',
-      documentation: 'Documentation',
-      documentation_val: '3.1 Mill Certificate'
-    },
-    download_btn: 'DOWNLOAD SAMPLE 3.1 MILL CERTIFICATE (PDF)',
-    cta_title: 'Need specific quality requirements or custom testing?',
-    cta_subtitle: 'Our laboratory can match your exact industrial specifications.',
-    cta_request: 'REQUEST QUALITY SPEC SHEET',
-    cta_whatsapp: 'DISCUSS TECHNICAL TERMS ON WHATSAPP'
-  },
-  footer: {
-    cta: {
-      title: 'Ready to start your next shipment?',
-      description: 'Contact our team today for a competitive quote.',
-      contact: 'CONTACT US',
-      whatsapp: 'CHAT ON WHATSAPP'
-    },
-    quick_links: 'Quick Links',
-    contact_info: 'Contact Information',
-    follow_us: 'Follow Us',
-    copyright: '© 2026 Algeria Metal Export Solutions. All rights reserved.',
-    map_title: "Our Location",
-    view_map: "View on Google Maps",
-    legal_links: "Legal Information",
-    privacy: "Privacy Policy",
-    terms: "Terms & Conditions",
-    terms_of_use: "Terms of Use",
-    cookies: "Cookie Policy",
-    faq: "FAQ"
-  },
-  privacy: {
-    title: "Privacy Policy",
-    section1_title: "1. Information We Collect",
-    section1_desc: "We collect personal information that you provide to us directly, such as your name, email address, phone number, and company name when you submit a quote request or contact us.",
-    section2_title: "2. How We Use Your Information",
-    section2_desc: "We use the information we collect to provide, maintain, and improve our services, to communicate with you, and to respond to your inquiries and requests.",
-    section3_title: "3. Data Retention",
-    section3_desc: "We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including legal, accounting, or reporting requirements.",
-    section4_title: "4. Your Rights",
-    section4_desc: "You have the right to access, correct, update, or delete your personal information at any time. Please contact us to exercise these rights.",
-    section5_title: "5. Contact Us",
-    section5_desc: "If you have any questions or concerns about this Privacy Policy, please contact us at info@algeriametal.com."
-  },
-  cookies: {
-    title: "Cookie Policy",
-    section1_title: "1. What Are Cookies",
-    section1_desc: "Cookies are small text files that are stored on your device when you visit our website. They help us understand how you use our site and improve your experience.",
-    section2_title: "2. Types of Cookies We Use",
-    essential: "Essential Cookies",
-    essential_desc: "Necessary for the website to function properly.",
-    analytics: "Analytics Cookies",
-    analytics_desc: "Help us understand how visitors interact with our website.",
-    functional: "Functional Cookies",
-    functional_desc: "Enable enhanced functionality and personalization.",
-    section3_title: "3. How to Manage Cookies",
-    section3_desc: "You can manage or delete cookies through your browser settings. Please note that disabling cookies may affect the functionality of our website.",
-    section4_title: "4. Third-Party Cookies",
-    section4_desc: "We may use third-party services that set cookies on our website. These include analytics providers, advertising networks, and social media platforms.",
-    section5_title: "5. Contact Us",
-    section5_desc: "If you have any questions about our Cookie Policy, please contact us at info@algeriametal.com."
-  },
-  faq: {
-    title: "Frequently Asked Questions",
-    no_items: "No FAQs available at the moment.",
-    items: [
-      {
-        question: "What types of scrap metal do you export?",
-        answer: "We export a wide range of ferrous and non-ferrous scrap metals, including HMS 1 & 2, Shredded Scrap, Rebar Scrap, Cast Iron Scrap, and various Steel Products."
+  rfc_app: {
+    top_header: {
+      subtitle: 'EXPERTS IN INSURANCE AND RISK MANAGEMENT',
+      items: {
+        expertise: 'EXPERTISE',
+        security: 'DATA SECURITY',
+        performance: 'OPERATIONAL PERFORMANCE',
+        support: 'PERSONALIZED SUPPORT',
       },
-      {
-        question: "What are your payment terms?",
-        answer: "We accept payments via T/T (Telegraphic Transfer) or L/C (Letter of Credit). Flexible terms can be negotiated depending on the order volume and customer history."
+    },
+    badge: 'NEW',
+    subtitle: 'THE SOFTWARE SUITE FOR INSURANCE PROFESSIONALS',
+    description: 'An integrated and intelligent solution to digitize, automate and manage all your insurance activities.',
+    features: {
+      clients: {
+        title: 'CLIENT MANAGEMENT',
+        desc: '360° client, contracts, interactions',
       },
-      {
-        question: "How long does shipping take to Europe?",
-        answer: "Shipping to Europe typically takes 3 to 6 days from the date of loading at Algerian ports, depending on the destination port and weather conditions."
+      contracts: {
+        title: 'CONTRACT MANAGEMENT',
+        desc: 'Subscription, endorsements, renewals',
       },
-      {
-        question: "Do you provide quality certification?",
-        answer: "Yes, all our products are accompanied by 3.1 Mill Certificates. We also offer third-party inspection services by SGS, BV, or TUV upon request."
+      claims: {
+        title: 'CLAIMS MANAGEMENT',
+        desc: 'Declaration, follow-up, settlement',
       },
-      {
-        question: "What are your shipping incoterms?",
-        answer: "We work with all major incoterms including FOB, CIF, and CFR. We can also accommodate other terms upon negotiation."
-      }
-    ]
+      dashboard: {
+        title: 'DASHBOARDS',
+        desc: 'Key indicators, reporting and real-time monitoring',
+      },
+    },
+    arguments: {
+      expert: {
+        title: 'DESIGNED BY INDUSTRY EXPERTS',
+        desc: 'For industry experts',
+      },
+      custom: {
+        title: '100% TAILORED TO YOUR NEEDS',
+        desc: 'To your business needs',
+      },
+      secure: {
+        title: 'SECURE',
+        desc: 'High availability cloud hosting',
+      },
+      integrated: {
+        title: 'INTEGRATED',
+        desc: 'Interoperable with your existing tools',
+      },
+    },
+    cta_final: {
+      title: 'DESIGNED BY INDUSTRY EXPERTS, FOR INDUSTRY EXPERTS',
+      desc: 'Join the insurance professionals who trust RFC-App.',
+      button: 'REQUEST A DEMO AND DISCOVER RFC-APP',
+    },
+    footer: 'RFC-App, digital performance at the service of insurance excellence.',
   },
-  terms: {
-    title: "Terms & Conditions",
-    section1_title: "1. General Information",
-    section1_desc: "These Terms & Conditions govern the sale of products by Algeria Metal Export Solutions (hereinafter referred to as \"the Company\") to customers. By placing an order, you accept these terms in their entirety.",
-    section2_title: "2. Products and Specifications",
-    section2_desc: "All products sold by the Company are scrap metals and steel products. Specifications are provided in good faith but may vary slightly due to natural variations in materials. Customers are responsible for verifying that products meet their requirements.",
-    section3_title: "3. Pricing and Payment",
-    section3_desc: "All prices are quoted in Algerian Dinar (DZD) or US Dollars (USD) depending on the agreement. Payment terms are T/T (Telegraphic Transfer) or L/C (Letter of Credit). Payment must be received before shipment unless otherwise agreed.",
-    section4_title: "4. Shipping and Delivery",
-    section4_desc: "Shipping is arranged from Algerian ports (Skikda, Oran, Algiers). Delivery times are estimates and not guaranteed. Risk of loss passes to the customer upon loading onto the vessel.",
-    section5_title: "5. Quality and Inspection",
-    section5_desc: "All products are accompanied by a 3.1 Mill Certificate. Customers may request third-party inspection (SGS, BV, TUV) at their own expense. Claims must be submitted within 7 days of delivery.",
-    section6_title: "6. Limitation of Liability",
-    section6_desc: "The Company shall not be liable for any indirect, incidental, or consequential damages arising from the use or inability to use the products. The Company's total liability shall not exceed the purchase price of the products.",
-    section7_title: "7. Governing Law",
-    section7_desc: "These terms shall be governed by the laws of Algeria. Any disputes shall be resolved through arbitration or the courts of Algiers, Algeria.",
-    section8_title: "8. Contact Information",
-    section8_desc: "For any questions regarding these Terms & Conditions, please contact us at info@algeriametal.com."
+  services: {
+    tag: 'Industry expertise',
+    title: 'OUR SERVICES',
+    subtitle: 'A comprehensive offer for 360° protection',
+    protect_assets: 'PROTECT ASSETS',
+    protect_liabilities: 'PROTECT LIABILITIES',
+    protect_projects: 'PROTECT PROJECTS',
+    protect_employees: 'PROTECT EMPLOYEES',
+    cta: 'Request a quote',
   },
-  terms_of_use: {
-    title: 'Terms of Use',
-    section1_title: '1. Acceptance of Terms',
-    section1_desc: 'By accessing and using this website, you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the site.',
-    section2_title: '2. Intellectual Property',
-    section2_desc: 'All content on this website, including text, graphics, logos, and images, is the property of Algeria Metal Export Solutions and is protected by international copyright and trademark laws.',
-    section3_title: '3. User Conduct',
-    section3_desc: 'You agree to use this website only for lawful purposes. You may not post or transmit any content that is illegal, harmful, or violates the rights of others.',
-    section4_title: '4. Limitation of Liability',
-    section4_desc: 'Algeria Metal Export Solutions shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website.',
-    section5_title: '5. Links to Third-Party Sites',
-    section5_desc: 'This website may contain links to third-party websites. These links are provided for your convenience only, and we do not endorse or assume any responsibility for the content of such sites.',
-    section6_title: '6. Changes to Terms',
-    section6_desc: 'We reserve the right to update or modify these Terms of Use at any time without prior notice. Your continued use of the website constitutes acceptance of the updated terms.',
-    section7_title: '7. Governing Law',
-    section7_desc: 'These Terms of Use shall be governed by the laws of Algeria. Any disputes shall be resolved through the courts of Algiers, Algeria.',
-    section8_title: '8. Contact Information',
-    section8_desc: 'If you have any questions about these Terms of Use, please contact us at info@algeriametal.com.'
+  sectors: {
+    risks_title: 'Key risks',
+    solutions_title: 'Solutions',
+    tag: 'Sector expertise',
+    title: 'SECTORS OF ACTIVITY',
+    subtitle: 'EXPERTISE ADAPTED TO YOUR SECTORS',
+    banner: 'For each sector, a macro risk study and tailor-made solutions.',
+    cta: 'View all sectors',
+    cta_banner: 'Request a study',
+    
+    // Agroalimentaire
+    agroalimentaire: {
+      title: 'AGRO-FOOD',
+      desc: 'Management of risks related to food production, processing and distribution.',
+      risks: {
+        contamination: 'Contamination (bacterial, chemical, allergens)',
+        recall: 'Product recall (costs, logistics)',
+        traceability: 'Traceability (defect, data loss)',
+        storage: 'Storage (temperature, humidity, deterioration)',
+      },
+      solutions: {
+        recall: 'Product recall insurance',
+        loss: 'Business interruption insurance',
+        rc: 'RC products (damage to third parties)',
+        transport: 'Storage and transport insurance',
+      },
+    },
+    
+    // Chimie
+    chimie: {
+      title: 'CHEMISTRY',
+      desc: 'Management of specific chemical, industrial and environmental risks.',
+      risks: {
+        atex: 'ATEX (explosive atmosphere)',
+        toxic: 'Toxic releases (soil, air, water)',
+        transport: 'Transport of dangerous goods (ADR)',
+        waste: 'Industrial waste (treatment, storage)',
+      },
+      solutions: {
+        rc: 'RC exploitation insurance',
+        environment: 'Environmental insurance (environmental damage)',
+        transport: 'Transport of dangerous goods insurance',
+        waste: 'Industrial waste storage insurance',
+      },
+    },
+    
+    // BTP & Construction
+    constructions: {
+      title: 'BTP & CONSTRUCTION',
+      desc: 'Solutions for construction site risks, works and decennial liabilities.',
+      risks: {
+        site: 'Complex sites (access, safety, delays)',
+        subcontractors: 'Subcontractors (defects, non-compliance)',
+        works: 'Works (collapse, defects)',
+        delays: 'Delays (penalties, financial losses)',
+      },
+      solutions: {
+        decennial: 'Decennial RC (decennial guarantee)',
+        all_risks: 'All risks site insurance (TRC)',
+        works: 'Works damage insurance',
+        loss: 'Business interruption insurance (delays)',
+      },
+    },
+    
+    // Oil & Gas
+    energie: {
+      title: 'OIL & GAS',
+      desc: 'Support for energy players on complex and sensitive risks.',
+      risks: {
+        forage: 'Drilling (explosion, collapse)',
+        platform: 'Platforms (fire, collision, storm)',
+        pipeline: 'Pipelines (corrosion, leak, sabotage)',
+        production: 'Production losses (breakdown, technical stop)',
+      },
+      solutions: {
+        all_risks: 'All risks insurance (platforms, drilling)',
+        production_loss: 'Production loss insurance',
+        rc: 'RC insurance (pollution, damage to third parties)',
+        transport: 'Transport insurance (pipe, maritime)',
+      },
+    },
+  },
+  organization: {
+    tag: 'Governance',
+    title: 'Our Organization',
+    subtitle: 'A structure of excellence at the service of your risks',
+    cta: 'Contact Us',
+    mission: {
+      title: 'Our Mission',
+      desc: 'To support our clients in protecting their assets and preventing industrial risks, with a tailor-made and independent approach.',
+    },
+    vision: {
+      title: 'Our Vision',
+      desc: 'To become the leading insurance broker in Algeria, recognized for our technical expertise and our commitment to excellence.',
+    },
+    values: {
+      title: 'Our Values',
+      integrity: 'Integrity',
+      integrity_desc: 'Transparency and honesty in all our actions.',
+      excellence: 'Excellence',
+      excellence_desc: 'Constant pursuit of quality and performance.',
+      collaboration: 'Collaboration',
+      collaboration_desc: 'Teamwork and sharing of expertise.',
+      innovation: 'Innovation',
+      innovation_desc: 'Technological watch and continuous improvement.',
+    },
+    leadership: {
+      title: 'Our Leadership',
+      ceo: 'President and CEO',
+      director: 'Deputy CEO',
+      risk: 'Risk Director',
+      brokerage: 'Brokerage Director',
+    },
+    stats: {
+      title: 'Our Key Figures',
+      years_experience: 'Years of experience',
+      clients: 'Clients',
+      partners: 'Partners',
+      satisfaction: 'Client satisfaction',
+    },
+    contact: {
+      title: 'Contact & Location',
+      address: '21 rue Debussy, Algiers Center',
+      phone: '+213 775 22 18 69',
+      email: 'contact@rfc-assurance.dz',
+    },
+  },
+  references: {
+    tag: '07',
+    title: 'THEY TRUST US',
+    subtitle: 'We support leading companies in their sectors.',
+  },
+  approach: {
+    tag: '08',
+    title: 'OUR APPROACH',
+    subtitle: 'An independent and results-oriented approach.',
+    step: {
+      analysis: {
+        title: 'In-depth analysis',
+        desc: 'Of your risks',
+      },
+      recommendations: {
+        title: 'Recommendations',
+        desc: 'Tailor-made and adapted',
+      },
+      implementation: {
+        title: 'Implementation',
+        desc: 'Of optimal solutions',
+      },
+      followup: {
+        title: 'Follow-up and defense',
+        desc: 'Of your interests until the claim',
+      },
+    },
+  },
+  ambitions: {
+    tag: '09',
+    title: 'OUR AMBITIONS 2025',
+    subtitle: 'To be the reference partner for growing companies.',
+    ambition: {
+      startups: {
+        title: 'Support startups',
+        desc: 'And innovation',
+      },
+      deployment: {
+        title: 'Deployment',
+        desc: 'In Algerian economic hubs',
+      },
+      export: {
+        title: 'Develop consulting',
+        desc: 'For export and international',
+      },
+      expertise: {
+        title: 'Strengthen our expertise',
+        desc: 'And innovate continuously',
+      },
+    },
   },
   team: {
-    hero_title: 'Our Leadership Team',
-    hero_subtitle: 'Committed experts for the future of metallurgy',
-    manager_name: 'Boulaioune Abdelkader',
-    manager_role: 'CEO & Founder',
-    manager_initials: 'BA',
-    manager_bio: "B2B expertise. Unwavering commitment. Technical and logistics mastery. A long-term vision with our clients.",
-    cmanager_name: 'Akrour Mansour',
-    cmanager_role: 'Co-CEO & Operations Director',
-    cmanager_initials: 'AM',
-    cmanager_bio: 'Mansour Akrour brings essential field expertise to Shlang Metal. As a true artisan of logistics fluidity, he oversees supply chain, quality control, and port operations. With 15 years of experience in scrap yard management, he has transformed supply constraints into strategic opportunities.',
-    ethics_title: 'Our Commitment',
-    ethics_transparency: 'Transparency',
-    ethics_transparency_desc: 'All our transactions are documented and traceable, from loading to delivery.',
-    ethics_compliance: 'Compliance',
-    ethics_compliance_desc: 'We comply with international ASTM, EN, and ISO 9001:2015 standards.',
-    ethics_ethics: 'Ethics',
-    ethics_ethics_desc: 'Fair business practices and compliance with customs and tax regulations.',
-    ethics_responsibility: 'Responsibility',
-    ethics_responsibility_desc: 'Promoting the circular economy and metal recycling.',
-    value_integrity: 'Integrity',
-    value_integrity_desc: 'Trust is earned through transparency.',
-    value_expertise: 'Expertise',
-    value_expertise_desc: 'Mastery of both product and market.',
-    value_partnership: 'Partnership',
-    value_partnership_desc: 'A long-term vision with our clients.',
-    stat_exp: 'Combined Experience (years)',
-    stat_ports: 'Operated Ports',
-    stat_countries: 'Countries Served',
-    stat_volume: 'Annual Volume (tons)',
-    skill_1: 'International Logistics',
-    skill_2: 'International Negotiation',
-    skill_3: 'Compliance & Standards',
-    skill_4: 'Global Networking',
-    skill_5: 'Operational Management',
-    skill_6: 'Quality Control',
-    skill_7: 'Field Logistics',
-    skill_8: 'Supplier Relations',
-    cta_title: 'Want to talk to our experts?',
-    cta_subtitle: 'We ll respond within 24 hours',
-    cta_button: 'Contact our team'
+    tag: '06',
+    title: 'A TEAM OF EXPERTS AT YOUR SERVICE',
+    subtitle: 'Multidisciplinary skills to provide you with the best solutions.',
+    expertise_label: 'Areas of expertise',
+    engineers: {
+      title: 'Engineers',
+      desc: 'Specialized in industrial risks',
+    },
+    specialists: {
+      title: 'Specialists',
+      desc: 'In insurance and reinsurance',
+    },
+    lawyers: {
+      title: 'Lawyers',
+      desc: 'Experts in liability and compliance',
+    },
+    adjusters: {
+      title: 'Managers',
+      desc: 'Dedicated claims managers',
+    },
+    stat_1: 'Years of experience',
+    stat_2: 'Projects supported',
+    stat_3: 'Customer satisfaction',
+    stat_4: 'Support available',
+    cta: 'Meet our team',
   },
-  local_market: {
-    title: 'Local Mastery of the Metal Market in Algeria',
-    subtitle: 'Committed leadership, recognized expertise',
-    anchor_title: 'Local Anchoring',
-    anchor_desc: 'Based in Algeria, our team has a precise knowledge of the national metal market\'s specificities.',
-    anchor_alt: 'Map of Algeria with influence points',
-    leadership_title: 'Committed Leadership',
-    leadership_desc: 'We take initiatives to structure the sector and support local players.',
-    leadership_alt: 'Team on site in Algeria',
-    mastery_title: 'Domain Mastery',
-    mastery_desc: 'In-depth knowledge of products, standards, and supply chains in Algeria.',
-    mastery_alt: 'Storage site in Algeria',
-    anchor_detail: "Our presence in Algeria allows us to anticipate local market fluctuations. We maintain privileged relationships with collectors and storage sites across the country, ensuring a stable and quality supply.",
-    leadership_detail: "We make strategic decisions to structure the Algerian metallurgical sector. Our leadership is demonstrated through constant monitoring, targeted investments, and personalized support for local players.",
-    mastery_detail: "Our domain mastery covers the entire value chain: from collection to export, through quality control and logistics. Expertise recognized by our international partners.",
+  contact: {
+    tag: 'Contact',
+    title: 'Contact Us',
+    subtitle: 'A team of experts at your disposal to answer all your questions.',
+    form_title: 'Send us a message',
+    form_name: 'Full name',
+    form_name_placeholder: 'Your name',
+    form_email: 'Email',
+    form_email_placeholder: 'your@email.com',
+    form_phone: 'Phone',
+    form_phone_placeholder: 'Your number',
+    form_message: 'Message',
+    form_message_placeholder: 'Your message...',
+    form_submit: 'Send message',
+    form_success: 'Message sent!',
+    footer: 'We are available to support you in your projects.',
+  },
+  footer: {
+    description: 'Your trusted partner for asset protection and risk management.',
+    quick_links: 'Quick Links',
+    contact_info: 'Contact Information',
+    legal_info: 'Legal Information',
+    links: {
+      home: 'Home',
+      products: 'Products',
+      logistics: 'Logistics',
+      quality: 'Quality & Certification',
+      about: 'About',
+      contact: 'Contact',
+      team: 'Team',
+    },
+    legal: {
+      mentions: 'Legal Notice',
+      privacy: 'Privacy Policy',
+      terms: 'Terms & Conditions',
+      cgu: 'CGU',
+      cookies: 'Cookie Policy',
+      faq: 'FAQ',
+    },
+    copyright: 'All rights reserved.',
   },
   legal: {
-    title: 'Legal Notice',
-    company_name_label: 'Company Name:',
-    company_name: 'Shlang Metal',
-    legal_form_label: 'Legal Form:',
-    legal_form: 'Limited Liability Company (LLC)',
-    address_label: 'Address:',
-    address: 'Hai Baba Ali, Section 09, Property Group No. 67, Ground Floor, Bir Touta Municipality',
-    location_label: 'Location:',
-    location: 'Algiers',
-    capital_label: 'Capital Stock:',
-    capital: '1,200,000.00 DA',
-    start_date_label: 'Start of Activity:',
-    start_date: '04/05/2026',
-    commercial_base_label: 'Commercial Base:',
-    commercial_base: 'Creation',
-    premises_label: 'Commercial Premises:',
-    premises: 'Equipped/Reserved (maintained)',
-    registration_number_label: 'Registration Number:',
-    registration_number: '26 B 1205761 - 16 / 00',
-    registration_date_label: 'Registration Date:',
-    registration_date: '04/05/2026'
+    back: 'Back to home',
+    last_update: 'Last updated on',
+    
+    // Mentions légales
+    mentions_title: 'Legal Notice',
+    mentions_date: 'January 1, 2025',
+    mentions_content: `
+      <p>In accordance with the provisions of Law No. 2004-575 of June 21, 2004 on confidence in the digital economy, it is specified that:</p>
+      
+      <h3>1. Site publication</h3>
+      <p>The site is published by <strong>RFC Assurance</strong>, an insurance brokerage company.</p>
+      
+      <h3>2. Publication director</h3>
+      <p>The publication director is <strong>Mr. Khalidou S.</strong></p>
+      
+      <h3>3. Headquarters</h3>
+      <p>21, Rue Claud Debussy, Algiers, Algeria.</p>
+      
+      <h3>4. Contact</h3>
+      <p>Email: contact@rfc-assurance.dz<br>Phone: +213 775 22 18 69</p>
+      
+      <h3>5. Hosting</h3>
+      <p>The site is hosted by Vercel Inc.</p>
+    `,
+    
+    // Politique de confidentialité
+    privacy_title: 'Privacy Policy',
+    privacy_date: 'January 1, 2025',
+    privacy_content: `
+      <p>We attach great importance to the protection of your personal data. This policy explains how we collect, use and protect your information.</p>
+      
+      <h3>1. Data collected</h3>
+      <p>We only collect the information necessary to manage your request:</p>
+      <ul>
+        <li>First and last name</li>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>Message (content of your request)</li>
+      </ul>
+      
+      <h3>2. Data usage</h3>
+      <p>Your data is used exclusively for:</p>
+      <ul>
+        <li>Responding to your requests</li>
+        <li>Offering you our services</li>
+        <li>Improving our site</li>
+      </ul>
+      
+      <h3>3. Data retention</h3>
+      <p>Your data is kept for a period of 3 years from your last request.</p>
+      
+      <h3>4. Your rights</h3>
+      <p>You have the right to access, rectify and delete your data. To exercise these rights, contact us at privacy@rfc-assurance.dz.</p>
+    `,
+    
+    // Conditions Générales
+    terms_title: 'Terms & Conditions',
+    terms_date: 'January 1, 2025',
+    terms_content: `
+      <p>These terms and conditions govern the use of the RFC Assurance website.</p>
+      
+      <h3>1. Purpose</h3>
+      <p>These terms aim to define the conditions of use of the site by users.</p>
+      
+      <h3>2. Acceptance</h3>
+      <p>By using this site, you accept these terms without reservation.</p>
+      
+      <h3>3. Modifications</h3>
+      <p>RFC Assurance reserves the right to modify these terms at any time. Modifications take effect upon publication.</p>
+      
+      <h3>4. Liability</h3>
+      <p>RFC Assurance cannot be held responsible for damages resulting from the use of the site.</p>
+      
+      <h3>5. Applicable law</h3>
+      <p>These terms are governed by Algerian law.</p>
+    `,
+    
+    // CGU
+    cgu_title: 'CGU',
+    cgu_date: 'January 1, 2025',
+    cgu_content: `
+      <p>These General Conditions of Use (CGU) govern access to and use of the RFC Assurance website and platform.</p>
+      
+      <h3>1. Acceptance of CGU</h3>
+      <p>By accessing the site, you accept these CGU without reservation. If you do not accept these conditions, you must stop using the site.</p>
+      
+      <h3>2. Access to the site</h3>
+      <p>The site is accessible free of charge to any user. RFC Assurance reserves the right to suspend or modify access without notice.</p>
+      
+      <h3>3. User account</h3>
+      <p>Some features may require the creation of an account. You are responsible for the confidentiality of your credentials.</p>
+      
+      <h3>4. Use of the site</h3>
+      <p>You agree to use the site in accordance with applicable laws and regulations. Any fraudulent or illegal use is prohibited.</p>
+      
+      <h3>5. Intellectual property</h3>
+      <p>All content of the site (texts, images, logos) is the exclusive property of RFC Assurance.</p>
+      
+      <h3>6. Limitation of liability</h3>
+      <p>RFC Assurance cannot be held responsible for damages resulting from the use of the site.</p>
+      
+      <h3>7. Modification of CGU</h3>
+      <p>RFC Assurance reserves the right to modify the CGU at any time. Modifications take effect upon publication.</p>
+      
+      <h3>8. Applicable law</h3>
+      <p>These CGU are governed by Algerian law. Any dispute will be subject to the courts of Algiers.</p>
+    `,
+    
+    // Politique de cookies
+    cookies_title: 'Cookie Policy',
+    cookies_date: 'January 1, 2025',
+    cookies_content: `
+      <p>We use cookies to improve your experience on our site.</p>
+      
+      <h3>1. Types of cookies</h3>
+      <ul>
+        <li>Essential cookies: necessary for the operation of the site.</li>
+        <li>Analytical cookies: help us understand how you use the site.</li>
+      </ul>
+      
+      <h3>2. Cookie management</h3>
+      <p>You can manage your cookie preferences via your browser settings.</p>
+      
+      <h3>3. Consent</h3>
+      <p>By continuing to browse the site, you accept the use of cookies.</p>
+    `,
+    
+    // FAQ
+    faq_title: 'FAQ',
+    faq_subtitle: 'Quickly find answers to your questions.',
+    faq_search_placeholder: 'Search for a question...',
+    faq_no_results: 'No questions found.',
+    faq_1_q: 'What are your opening hours?',
+    faq_1_a: 'We are open Sunday to Thursday from 8:30 AM to 5:30 PM.',
+    faq_2_q: 'How can I get a quote?',
+    faq_2_a: 'You can fill out the contact form or call us at +213 775 22 18 69.',
+    faq_3_q: 'Which sectors do you cover?',
+    faq_3_a: 'We cover industry, oil & gas, construction and services.',
+    faq_4_q: 'Do you offer audit services?',
+    faq_4_a: 'Yes, we offer comprehensive audits of your risks and insurance contracts.',
+    faq_5_q: 'Can I cancel my contract at any time?',
+    faq_5_a: 'Yes, subject to the conditions provided in your contract.',
+    faq_6_q: 'How can I contact technical support?',
+    faq_6_a: 'By email at support@rfc-assurance.dz or by WhatsApp at +213 775 22 18 69.',
   },
-  products_page: {
-    title: 'OUR PRODUCTS',
-    hero_subtitle: 'High-quality scrap metal products available in bulk with consistent specifications and competitive pricing.',
-    consistent_quality: 'CONSISTENT\nQUALITY',
-    consistent_desc: 'Strict quality control and inspection',
-    certified_products: 'CERTIFIED\nPRODUCTS',
-    certified_desc: 'Compliant with international standards',
-    large_capacity: 'LARGE\nCAPACITY',
-    large_desc: 'Regular stock and bulk supply',
-    customized_solutions: 'CUSTOMIZED\nSOLUTIONS',
-    customized_desc: 'Tailored specifications on request',
-    all_products: 'ALL PRODUCTS',
-    ferrous_scrap: 'Ferrous Scrap',
-    non_ferrous_scrap: 'Non-Ferrous Scrap',
-    shredded_scrap: 'Shredded Scrap',
-    foundry_scrap: 'Foundry Scrap',
-    steel_products: 'Steel Products',
-    download_catalogue: 'DOWNLOAD CATALOG',
-    view_specs: 'VIEW SPECIFICATIONS',
-    size: 'Size',
-    thickness: 'Thickness',
-    density: 'Density',
-    moisture: 'Moisture',
-    packaging: 'Packaging',
-    origin: 'Origin',
-    length: 'Length',
-    condition: 'Condition',
-    composition: 'Composition',
-    packaging_options: {
-      title: 'PACKAGING\nOPTIONS',
-      desc: 'Bulk / Loose\nContainers / Loose'
-    },
-    monthly_capacity: {
-      title: 'MONTHLY\nCAPACITY',
-      desc: '100,000+ Tons\nConsistent Supply'
-    },
-    quality_standard: {
-      title: 'QUALITY\nSTANDARD',
-      desc: 'ASTM / EN / ISO\nCertified Products'
-    },
-    inspection: {
-      title: 'INSPECTION',
-      desc: 'SGS / BV / TUV\nThird Party Inspection'
-    },
-    payment_terms: {
-      title: 'PAYMENT\nTERMS',
-      desc: 'T/T / L/C\nFlexible Terms'
-    },
-    cta: {
-      title: 'Ready to get a quote for your required product?',
-      subtitle: 'Send us your requirements and receive a competitive offer within 24 hours.',
-      request: 'REQUEST QUOTATION (RFQ)',
-      whatsapp: 'CHAT ON WHATSAPP'
-    }
-  },
-  logistics_page: {
-    title: 'LOGISTICS & SHIPPING',
-    hero_subtitle: 'Strategically located in the Mediterranean, Algeria offers faster and more cost-effective shipping to Europe, MENA and Africa.',
-    stat1: 'MAJOR\nPORTS',
-    stat2: 'TONS',
-    stat3: 'COUNTRIES',
-    stat4: 'DAYS',
-    stat5: 'FLEXIBLE',
-    stat5_desc: 'INCOTERMS',
-    stat6: 'CERTIFIED',
-    ports_title: 'LOADING PORTS',
-    main_products: 'Main products',
-    port_skikda_name: 'PORT OF SKIKDA',
-    port_skikda_detail1: 'Deep water port',
-    port_skikda_detail2: 'Modern equipment',
-    port_skikda_detail3: 'Fast vessel handling',
-    port_skikda_products: 'All scrap grades',
-    port_oran_name: 'PORT OF ORAN',
-    port_oran_detail1: 'Strategic West Algeria port',
-    port_oran_detail2: 'Easy access to Europe',
-    port_oran_detail3: 'High storage capacity',
-    port_oran_products: 'HMS, Shredded, Rebar, Cast Iron',
-    port_algiers_name: 'PORT OF ALGIERS',
-    port_algiers_detail1: 'Capital city port',
-    port_algiers_detail2: 'Regular shipping lines',
-    port_algiers_detail3: 'Efficient clearance',
-    port_algiers_products: 'All scrap grades',
-    markets_title: 'MAIN MARKETS',
-    market_europe: 'EUROPE',
-    market_middleeast: 'MIDDLE EAST',
-    market_africa: 'AFRICA',
-    market_asia: 'ASIA',
-    process_title: 'OUR EXPORT PROCESS',
-    process_step1_title: 'INQUIRY',
-    process_step1_desc: 'You send us\nyour request',
-    process_step2_title: 'CONFIRMATION',
-    process_step2_desc: 'We confirm\navailability',
-    process_step3_title: 'INSPECTION',
-    process_step3_desc: 'Quality check\nby SGS',
-    process_step4_title: 'LOADING',
-    process_step4_desc: 'Professional\nloading',
-    process_step5_title: 'SHIPPING',
-    process_step5_desc: 'On-time\ndelivery',
-    shipping_title: 'SHIPPING INFORMATION',
-    ship_incoterms: 'INCOTERMS',
-    ship_incoterms_val: 'FOB / CIF / CFR',
-    ship_payment: 'PAYMENT TERMS',
-    ship_payment_val: 'T/T (Telegraphic Transfer) / L/C',
-    ship_loading: 'LOADING TIME',
-    ship_loading_val: '3 – 5 Days After Confirmation',
-    ship_freight: 'FREIGHT TYPE',
-    ship_freight_val: 'Bulk / Break Bulk / Container',
-    ship_packaging: 'PACKAGING',
-    ship_packaging_val: 'Bulk / Loose / Bales / Containers',
-    ship_inspection: 'INSPECTION',
-    ship_inspection_val: 'SGS / BV / TUV – On loading',
-    ship_documents: 'DOCUMENTS',
-    ship_documents_val: 'Commercial Invoice, Packing List, B/L, Certificate of Origin, Mill Test (3.1)'
-  },
-  about_page: {
-    title: 'ABOUT US',
-    hero_subtitle: 'A leading force in metal and ferrous product exports from Algeria to the world.',
-    feature1_title: 'Consistent Quality',
-    feature1_desc: 'Our company consistent quality and professional facilities.',
-    feature2_title: 'Certified Products',
-    feature2_desc: 'We industry extensive utility and processing capabilities.',
-    feature3_title: 'Company Industria',
-    feature3_desc: 'Our customely organized scrap and answer aneloeorenee.',
-    feature4_title: 'Global Footprint',
-    feature4_desc: 'Tritair international trade networks to major or port regions.',
-    card1_title: 'Our Legacy',
-    card1_desc: 'A clean professional office, brown as a modern, professional facility or main office building.',
-    card1_item1: 'Key Milestones: Est. early 2000s',
-    card1_item2: 'Core Experience: 20+ Years in Industry',
-    card1_item3: 'Key Markets: Established Global Reach',
-    card2_title: 'Our Infrastructure',
-    card2_desc: 'Extensive facility and processing capabilities, with mass scrap organized hub and logistics.',
-    card2_item1: 'Key Facilities: Massive Yard Space',
-    card2_item2: 'Modern Processing',
-    card2_item3: 'Integrated Logistics Center',
-    card2_item4: 'Multi-modal Transport',
-    card3_title: 'Global Footprint',
-    card3_desc: 'International trade networks in international export, nations, and ports to major regions.',
-    card3_item1: 'Key Markets Served: Algeria, Spain, India...',
-    card3_item2: 'Annual Volumes: 2000 volumes',
-    card3_item3: 'Multi-modal routes, multiple routes, more',
-    download_btn: 'DOWNLOAD CORPORATE BROCHURE (PDF)',
-    grid1_title: 'PACKAGING',
-    grid1_desc: 'Bulk / Loose\nContainers / Loose',
-    grid2_title: 'MONTHLY\nCAPACITY',
-    grid2_desc: '100,000+ Tons\nConsistent Supply',
-    grid3_title: 'PHONEUS',
-    grid3_desc: '+213 55 12 34 56 78',
-    grid4_title: 'SNAPPING',
-    grid4_desc: 'International\nNetworks',
-    cta_title: 'Looking for a reliable long-term supply partner?',
-    cta_subtitle: 'Contact us today and let\'s build a strong partnership together.',
-    cta_btn1: 'PARTNER WITH US',
-    cta_btn2: 'CONTACT OUR TEAM'
-  },
-  contact_page: {
-    title: 'CONTACT',
-    hero_subtitle: 'Ready to discuss your next metal supply requirement. We are here to help.',
-    card1_title: 'GLOBAL CONTACT INFO',
-    card1_desc: 'Direct line for inquiries, partnerships, and technical questions.',
-    card1_email_label: 'EMAIL (INQUIRIES)',
-    card1_phone_label: 'PHONE (HEADQUARTERS)',
-    card1_emergency_label: 'EMERGENCY / AFTER HOURS',
-    card1_address_label: 'ADDRESS',
-    card1_address: '12, Rue des Frères Bouadou,\nBir Mourad Raïs,\nAlgiers, Algeria',
-    card1_btn: 'SCHEDULE A CALL WITH AN EXPERT',
-    card2_title: 'VISIT OUR HEADQUARTERS',
-    card2_desc: 'Schedule a meeting with our technical team. See our processing and logistics capabilities.',
-    card2_badge: 'ALGERIA METAL - HEADQUARTERS',
-    card2_hours_label: 'OFFICE HOURS',
-    card2_hours_value: 'Sunday - Thursday: 8:30 AM - 5:30 PM (CET)',
-    card2_closed_label: 'CLOSED',
-    card2_closed_value: 'Fridays and Public Holidays',
-    card2_parking_label: 'VISITOR PARKING',
-    card2_parking_value: 'Available on-site',
-    card2_accessibility_label: 'ACCESSIBILITY',
-    card2_accessibility_value: 'Full ADA compliance.',
-    download_btn: 'DOWNLOAD VISITOR GUIDE & MAP (PDF)',
-    grid1_title: 'PACKAGING',
-    grid1_desc: 'Bulk / Loose\nContainers / Loose',
-    grid2_title: 'MONTHLY\nCAPACITY',
-    grid2_desc: '100,000+ Tons\nConsistent Supply',
-    grid3_title: 'PHONEUS',
-    grid3_desc: '+213 55 12 34 56 78',
-    grid4_title: 'SNAPPING',
-    grid4_desc: 'International\nNetworks',
-    cta_title: 'Need an immediate answer to your technical query?',
-    cta_subtitle: 'Our technical support team is ready to assist you.',
-    cta_btn1: 'LIVE CHAT ON WHATSAPP',
-    cta_btn2: 'CONTACT OUR TECHNICAL SUPPORT TEAM'
-  },
-  request_page: {
-    title: 'REQUEST QUOTATION',
-    hero_subtitle: 'Ready to receive your competitive offer? Provide your requirements below.',
-    section_contact_title: 'PROJECT & CONTACT DETAILS',
-    contact_company: 'Company Name',
-    contact_person: 'Contact Person',
-    contact_email: 'Email Address',
-    contact_project_type: 'Project Type',
-    project_type_infrastructure: 'Infrastructure, Construction, Manufacturing, etc.',
-    section_shipping_title: 'SHIPPING & LOGISTICS',
-    shipping_port_load: 'Preferred Port of Load',
-    shipping_destination: 'Final Destination Port',
-    shipping_lead_time: 'Desired Lead Time',
-    shipping_incoterm: 'Preferred Incoterm',
-    port_skikda: 'Port of Skikda',
-    port_oran: 'Port of Oran',
-    port_algiers: 'Port of Algiers',
-    section_products_title: 'PRODUCT & CAPACITY SELECTION',
-    product_hms: 'HMS 1 & 2',
-    product_shredded: 'Shredded Scrap',
-    product_rebar: 'Rebar Scrap',
-    product_cast_iron: 'Cast Iron Scrap',
-    product_steel: 'Steel Products',
-    quantity_label: 'QUANTITY (TONS)',
-    notes_label: 'CUSTOM SPECIFICATIONS OR ADDITIONAL NOTES',
-    select_option: 'Select...',
-    submit_btn: 'SUBMIT FORM & RECEIVE QUOTE',
-    download_btn: 'DOWNLOAD QUOTATION TEMPLATE (PDF)',
-    grid1_title: 'PACKAGING',
-    grid1_desc: 'Bulk / Loose\nContainers / Loose',
-    grid2_title: 'MONTHLY\nCAPACITY',
-    grid2_desc: '100,000+ Tons\nConsistent Supply',
-    grid3_title: 'PHONEUS',
-    grid3_desc: '+213 55 12 34 56 78',
-    grid4_title: 'SNAPPING',
-    grid4_desc: 'International\nNetworks',
-    cta_title: 'Need immediate support with your request?',
-    cta_subtitle: 'Our quotation team is ready to assist you.',
-    cta_btn1: 'LIVE CHAT ON WHATSAPP',
-    cta_btn2: 'CALL OUR QUOTATION EXPERT TEAM'
-  }
 };
-

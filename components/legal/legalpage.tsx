@@ -1,88 +1,77 @@
-// components/legal/legalpage.tsx
 'use client';
 
+import { useRef, useEffect } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
+import Link from 'next/link';
+import { ArrowLeft, FileText, Shield, Scale, Cookie, HelpCircle, ChevronRight } from 'lucide-react';
 
-export default function LegalPage() {
+interface LegalPageProps {
+  titleKey: string;
+  contentKey: string;
+  lastUpdateKey?: string;
+  icon?: React.ElementType;
+}
+
+export default function LegalPage({ titleKey, contentKey, lastUpdateKey, icon }: LegalPageProps) {
   const { t, locale } = useTranslation();
   const isRTL = locale === 'ar';
+  const pageRef = useRef<HTMLDivElement>(null);
 
-  console.log('📍 Locale dans LegalPage:', locale);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (pageRef.current) observer.observe(pageRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const IconComponent = icon || FileText;
 
   return (
-    <div className={`min-h-screen bg-[#0f172a] text-white ${isRTL ? 'rtl' : 'ltr'}`}>
-      {/* ✅ HEADER SUPPRIMÉ */}
-      
-      <main className="container mx-auto px-6 py-12">
-        <h1 className={`text-3xl font-bold mb-8 border-l-4 border-orange-500 pl-4 ${isRTL ? 'border-l-0 border-r-4 pr-4' : ''}`}>
-          {t?.legal?.title || 'Mentions Légales'}
-        </h1>
+    <div ref={pageRef} className="min-h-screen bg-linear-to-br from-[#f8fafc] to-[#e8f0fe] text-[#0a1628] pt-20 md:pt-24 lg:pt-28 pb-12 md:pb-16">
+      <div className="container mx-auto px-4 md:px-6">
+        
+        {/* Bouton retour avec style */}
+        <Link
+          href={`/${locale}`}
+          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#0a1628] hover:underline mb-6 transition"
+        >
+          <ArrowLeft size={16} />
+          {t.legal?.back || 'Retour à l\'accueil'}
+        </Link>
 
-        <div className="bg-[#1e293b] rounded-lg p-6 border border-gray-700 space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Dénomination */}
-            <div>
-              <span className="text-orange-500 font-bold">{t?.legal?.company_name_label || 'Dénomination :'}</span>
-              <p>{t?.legal?.company_name || 'Shlang Metal'}</p>
+        {/* En-tête avec icône et titre */}
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md border border-gray-100 mb-8">
+          <div className="flex items-center gap-4 mb-2">
+            <div className="bg-[#0a1628] p-3 rounded-full">
+              <IconComponent className="w-6 h-6 text-white" />
             </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0a1628]">
+              {t.legal?.[titleKey] || 'Titre de la page'}
+            </h1>
+          </div>
+          
+          {/* Date de dernière mise à jour */}
+          {lastUpdateKey && (
+            <p className="text-sm text-gray-500 ml-1">
+              {t.legal?.last_update || 'Dernière mise à jour le'} {t.legal?.[lastUpdateKey] || '1er janvier 2025'}
+            </p>
+          )}
+        </div>
 
-            {/* Forme juridique */}
-            <div>
-              <span className="text-orange-500 font-bold">{t?.legal?.legal_form_label || 'Forme juridique :'}</span>
-              <p>{t?.legal?.legal_form || 'SARL'}</p>
-            </div>
-
-            {/* Adresse */}
-            <div className="md:col-span-2">
-              <span className="text-orange-500 font-bold">{t?.legal?.address_label || 'Adresse :'}</span>
-              <p>{t?.legal?.address || 'Hai Baba Ali, Section 09, Groupe de propriété n° 67, Rez-de-chaussée, Commune de Bir Touta'}</p>
-            </div>
-
-            {/* Lieu */}
-            <div>
-              <span className="text-orange-500 font-bold">{t?.legal?.location_label || 'Lieu :'}</span>
-              <p>{t?.legal?.location || 'Alger'}</p>
-            </div>
-
-            {/* Capital */}
-            <div>
-              <span className="text-orange-500 font-bold">{t?.legal?.capital_label || 'Capital social :'}</span>
-              <p>{t?.legal?.capital || '1 200 000,00 DA'}</p>
-            </div>
-
-            {/* Début d'activité */}
-            <div>
-              <span className="text-orange-500 font-bold">{t?.legal?.start_date_label || 'Début d\'activité :'}</span>
-              <p>{t?.legal?.start_date || '04/05/2026'}</p>
-            </div>
-
-            {/* Base commerciale */}
-            <div>
-              <span className="text-orange-500 font-bold">{t?.legal?.commercial_base_label || 'Base commerciale :'}</span>
-              <p>{t?.legal?.commercial_base || 'Création'}</p>
-            </div>
-
-            {/* Local commercial */}
-            <div className="md:col-span-2">
-              <span className="text-orange-500 font-bold">{t?.legal?.premises_label || 'Local commercial :'}</span>
-              <p>{t?.legal?.premises || 'Équipé/Préparé (en bon état)'}</p>
-            </div>
-
-            {/* Numéro d'immatriculation */}
-            <div className="md:col-span-2">
-              <span className="text-orange-500 font-bold">{t?.legal?.registration_number_label || 'Numéro d\'immatriculation :'}</span>
-              <p>{t?.legal?.registration_number || '26 B 1205761 - 16 / 00'}</p>
-            </div>
-
-            {/* Date d'immatriculation */}
-            <div className="md:col-span-2">
-              <span className="text-orange-500 font-bold">{t?.legal?.registration_date_label || 'Date d\'immatriculation :'}</span>
-              <p>{t?.legal?.registration_date || '04/05/2026'}</p>
-            </div>
+        {/* Contenu avec style premium */}
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md border border-gray-100 prose prose-sm md:prose-lg max-w-none text-gray-700">
+          <div className="[&_h3]:text-[#0a1628] [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-6 [&_h3]:mb-3 [&_ul]:space-y-1 [&_ul]:list-disc [&_ul]:pl-5 [&_p]:leading-relaxed [&_p]:mb-4">
+            <div dangerouslySetInnerHTML={{ __html: t.legal?.[contentKey] || 'Contenu de la page juridique à définir.' }} />
           </div>
         </div>
-      </main>
 
+      </div>
     </div>
   );
 }
