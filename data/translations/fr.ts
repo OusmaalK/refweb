@@ -1,5 +1,5 @@
 // data/translations/fr.ts
-export const translations = {
+const translations = {
   nav: {
     home: 'Accueil',
     about: 'À propos',
@@ -316,7 +316,6 @@ export const translations = {
     },
   },
   team: {
-    tag: '06',
     title: 'UNE ÉQUIPE D\'EXPERTS À VOTRE SERVICE',
     subtitle: 'Des compétences pluridisciplinaires pour vous apporter les meilleures solutions.',
     expertise_label: 'Domaines d\'expertise',
@@ -531,3 +530,5 @@ export const translations = {
   },
   
 };
+
+export default translations;

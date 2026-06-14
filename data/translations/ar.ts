@@ -1,5 +1,5 @@
 // data/translations/ar.ts
-export const translations = {
+const translations = {
   nav: {
     home: 'الرئيسية',
     about: 'من نحن',
@@ -530,3 +530,5 @@ export const translations = {
     faq_6_a: 'عن طريق البريد الإلكتروني على support@rfc-assurance.dz أو عبر WhatsApp على +213 775 22 18 69.',
   },
 };
+
+export default translations;

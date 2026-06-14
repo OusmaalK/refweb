@@ -1,10 +1,10 @@
 // data/translations/index.ts
-import { translations as fr } from './fr';
-import { translations as en } from './en';
-import { translations as ar } from './ar';
+import en from './en';
+import fr from './fr';
+import ar from './ar';
 
 export const translations = {
-  fr,
   en,
+  fr,
   ar,
 };

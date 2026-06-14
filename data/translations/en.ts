@@ -1,5 +1,5 @@
 // data/translations/en.ts
-export const translations = {
+const translations = {
   nav: {
     home: 'Home',
     about: 'About',
@@ -530,3 +530,5 @@ export const translations = {
     faq_6_a: 'By email at support@rfc-assurance.dz or by WhatsApp at +213 775 22 18 69.',
   },
 };
+
+export default translations;
