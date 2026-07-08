@@ -42,28 +42,32 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0a1628] text-white border-t border-white/10">
-      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 ${isRTL ? 'rtl' : 'ltr'}`}>
+    <footer className="bg-[#0a1628] text-white border-t border-white/10" suppressHydrationWarning>
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12" suppressHydrationWarning>
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 ${isRTL ? 'rtl' : 'ltr'}`} suppressHydrationWarning>
           
           {/* Colonne 1 : Logo + description */}
-          <div className="space-y-8">
-            <Link href={`/${locale}`} className="inline-block">
-            <div className="flex justify-center items-center bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-sm">
-              <Image
-                src="/static/logo.png"
-                alt="RFC Assurance"
-                width={640}
-                height={240}
-                className="h-20 w-auto object-contain"
-                priority
-              />
-            </div>
+          <div className="space-y-8" suppressHydrationWarning>
+            <Link href={`/${locale}`} className="inline-block" suppressHydrationWarning>
+              <div 
+                className="flex justify-center items-center bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-sm"
+                suppressHydrationWarning
+              >
+                <Image
+                  src="/static/logo.png"
+                  alt="RFC Assurance"
+                  width={640}
+                  height={240}
+                  className="h-20 w-auto object-contain"
+                  priority
+                  suppressHydrationWarning
+                />
+              </div>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-400 leading-relaxed" suppressHydrationWarning>
               {t.footer?.description || 'Votre partenaire de confiance pour la protection de vos actifs et la gestion de vos risques.'}
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3" suppressHydrationWarning>
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -71,6 +75,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-[#ffffff] p-2 rounded-full transition"
+                  suppressHydrationWarning
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -79,16 +84,17 @@ export default function Footer() {
           </div>
 
           {/* Colonne 2 : Liens rapides */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block">
+          <div className="space-y-4" suppressHydrationWarning>
+            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block" suppressHydrationWarning>
               {t.footer?.quick_links || 'Liens rapides'}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2" suppressHydrationWarning>
               {quickLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} suppressHydrationWarning>
                   <Link
                     href={link.href}
                     className="text-sm text-gray-400 hover:text-[#ffffff] transition flex items-center gap-2"
+                    suppressHydrationWarning
                   >
                     <span className="w-1.5 h-1.5 bg-[#ffffff] rounded-full" />
                     {link.label}
@@ -99,13 +105,13 @@ export default function Footer() {
           </div>
 
           {/* Colonne 3 : Informations de contact + MAP */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block">
+          <div className="space-y-4" suppressHydrationWarning>
+            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block" suppressHydrationWarning>
               {t.footer?.contact_info || 'Informations de contact'}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3" suppressHydrationWarning>
               {contactInfo.map((item, index) => (
-                <li key={index} className="flex items-start gap-2">
+                <li key={index} className="flex items-start gap-2" suppressHydrationWarning>
                   <item.icon className="w-4 h-4 text-[#ffffff] mt-1 shrink-0" />
                   <span className="text-sm text-gray-400">{item.value}</span>
                 </li>
@@ -113,7 +119,7 @@ export default function Footer() {
             </ul>
             
             {/* Carte Google Maps */}
-            <div className="mt-3">
+            <div className="mt-3" suppressHydrationWarning>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d51150.09067255737!2d3.0605311239709487!3d36.749435346471266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s21%2C%20Rue%20Claud%20Debussy%2C%20Alger!5e0!3m2!1sfr!2sdz!4v1781443959277!5m2!1sfr!2sdz"
                 width="100%"
@@ -128,16 +134,17 @@ export default function Footer() {
           </div>
 
           {/* Colonne 4 : Informations légales */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block">
+          <div className="space-y-4" suppressHydrationWarning>
+            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block" suppressHydrationWarning>
               {t.footer?.legal_info || 'Informations légales'}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2" suppressHydrationWarning>
               {legalLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} suppressHydrationWarning>
                   <Link
                     href={link.href}
                     className="text-sm text-gray-400 hover:text-[#ffffff] transition flex items-center gap-2"
+                    suppressHydrationWarning
                   >
                     <span className="w-1.5 h-1.5 bg-[#ffffff] rounded-full" />
                     {link.label}
@@ -149,16 +156,16 @@ export default function Footer() {
 
         </div>
 
-        {/* ✅ Footer bottom avec lien Admin discret */}
-        <div className="border-t border-white/10 mt-8 md:mt-12 pt-4 text-center">
-          <p className="text-xs text-gray-500">
+        {/* Footer bottom avec lien Admin discret */}
+        <div className="border-t border-white/10 mt-8 md:mt-12 pt-4 text-center" suppressHydrationWarning>
+          <p className="text-xs text-gray-500" suppressHydrationWarning>
             &copy; {new Date().getFullYear()} RFC Assurance. {t.footer?.copyright || 'Tous droits réservés.'}
           </p>
           
-          {/* ✅ Lien Admin discret */}
           <Link 
             href={`/${locale}/admin/login`}
             className="text-white/10 hover:text-white/30 transition-colors duration-300 text-[10px] mt-2 inline-flex items-center gap-1"
+            suppressHydrationWarning
           >
             <Settings className="w-3 h-3" />
             Administration
