@@ -125,7 +125,7 @@ export default function ServicesPage() {
           <p className="text-gray-600 text-sm md:text-base">
             {t.services?.subtitle || 'Une offre complète pour une protection à 360°'}
           </p>
-          <div className="w-16 h-1 bg-[#eab308] mx-auto mt-3"></div>
+          <div className="w-16 h-1 bg-[#ef4444] mx-auto mt-3"></div>
         </motion.div>
 
         {/* Grille des 4 piliers */}
@@ -174,11 +174,11 @@ export default function ServicesPage() {
           className="mt-10 md:mt-14 text-center"
         >
           <Link
-            href={`/${locale}/#contact`}
-            className="inline-block bg-[#0a1628] hover:bg-[#1a2a4a] text-white font-bold px-6 md:px-8 py-3 rounded-lg transition transform hover:scale-105 shadow-lg"
-          >
-            {t.services?.cta || 'Demander un devis'}
-          </Link>
+          href={`/${locale}/#contact`}
+          className="inline-block bg-[#ef4444] hover:bg-[#dc2626] text-white font-bold px-6 md:px-8 py-3 rounded-lg transition transform hover:scale-105 shadow-lg"
+        >
+          {t.services?.cta || 'Demander un devis'}
+        </Link>
         </motion.div>
 
       </div>

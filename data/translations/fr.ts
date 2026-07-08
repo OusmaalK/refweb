@@ -8,12 +8,13 @@ const translations = {
     organization: 'Organisation',
     contact: 'Contact',
   },
-  hero: {
-    tag: 'LE CONSEIL PAR EXCELLENCE',
-    title: 'Consulting en Audit & Prévention des Risques Industriels',
-    subtitle: 'Courtage d’assurance agréé par le Ministère des Finances',
-    cta_audit: 'Solliciter un audit',
-    cta_services: 'Découvrir nos prestations',
+  "hero": {
+    "tag": "LE CONSEIL PAR EXCELLENCE",
+    "title": "Société de Courtage d'Assurance et de Conseil en Gestion des Risques<br />Audit & Prévention des Risques Industriels",
+    "subtitle": "Courtier d'assurance agréé par le Ministère des Finances",
+    "cta_audit": "Solliciter un audit",
+    "cta_services": "Découvrir nos prestations",
+    "cta_blog": "Actualités & Expertise"
   },
   home: {
     sections: {
@@ -60,6 +61,12 @@ const translations = {
     why_us_3: 'Défense exclusive de vos intérêts',
     why_us_4: 'Suivi global de la souscription au sinistre',
     cta_rfcapp: 'Découvrir RFC-App',
+  },
+  features: {  
+    expertise_desc: "Depuis 2014",
+    custom_desc: "Et indépendante",
+    defense_desc: "De vos intérêts",
+    global_desc: "De la souscription au sinistre"
   },
   bridge: {
     title: 'Une plateforme de gestion conçue pour les courtiers d\'assurance',
@@ -135,7 +142,7 @@ const translations = {
     protect_liabilities: 'PROTÉGER LES RESPONSABILITÉS',
     protect_projects: 'PROTÉGER LES PROJETS',
     protect_employees: 'PROTÉGER LES COLLABORATEURS',
-    cta: 'Demander un devis',
+    cta: 'Demander une consultation',
   },
   sectors: {
     risks_title: 'Risques clés',
@@ -245,10 +252,14 @@ const translations = {
     },
     leadership: {
       title: 'Notre Leadership',
-      ceo: 'Président Directeur Général',
-      director: 'Directrice Générale Adjointe',
-      risk: 'Directeur des Risques',
-      brokerage: 'Directeur du Courtage',
+      strategic: 'Direction Stratégique',
+      strategic_desc: 'Gouvernance et vision',
+      technical: 'Direction Technique',
+      technical_desc: 'Expertise en risques industriels',
+      commercial: 'Direction Commerciale',
+      commercial_desc: 'Développement et partenariats',
+      administrative: 'Direction Administrative',
+      administrative_desc: 'Gestion et conformité',
     },
     stats: {
       title: 'Nos Chiffres Clés',
@@ -294,7 +305,7 @@ const translations = {
   },
   ambitions: {
     tag: '09',
-    title: 'NOS AMBITIONS 2025',
+    title: 'NOS AMBITIONS',
     subtitle: 'Être l\'accompagnateur de référence des entreprises en croissance.',
     ambition: {
       startups: {
@@ -528,7 +539,89 @@ const translations = {
     faq_6_q: 'Comment contacter le support technique ?',
     faq_6_a: 'Par email à support@rfc-assurance.dz ou par WhatsApp au +213 775 22 18 69.',
   },
-  
+  blog: {
+    title: 'Actualités & Expertise',
+    subtitle: 'Restez informés sur la gestion des risques industriels en Algérie.',
+    categories: {
+      audit_prevention: { title: 'Audit & Prévention' },
+      assurance_courtage: { title: 'Assurances & Courtage' },
+      strategie_internationale: { title: 'Conseil & Export' },
+    },
+    posts: {
+      audit_pme: {
+        category: 'audit_prevention',
+        title: 'L\'audit des risques : pilier de la pérennité pour les PME/PMI algériennes',
+        subtitle: 'Comment une analyse proactive des risques majeurs sécurise vos investissements et votre activité.',
+        image: '/images/blog/audit-pme.png',
+        content: `L'économie algérienne est dynamique, portée par un tissu de PME/PMI en pleine croissance. Cependant, ce développement s'accompagne de risques complexes. Pour une PME, un sinistre majeur non anticipé peut être fatal.
+
+        L'audit des risques est un outil de gestion stratégique indispensable. Il permet d'identifier les vulnérabilités, d'évaluer l'impact financier, d'anticiper la gestion de crise et de sécuriser vos investissements auprès de vos partenaires financiers. RFC Assurance vous accompagne dans cette démarche pour transformer la gestion des risques en avantage compétitif.`
+      },
+      audit_oil_gas: {
+        category: 'audit_prevention',
+        title: 'Sécuriser vos actifs : audit spécifique pour le secteur Oil & Gas',
+        subtitle: 'Accompagnement sur-mesure pour les services pétroliers.',
+        image: '/images/blog/audit-oil-gas.png',
+        content: `Le secteur de l'énergie en Algérie exige une maîtrise des risques d'une ampleur exceptionnelle. Les conséquences d'un accident peuvent être catastrophiques sur les plans humain, environnemental et financier.
+
+        Notre audit spécifique s'adapte à vos exigences : sécurité des installations de production, maîtrise des risques technologiques (fuites, explosions) et audit des infrastructures critiques comme les stations de dessalement. Nous traduisons nos constats en plans d'action pragmatiques pour renforcer la sécurité de vos actifs.`
+      },
+      inspection_gas: {
+        category: 'audit_prevention',
+        title: 'Inspection Gas : contrôle technique et sécurité des infrastructures',
+        subtitle: 'Maintenance préventive et vérifications réglementaires.',
+        image: '/images/blog/inspection-gas.png',
+        content: `Le réseau gazier est vital pour l'économie nationale. L'Inspection Gas est une étape incontournable pour garantir la sûreté et la fiabilité de vos opérations. 
+
+        Nos prestations couvrent les vérifications réglementaires, les contrôles non destructifs (CND) pour détecter les défauts internes avant la rupture, et l'évaluation de la corrosion. Cette démarche technique vous permet également de justifier la qualité de votre gestion des risques auprès des assureurs pour négocier des conditions optimales.`
+      },
+      maitrise_btp: {
+        category: 'assurance_courtage',
+        title: 'Maîtrise des risques BTP : les garanties indispensables pour vos grands chantiers',
+        subtitle: 'De la RC Décennale aux risques de montage.',
+        image: '/images/blog/risques-btp.png',
+        content: `Le secteur du BTP en Algérie est particulièrement exposé. Sécuriser vos projets est une priorité stratégique pour garantir la bonne fin des travaux.
+
+        RFC Assurance vous propose un accompagnement complet : Responsabilité Civile Décennale, Assurance Tous Risques Chantier (TRC), et Assurance Risques de Montage. Nous analysons vos projets en profondeur pour identifier les risques spécifiques et négocier des garanties sur-mesure qui protègent efficacement votre investissement.`
+      },
+      protection_passif: {
+        category: 'assurance_courtage',
+        title: 'Protection du passif : préservez la structure financière de votre entreprise',
+        subtitle: 'Pourquoi la Responsabilité Civile est le bouclier financier.',
+        image: '/images/blog/protection-passif.png',
+        content: `Toute entreprise est exposée au risque de voir sa responsabilité civile engagée. Les conséquences financières peuvent menacer la structure même de votre société.
+
+        Protéger votre passif, c'est mettre en place un bouclier financier : Responsabilité Civile Générale pour les dommages aux tiers, RC Décennale pour les constructeurs, et RC des Dirigeants pour protéger votre patrimoine personnel. Nous évaluons vos vulnérabilités pour préserver la solidité financière de votre entreprise.`
+      },
+      capital_humain: {
+        category: 'assurance_courtage',
+        title: 'Le Capital Humain : votre actif le plus précieux mérite une protection complète',
+        subtitle: 'Optimisez votre prévoyance collective, santé et assurances.',
+        image: '/images/blog/capital-humain.png',
+        content: `Vos collaborateurs sont le cœur de votre entreprise. Leur bien-être est essentiel à votre performance. Protéger votre capital humain, c'est aussi renforcer votre marque employeur.
+
+        RFC Assurance vous propose une approche globale : Prévoyance Collective (décès, invalidité), Assurance Santé performante, et Assurance Missions Étranger. Nous concevons des programmes optimisés pour maximiser l'impact social tout en maîtrisant votre budget.`
+      },
+      conseil_export: {
+        category: 'strategie_internationale',
+        title: 'Conseil à l\'export : accompagner l\'internationalisation des industriels algériens',
+        subtitle: 'Stratégies et couverture d\'assurance pour votre expansion.',
+        image: '/images/blog/conseil-export.png',
+        content: `L'internationalisation représente une formidable opportunité de croissance, mais s'accompagne de risques politiques, logistiques et commerciaux complexes.
+
+        RFC Assurance vous accompagne pour sécuriser cette expansion : analyse des risques marchés, Assurance-Crédit Export contre les impayés, et Assurance Transports Internationaux. Nous vous apportons notre expertise pour conquérir de nouveaux marchés en toute sérénité.`
+      },
+      role_courtier: {
+        category: 'assurance_courtage',
+        title: 'Du premier jour au sinistre : la mission de défense des intérêts par votre courtier',
+        subtitle: 'Comprendre la valeur ajoutée d\'un partenaire agréé.',
+        image: '/images/blog/role-courtier.png',
+        content: `Un courtier agréé n'est pas un simple vendeur de contrats. C'est votre expert dédié qui défend vos intérêts auprès des assureurs.
+
+        Notre mission : négocier les meilleures conditions, assurer un suivi rigoureux de vos polices, et surtout vous défendre lors de la gestion d'un sinistre. Choisir RFC Assurance, c'est opter pour un partenaire de confiance engagé à optimiser votre stratégie de risque sur le long terme.`
+      },
+    },
+  },
 };
 
 export default translations;

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
-import { Mail, Phone, MessageCircle, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MessageCircle, MapPin, Facebook, Instagram, Linkedin, Twitter, Settings } from 'lucide-react';
 
 export default function Footer() {
   const { t, locale } = useTranslation();
@@ -19,7 +19,7 @@ export default function Footer() {
   const quickLinks = [
     { label: 'Accueil', href: `/${locale}` },
     { label: 'À propos', href: `/${locale}/about` },
-    { label: 'Prestations', href: `/${locale}/services` },
+    { label: 'Prestations', href: `/${locale}/service` },
     { label: 'Secteurs', href: `/${locale}/sectors` },
     { label: 'Organisation', href: `/${locale}/organization` },
     { label: 'Contact', href: `/${locale}/#contact` },
@@ -49,14 +49,16 @@ export default function Footer() {
           {/* Colonne 1 : Logo + description */}
           <div className="space-y-8">
             <Link href={`/${locale}`} className="inline-block">
-            <Image
-                src="/static/logo-white.png"
+            <div className="flex justify-center items-center bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-sm">
+              <Image
+                src="/static/logo.png"
                 alt="RFC Assurance"
                 width={640}
                 height={240}
-                className="h-30 w-auto object-contain"
-                priority // ✅ Ajouté pour charger l'image en priorité
-                />
+                className="h-20 w-auto object-contain"
+                priority
+              />
+            </div>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed">
               {t.footer?.description || 'Votre partenaire de confiance pour la protection de vos actifs et la gestion de vos risques.'}
@@ -68,7 +70,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-[#eab308] p-2 rounded-full transition"
+                  className="bg-white/10 hover:bg-[#ffffff] p-2 rounded-full transition"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -78,7 +80,7 @@ export default function Footer() {
 
           {/* Colonne 2 : Liens rapides */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold border-b border-[#eab308] pb-2 inline-block">
+            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block">
               {t.footer?.quick_links || 'Liens rapides'}
             </h3>
             <ul className="space-y-2">
@@ -86,9 +88,9 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#eab308] transition flex items-center gap-2"
+                    className="text-sm text-gray-400 hover:text-[#ffffff] transition flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 bg-[#eab308] rounded-full" />
+                    <span className="w-1.5 h-1.5 bg-[#ffffff] rounded-full" />
                     {link.label}
                   </Link>
                 </li>
@@ -98,19 +100,19 @@ export default function Footer() {
 
           {/* Colonne 3 : Informations de contact + MAP */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold border-b border-[#eab308] pb-2 inline-block">
+            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block">
               {t.footer?.contact_info || 'Informations de contact'}
             </h3>
             <ul className="space-y-3">
               {contactInfo.map((item, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <item.icon className="w-4 h-4 text-[#eab308] mt-1 shrink-0" />
+                  <item.icon className="w-4 h-4 text-[#ffffff] mt-1 shrink-0" />
                   <span className="text-sm text-gray-400">{item.value}</span>
                 </li>
               ))}
             </ul>
             
-            {/* ✅ Carte Google Maps avec votre code */}
+            {/* Carte Google Maps */}
             <div className="mt-3">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d51150.09067255737!2d3.0605311239709487!3d36.749435346471266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s21%2C%20Rue%20Claud%20Debussy%2C%20Alger!5e0!3m2!1sfr!2sdz!4v1781443959277!5m2!1sfr!2sdz"
@@ -127,7 +129,7 @@ export default function Footer() {
 
           {/* Colonne 4 : Informations légales */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold border-b border-[#eab308] pb-2 inline-block">
+            <h3 className="text-lg font-bold border-b border-[#ffffff] pb-2 inline-block">
               {t.footer?.legal_info || 'Informations légales'}
             </h3>
             <ul className="space-y-2">
@@ -135,9 +137,9 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#eab308] transition flex items-center gap-2"
+                    className="text-sm text-gray-400 hover:text-[#ffffff] transition flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 bg-[#eab308] rounded-full" />
+                    <span className="w-1.5 h-1.5 bg-[#ffffff] rounded-full" />
                     {link.label}
                   </Link>
                 </li>
@@ -147,11 +149,20 @@ export default function Footer() {
 
         </div>
 
-        {/* Footer bottom */}
+        {/* ✅ Footer bottom avec lien Admin discret */}
         <div className="border-t border-white/10 mt-8 md:mt-12 pt-4 text-center">
           <p className="text-xs text-gray-500">
             &copy; {new Date().getFullYear()} RFC Assurance. {t.footer?.copyright || 'Tous droits réservés.'}
           </p>
+          
+          {/* ✅ Lien Admin discret */}
+          <Link 
+            href={`/${locale}/admin/login`}
+            className="text-white/10 hover:text-white/30 transition-colors duration-300 text-[10px] mt-2 inline-flex items-center gap-1"
+          >
+            <Settings className="w-3 h-3" />
+            Administration
+          </Link>
         </div>
       </div>
     </footer>

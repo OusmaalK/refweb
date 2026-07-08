@@ -219,7 +219,7 @@ export default function SectorsPage() {
             </p>
             <Link
               href={`/${locale}/#contact`}
-              className="inline-block mt-3 bg-[#eab308] hover:bg-yellow-500 text-[#0a1628] font-bold px-4 md:px-6 py-2 rounded-lg transition transform hover:scale-105 text-xs md:text-sm"
+              className="inline-block mt-3 bg-[#ef4444] hover:bg-[#dc2626] text-white font-bold px-4 md:px-6 py-2 rounded-lg transition transform hover:scale-105 text-xs md:text-sm"
             >
               {t.sectors?.cta_banner || 'Demander une étude'}
             </Link>

@@ -34,7 +34,7 @@ export default function AboutSection() {
           </p>
           <Link
             href={`/${locale}/about`}
-            className="inline-block mt-6 md:mt-8 bg-[#eab308] hover:bg-yellow-500 text-[#0a1628] font-bold px-4 md:px-6 py-2 md:py-3 rounded-md transition text-sm md:text-base"
+            className="inline-block mt-6 md:mt-8 bg-[#ef4444] hover:bg-yellow-500 text-[#ffffff] font-bold px-4 md:px-6 py-2 md:py-3 rounded-md transition text-sm md:text-base"
           >
             {t.about?.cta || 'En savoir plus'}
           </Link>

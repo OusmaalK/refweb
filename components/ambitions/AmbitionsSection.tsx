@@ -52,7 +52,7 @@ export default function AmbitionsSection() {
           <p className="text-gray-400 text-sm md:text-base">
             {t.ambitions?.subtitle || 'Être l\'accompagnateur de référence des entreprises en croissance.'}
           </p>
-          <div className="w-16 h-1 bg-[#eab308] mx-auto mt-3"></div>
+          <div className="w-16 h-1 bg-[#ffffff] mx-auto mt-3"></div>
         </div>
 
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 ${isRTL ? 'rtl' : 'ltr'}`}>
@@ -63,10 +63,10 @@ export default function AmbitionsSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-[#0f1a2e] rounded-xl p-4 md:p-6 border border-[#eab308]/30 hover:border-[#eab308] transition flex flex-col items-center text-center"
+              className="bg-[#0f1a2e] rounded-xl p-4 md:p-6 border border-[#ffffff]/30 hover:border-[#ffffff] transition flex flex-col items-center text-center"
             >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#eab308]/10 flex items-center justify-center mb-3">
-                <ambition.icon className="w-6 h-6 md:w-7 md:h-7 text-[#eab308]" />
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#ffffff]/10 flex items-center justify-center mb-3">
+                <ambition.icon className="w-6 h-6 md:w-7 md:h-7 text-[#ffffff]" />
               </div>
               <h3 className="text-sm md:text-base font-bold text-white mb-1">
                 {getTranslation(`ambition.${ambition.key}.title`)}

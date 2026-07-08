@@ -8,12 +8,13 @@ const translations = {
     organization: 'Organization',
     contact: 'Contact',
   },
-  hero: {
-    tag: 'EXCELLENCE IN CONSULTING',
-    title: 'Consulting in Audit & Industrial Risk Prevention',
-    subtitle: 'Insurance brokerage approved by the Ministry of Finance',
-    cta_audit: 'Request an audit',
-    cta_services: 'Discover our services',
+  "hero": {
+    "tag": "EXCELLENCE IN CONSULTING",
+    "title": "Insurance Brokerage & Risk Management Consulting Company<br />Audit & Prevention of Industrial Risks",
+    "subtitle": "Insurance brokerage approved by the Ministry of Finance",
+    "cta_audit": "Request an audit",
+    "cta_services": "Discover our services",
+    "cta_blog": "News & Expertise"
   },
   home: {
     sections: {
@@ -61,6 +62,12 @@ const translations = {
     why_us_4: 'Global follow-up from subscription to claim',
     cta_rfcapp: 'Discover RFC-App',
   },
+  features: {
+  expertise_desc: "Since 2014",
+  custom_desc: "And independent",
+  defense_desc: "Of your interests",
+  global_desc: "From subscription to claim"
+},
   bridge: {
     title: 'A management platform designed for insurance brokers',
     subtitle: 'Essential, Pro & Expert plans to optimize your client, contract and claims management.',
@@ -135,7 +142,7 @@ const translations = {
     protect_liabilities: 'PROTECT LIABILITIES',
     protect_projects: 'PROTECT PROJECTS',
     protect_employees: 'PROTECT EMPLOYEES',
-    cta: 'Request a quote',
+    cta: 'Request a consultation',
   },
   sectors: {
     risks_title: 'Key risks',
@@ -244,12 +251,16 @@ const translations = {
       innovation_desc: 'Technological watch and continuous improvement.',
     },
     leadership: {
-      title: 'Our Leadership',
-      ceo: 'President and CEO',
-      director: 'Deputy CEO',
-      risk: 'Risk Director',
-      brokerage: 'Brokerage Director',
-    },
+    title: "Our Leadership",
+    strategic: "Strategic Direction",
+    strategic_desc: "Governance and vision",
+    technical: "Technical Direction",
+    technical_desc: "Industrial risk expertise",
+    commercial: "Commercial Direction",
+    commercial_desc: "Development and partnerships",
+    administrative: "Administrative Direction",
+    administrative_desc: "Management and compliance"
+  },
     stats: {
       title: 'Our Key Figures',
       years_experience: 'Years of experience',
@@ -294,7 +305,7 @@ const translations = {
   },
   ambitions: {
     tag: '09',
-    title: 'OUR AMBITIONS 2025',
+    title: 'OUR AMBITIONS',
     subtitle: 'To be the reference partner for growing companies.',
     ambition: {
       startups: {
@@ -529,6 +540,90 @@ const translations = {
     faq_6_q: 'How can I contact technical support?',
     faq_6_a: 'By email at support@rfc-assurance.dz or by WhatsApp at +213 775 22 18 69.',
   },
+  blog: {
+    title: 'News & Expertise',
+    subtitle: 'Stay informed on industrial risk management in Algeria.',
+    categories: {
+      audit_prevention: { title: 'Audit & Prevention' },
+      assurance_courtage: { title: 'Insurance & Brokerage' },
+      strategie_internationale: { title: 'Consulting & Export' },
+    },
+    posts: {
+      audit_pme: {
+        category: 'audit_prevention',
+        title: 'Risk audit: a pillar of sustainability for Algerian SMEs/SMIs',
+        subtitle: 'How a proactive analysis of major risks secures your investments and your business.',
+        image: '/images/blog/audit-pme.png',
+        content: `The Algerian economy is dynamic, driven by a growing fabric of SMEs/SMIs. However, this development comes with complex risks. For an SME, a major unforeseen loss can be fatal.
+
+        Risk audit is an essential strategic management tool. It helps identify vulnerabilities, assess financial impact, anticipate crisis management, and secure your investments with financial partners. RFC Assurance supports you in this approach to turn risk management into a competitive advantage.`
+      },
+      audit_oil_gas: {
+        category: 'audit_prevention',
+        title: 'Securing your assets: specific audit for the Oil & Gas sector',
+        subtitle: 'Tailor-made support for oil services.',
+        image: '/images/blog/audit-oil-gas.png',
+        content: `The energy sector in Algeria requires risk management on an exceptional scale. The consequences of an accident can be catastrophic on human, environmental and financial levels.
+
+        Our specific audit adapts to your requirements: safety of production facilities, control of technological risks (leaks, explosions) and audit of critical infrastructure such as desalination plants. We translate our findings into pragmatic action plans to strengthen the safety of your assets.`
+      },
+      inspection_gas: {
+        category: 'audit_prevention',
+        title: 'Gas Inspection: technical control and infrastructure safety',
+        subtitle: 'Preventive maintenance and regulatory verifications.',
+        image: '/images/blog/inspection-gas.png',
+        content: `The gas network is vital for the national economy. Gas Inspection is an essential step to guarantee the safety and reliability of your operations.
+
+        Our services cover regulatory verifications, non-destructive testing (NDT) to detect internal defects before failure, and corrosion assessment. This technical approach also allows you to justify the quality of your risk management to insurers to negotiate optimal conditions.`
+      },
+      maitrise_btp: {
+        category: 'assurance_courtage',
+        title: 'BTP risk management: essential guarantees for your major projects',
+        subtitle: 'From Decennial RC to assembly risks.',
+        image: '/images/blog/risques-btp.png',
+        content: `The BTP sector in Algeria is particularly exposed. Securing your projects is a strategic priority to guarantee the successful completion of works.
+
+        RFC Assurance offers you comprehensive support: Decennial Civil Liability, All Risks Site Insurance (TRC), and Assembly Risks Insurance. We analyze your projects in depth to identify specific risks and negotiate tailor-made guarantees that effectively protect your investment.`
+      },
+      protection_passif: {
+        category: 'assurance_courtage',
+        title: 'Liability protection: preserve the financial structure of your company',
+        subtitle: 'Why Civil Liability is the financial shield.',
+        image: '/images/blog/protection-passif.png',
+        content: `Every company is exposed to the risk of its civil liability being engaged. The financial consequences can threaten the very structure of your company.
+
+        Protecting your liabilities means setting up a financial shield: General Civil Liability for damage to third parties, Decennial RC for builders, and Directors' RC to protect your personal assets. We assess your vulnerabilities to preserve the financial solidity of your company.`
+      },
+      capital_humain: {
+        category: 'assurance_courtage',
+        title: 'Human Capital: your most valuable asset deserves complete protection',
+        subtitle: 'Optimize your group provident, health and insurance.',
+        image: '/images/blog/capital-humain.png',
+        content: `Your employees are the heart of your company. Their well-being is essential to your performance. Protecting your human capital also strengthens your employer brand.
+
+        RFC Assurance offers you a global approach: Group Provident (death, disability), performant Health Insurance, and Foreign Mission Insurance. We design optimized programs to maximize social impact while controlling your budget.`
+      },
+      conseil_export: {
+        category: 'strategie_internationale',
+        title: 'Export consulting: supporting the internationalization of Algerian industrialists',
+        subtitle: 'Strategies and insurance coverage for your expansion.',
+        image: '/images/blog/conseil-export.png',
+        content: `Internationalization represents a tremendous growth opportunity but comes with complex political, logistical and commercial risks.
+
+        RFC Assurance supports you in securing this expansion: market risk analysis, Export Credit Insurance against non-payment, and International Transport Insurance. We bring you our expertise to conquer new markets with peace of mind.`
+      },
+      role_courtier: {
+        category: 'assurance_courtage',
+        title: 'From day one to the claim: the mission of defending your interests by your broker',
+        subtitle: 'Understanding the added value of an approved partner.',
+        image: '/images/blog/role-courtier.png',
+        content: `An approved broker is not just a contract seller. It is your dedicated expert who defends your interests with insurers.
+
+        Our mission: negotiate the best conditions, ensure rigorous monitoring of your policies, and above all defend you during claims management. Choosing RFC Assurance means opting for a trusted partner committed to optimizing your risk strategy over the long term.`
+      },
+    },
+  },
+
 };
 
 export default translations;

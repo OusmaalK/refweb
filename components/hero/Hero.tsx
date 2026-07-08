@@ -46,17 +46,21 @@ export default function Hero() {
           </span>
 
           <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-0.5 sm:mb-1 animate-fade-in-up animation-delay-200">
-            <span dangerouslySetInnerHTML={{ __html: t.hero?.title || 'Consulting en Audit &<br />Prévention des Risques Industriels' }} />
+            <span dangerouslySetInnerHTML={{ 
+              __html: t.hero?.title || 
+                'Société de Courtage d\'Assurance et de Conseil en Gestion des Risques<br />Audit & Prévention des Risques Industriels' 
+            }} />
           </h1>
 
           <p className="text-xs sm:text-sm md:text-lg lg:text-xl text-[#eab308] mb-1 sm:mb-1 animate-fade-in-up animation-delay-400">
-            {t.hero?.subtitle || 'Courtage d\'assurance agréé par le Ministère des Finances'}
+            {t.hero?.subtitle || 'Courtier d\'assurance agréé par le Ministère des Finances'}
           </p>
 
-          <div className={`flex flex-col sm:flex-row gap-1 sm:gap-1 animate-fade-in-up animation-delay-600 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
+          {/* Bloc des boutons d'action */}
+          <div className={`flex flex-col sm:flex-row gap-2 animate-fade-in-up animation-delay-600 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
             <Link
               href={`/${locale}/#contact`}
-              className="bg-[#eab308] hover:bg-yellow-500 text-[#0a1628] font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 md:py-3 rounded-md transition transform hover:scale-105 text-center text-[10px] sm:text-xs md:text-sm"
+              className="bg-white hover:bg-gray-50 text-[#ef4444] font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 md:py-3 rounded-md transition transform hover:scale-105 text-center text-[10px] sm:text-xs md:text-sm"
             >
               {t.hero?.cta_audit || 'Solliciter un audit'}
             </Link>
@@ -65,6 +69,13 @@ export default function Hero() {
               className="border border-white/30 hover:border-white text-white font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 md:py-3 rounded-md transition hover:bg-white/10 text-center text-[10px] sm:text-xs md:text-sm"
             >
               {t.hero?.cta_services || 'Découvrir nos prestations'}
+            </Link>
+            {/* Bouton Blog - CORRIGÉ */}
+            <Link
+              href={`/${locale}/blog`}
+              className="border border-white/30 hover:bg-white/20 text-white font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 md:py-3 rounded-md transition text-center text-[10px] sm:text-xs md:text-sm backdrop-blur-sm"
+            >
+              {t.hero?.cta_blog || 'Actualités & Expertise'}  {/* ← MODIFICATION ICI */}
             </Link>
           </div>
         </div>

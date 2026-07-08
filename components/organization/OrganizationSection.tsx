@@ -71,8 +71,8 @@ export default function OrganizationSection() {
         <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 ${isRTL ? 'rtl' : 'ltr'}`}>
           {cards.map((card, index) => (
             <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-md hover:shadow-xl transition border border-gray-100 text-center group">
-              <div className="w-12 h-12 md:w-14 md:h-14 mx-auto rounded-full bg-[#eab308]/10 flex items-center justify-center mb-3 group-hover:bg-[#eab308]/20 transition">
-                <card.icon className="w-6 h-6 md:w-7 md:h-7 text-[#eab308]" />
+              <div className="w-12 h-12 md:w-14 md:h-14 mx-auto rounded-full bg-[##ef4444]/10 flex items-center justify-center mb-3 group-hover:bg-[#eab308]/20 transition">
+                <card.icon className="w-6 h-6 md:w-7 md:h-7 text-[#ef4444]" />
               </div>
               <h3 className="text-sm md:text-base font-bold text-[#0a1628] mb-2">
                 {card.title}

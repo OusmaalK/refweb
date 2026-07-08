@@ -56,7 +56,7 @@ export default function TeamSection() {
 
   return (
     <section ref={sectionRef} className="py-20 md:py-28 bg-[#0a1628] text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0f1a2e] to-[#0a1628] opacity-50" />
+      <div className="absolute inset-0 bg-linear-to-b from-[#0a1628] via-[#0f1a2e] to-[#0a1628] opacity-50" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
@@ -69,7 +69,7 @@ export default function TeamSection() {
           <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mt-4">
             {t.team?.subtitle || 'Des compétences pluridisciplinaires pour vous apporter les meilleures solutions.'}
           </p>
-          <div className="w-24 h-1 bg-[#eab308] mx-auto mt-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-[#ffffff] mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* Grille des 4 profils */}
@@ -123,19 +123,19 @@ export default function TeamSection() {
         <div className="mt-20 pt-12 border-t border-white/10">
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 ${isRTL ? 'rtl' : 'ltr'}`}>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-[#eab308] group-hover:scale-110 transition-transform duration-300">15+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#ffffff] group-hover:scale-110 transition-transform duration-300">15+</div>
               <p className="text-gray-400 text-sm mt-2">{t.team?.stat_1 || 'Années d\'expérience'}</p>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-[#eab308] group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#ffffff] group-hover:scale-110 transition-transform duration-300">50+</div>
               <p className="text-gray-400 text-sm mt-2">{t.team?.stat_2 || 'Projets accompagnés'}</p>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-[#eab308] group-hover:scale-110 transition-transform duration-300">100%</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#ffffff] group-hover:scale-110 transition-transform duration-300">100%</div>
               <p className="text-gray-400 text-sm mt-2">{t.team?.stat_3 || 'Satisfaction client'}</p>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-[#eab308] group-hover:scale-110 transition-transform duration-300">24/7</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#ffffff] group-hover:scale-110 transition-transform duration-300">24/7</div>
               <p className="text-gray-400 text-sm mt-2">{t.team?.stat_4 || 'Support disponible'}</p>
             </div>
           </div>
@@ -143,13 +143,13 @@ export default function TeamSection() {
 
         {/* CTA vers l'équipe */}
         <div className="mt-12 text-center">
-          <Link
-            href={`/${locale}/#contact`}
-            className="inline-flex items-center gap-2 bg-[#eab308] hover:bg-yellow-500 text-[#0a1628] font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
-          >
-            {t.team?.cta || 'Rencontrer notre équipe'}
-            <ChevronRight size={18} />
-          </Link>
+        <Link
+          href={`/${locale}/#contact`}
+          className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#ef4444] border-2 border-[#ef4444] font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
+        >
+          {t.team?.cta || 'Rencontrer notre équipe'}
+          <ChevronRight size={18} />
+        </Link>
         </div>
 
       </div>

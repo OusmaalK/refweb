@@ -9,7 +9,8 @@ import {
   Building2, Briefcase, Globe, 
   TrendingUp, HeartHandshake, 
   CheckCircle, Star, MapPin, 
-  Phone, Mail, Clock 
+  Phone, Mail, Clock, 
+  Eye, Gauge, Handshake, FileCheck // ← Nouveaux icônes pour le leadership
 } from 'lucide-react';
 
 export default function OrganizationPage() {
@@ -40,11 +41,36 @@ export default function OrganizationPage() {
     }
   };
 
+  // ✅ NOUVEAU : Leadership sans noms - Approche par directions
   const leadership = [
-    { name: 'M. Karim Benali', role: getTranslation('leadership.ceo'), image: '/static/ceo.jpg' },
-    { name: 'Mme. Nadia Tounsi', role: getTranslation('leadership.director'), image: '/static/director.jpg' },
-    { name: 'M. Amine Bensaïd', role: getTranslation('leadership.risk'), image: '/static/risk.jpg' },
-    { name: 'M. Sofiane Hamdi', role: getTranslation('leadership.brokerage'), image: '/static/brokerage.jpg' },
+    { 
+      icon: Eye, 
+      name: getTranslation('leadership.strategic'), 
+      role: getTranslation('leadership.strategic_desc'),
+      bg: 'bg-blue-500/10',
+      iconColor: 'text-blue-500'
+    },
+    { 
+      icon: Gauge, 
+      name: getTranslation('leadership.technical'), 
+      role: getTranslation('leadership.technical_desc'),
+      bg: 'bg-emerald-500/10',
+      iconColor: 'text-emerald-500'
+    },
+    { 
+      icon: Handshake, 
+      name: getTranslation('leadership.commercial'), 
+      role: getTranslation('leadership.commercial_desc'),
+      bg: 'bg-purple-500/10',
+      iconColor: 'text-purple-500'
+    },
+    { 
+      icon: FileCheck, 
+      name: getTranslation('leadership.administrative'), 
+      role: getTranslation('leadership.administrative_desc'),
+      bg: 'bg-orange-500/10',
+      iconColor: 'text-orange-500'
+    },
   ];
 
   const values = [
@@ -91,7 +117,7 @@ export default function OrganizationPage() {
           <p className="text-gray-600 text-sm md:text-base mt-2">
             {t.organization?.subtitle || 'Une structure d\'excellence au service de vos risques'}
           </p>
-          <div className="w-16 h-1 bg-[#eab308] mx-auto mt-3"></div>
+          <div className="w-16 h-1 bg-[#ef4444] mx-auto mt-3"></div>
         </motion.div>
 
         {/* Section : Mission & Vision */}
@@ -103,7 +129,7 @@ export default function OrganizationPage() {
         >
           <div className="bg-white rounded-xl p-5 md:p-6 shadow-md hover:shadow-xl transition">
             <div className="flex items-center gap-2 mb-3">
-              <Target className="w-6 h-6 text-[#eab308]" />
+              <Target className="w-6 h-6 text-[#ef4444]" />
               <h2 className="text-lg md:text-xl font-bold">
                 {getTranslation('mission.title')}
               </h2>
@@ -114,7 +140,7 @@ export default function OrganizationPage() {
           </div>
           <div className="bg-white rounded-xl p-5 md:p-6 shadow-md hover:shadow-xl transition">
             <div className="flex items-center gap-2 mb-3">
-              <Shield className="w-6 h-6 text-[#eab308]" />
+              <Shield className="w-6 h-6 text-[#ef4444]" />
               <h2 className="text-lg md:text-xl font-bold">
                 {getTranslation('vision.title')}
               </h2>
@@ -142,7 +168,7 @@ export default function OrganizationPage() {
                 variants={itemVariants}
                 className="bg-white rounded-xl p-4 md:p-5 shadow-md hover:shadow-xl transition text-center"
               >
-                <value.icon className="w-8 h-8 md:w-10 md:h-10 text-[#eab308] mx-auto mb-2" />
+                <value.icon className="w-8 h-8 md:w-10 md:h-10 text-[#ef4444] mx-auto mb-2" />
                 <h3 className="text-sm md:text-base font-bold">
                   {getTranslation(`values.${value.key}`)}
                 </h3>
@@ -154,7 +180,7 @@ export default function OrganizationPage() {
           </div>
         </motion.div>
 
-        {/* Section : Leadership */}
+        {/* ✅ Section : Notre Leadership - NOUVELLE VERSION SANS NOMS */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -162,20 +188,25 @@ export default function OrganizationPage() {
           className="mb-12 md:mb-16"
         >
           <h2 className="text-xl md:text-2xl font-bold text-center mb-6">
-            {getTranslation('leadership.title')}
+            {getTranslation('leadership.title') || 'Notre Leadership'}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {leadership.map((leader, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white rounded-xl p-4 md:p-5 shadow-md hover:shadow-xl transition text-center"
+                className="bg-white rounded-xl p-4 md:p-6 shadow-md hover:shadow-xl transition text-center group"
               >
-                <div className="w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full bg-[#0a1628]/10 mb-3 flex items-center justify-center">
-                  <Users className="w-8 h-8 text-[#0a1628]" />
+                {/* Icône avec fond coloré */}
+                <div className={`w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full ${leader.bg} mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <leader.icon className={`w-8 h-8 md:w-10 md:h-10 ${leader.iconColor}`} />
                 </div>
-                <h3 className="text-sm md:text-base font-bold">{leader.name}</h3>
-                <p className="text-xs text-gray-500">{leader.role}</p>
+                <h3 className="text-sm md:text-base font-bold text-[#0a1628]">
+                  {leader.name}
+                </h3>
+                <p className="text-xs text-gray-500 mt-1">
+                  {leader.role}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -198,7 +229,7 @@ export default function OrganizationPage() {
                 variants={itemVariants}
                 className="bg-white rounded-xl p-4 md:p-5 shadow-md hover:shadow-xl transition text-center"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#0a1628]">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#ef4444]">{stat.value}</div>
                 <div className="text-xs md:text-sm text-gray-500">
                   {getTranslation(`stats.${stat.label}`)}
                 </div>
@@ -212,23 +243,29 @@ export default function OrganizationPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="bg-[#0a1628] text-white rounded-xl p-6 md:p-8"
+          className="bg-[#0a1628] text-white rounded-xl p-8 shadow-xl"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-center mb-4">
+          <h2 className="text-2xl font-bold text-center mb-8">
             {getTranslation('contact.title')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            <div className="flex items-center gap-3 justify-center">
-              <MapPin className="w-5 h-5 text-[#eab308]" />
-              <span className="text-sm">{getTranslation('contact.address')}</span>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Adresse */}
+            <div className="flex flex-col items-center gap-3 text-center">
+              <MapPin className="w-8 h-8 text-[#ef4444]" />
+              <span className="text-sm font-medium">{getTranslation('contact.address')}</span>
             </div>
-            <div className="flex items-center gap-3 justify-center">
-              <Phone className="w-5 h-5 text-[#eab308]" />
-              <span className="text-sm">{getTranslation('contact.phone')}</span>
+            
+            {/* Téléphone */}
+            <div className="flex flex-col items-center gap-3 text-center">
+              <Phone className="w-8 h-8 text-[#ef4444]" />
+              <span className="text-sm font-medium">{getTranslation('contact.phone')}</span>
             </div>
-            <div className="flex items-center gap-3 justify-center">
-              <Mail className="w-5 h-5 text-[#eab308]" />
-              <span className="text-sm">{getTranslation('contact.email')}</span>
+            
+            {/* Email */}
+            <div className="flex flex-col items-center gap-3 text-center">
+              <Mail className="w-8 h-8 text-[#ef4444]" />
+              <span className="text-sm font-medium">{getTranslation('contact.email')}</span>
             </div>
           </div>
         </motion.div>
@@ -238,11 +275,11 @@ export default function OrganizationPage() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-10 md:mt-14 text-center"
+          className="mt-12 text-center"
         >
           <Link
             href={`/${locale}/#contact`}
-            className="inline-block bg-[#0a1628] hover:bg-[#1a2a4a] text-white font-bold px-6 md:px-8 py-3 rounded-lg transition transform hover:scale-105"
+            className="inline-block bg-[#0a1628] hover:bg-[#ef4444] border-2 border-[#ef4444] text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             {t.organization?.cta || 'Contactez-nous'}
           </Link>

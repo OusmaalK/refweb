@@ -6,8 +6,8 @@ import "../styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RFC Assurance - Courtier d'Assurance en Algérie",
-  description: "Consulting en Audit & Prévention des Risques Industriels - Courtage d'assurance agréé par le Ministère des Finances",
+  title: "RFC Assurance - Société de Courtage d'Assurance et de Conseil en Gestion des Risques",
+  description: "Société de Courtage d'Assurance et de Conseil en Gestion des Risques. Audit & Prévention des Risques Industriels - Courtier d'assurance agréé par le Ministère des Finances",
   icons: {
     icon: '/static/logo.png',
   },
@@ -20,8 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" dir="ltr" data-scroll-behavior="smooth">
-
-      <body className={inter.className}>
+      <body 
+        className={inter.className}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
