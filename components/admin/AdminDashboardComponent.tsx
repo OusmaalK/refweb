@@ -1,90 +1,60 @@
 "use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Import pour la redirection
-import ArticlesManager from './ArticlesManager';
-import NewsletterManager from './NewsletterManager';
-import NewsletterEditor from './NewsletterEditor';
-import DashboardHome from './DashboardHome';
+import { useRouter, usePathname } from 'next/navigation';
+import { LogOut } from 'lucide-react';
 
 export default function AdminDashboardComponent() {
-  const [activeTab, setActiveTab] = useState('dashboard');
-  const router = useRouter(); // Initialisation du router
+  const router = useRouter();
+  const pathname = usePathname();
 
-  // Fonction de déconnexion
-  const handleLogout = async () => {
-    try {
-      // Appel à votre API de déconnexion
-      await fetch('/api/auth/logout', { method: 'POST' });
-      
-      // Redirection vers l'accueil après déconnexion
-      router.push('/');
-      router.refresh(); 
-    } catch (error) {
-      console.error("Erreur lors de la déconnexion", error);
+  const getHomePath = () => {
+    if (pathname.startsWith('/admin')) {
+      return '/admin/login';
     }
+    return '/fr/admin/login';
   };
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'dashboard':
-        return <DashboardHome />;
-      case 'articles':
-        return <ArticlesManager />;
-      case 'newsletter':
-        return <NewsletterManager />;
-      case 'newsletter-redaction':
-        return <NewsletterEditor />;
-      default:
-        return <DashboardHome />;
-    }
+  const handleLogout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    router.push(getHomePath());
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar de navigation */}
-      <aside className="w-64 bg-[#0a1628] text-white p-6 pt-24 fixed h-full"> 
-        <h2 className="text-xl font-bold mb-8">RFC Admin</h2>
-        <nav className="space-y-4">
-            <button 
-                onClick={() => setActiveTab('dashboard')} 
-                className={`block w-full text-left transition-colors font-medium ${activeTab === 'dashboard' ? 'text-[#eab308]' : 'hover:text-[#eab308]'}`}
-            >
-                Tableau de bord
-            </button>
-            <button 
-                onClick={() => setActiveTab('articles')} 
-                className={`block w-full text-left transition-colors font-medium ${activeTab === 'articles' ? 'text-[#eab308]' : 'hover:text-[#eab308]'}`}
-            >
-                Articles
-            </button>
-            <button 
-                onClick={() => setActiveTab('newsletter')} 
-                className={`block w-full text-left transition-colors font-medium ${activeTab === 'newsletter' ? 'text-[#eab308]' : 'hover:text-[#eab308]'}`}
-            >
-                Gestion Newsletter
-            </button>
-            <button 
-                onClick={() => setActiveTab('newsletter-redaction')} 
-                className={`block w-full text-left transition-colors font-medium ${activeTab === 'newsletter-redaction' ? 'text-[#eab308]' : 'hover:text-[#eab308]'}`}
-            >
-                Rédiger Newsletter
-            </button>
-            
-            {/* Bouton de déconnexion mis à jour */}
-            <button 
-                onClick={handleLogout}
-                className="block w-full text-left text-red-400 mt-10 hover:text-red-300 transition-colors"
-            >
-                Déconnexion
-            </button>
-        </nav>
-      </aside>
+    <div className="min-h-screen bg-[#0a1628] text-white p-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold">Tableau de Bord</h1>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition"
+          >
+            <LogOut className="w-4 h-4" />
+            Déconnexion
+          </button>
+        </div>
 
-      {/* Zone de contenu principal */}
-      <main className="flex-1 p-8 pt-24 ml-64"> 
-        {renderContent()}
-      </main>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white/10 p-6 rounded-xl">
+            <h3 className="text-lg font-semibold">Articles</h3>
+            <p className="text-3xl font-bold mt-2">0</p>
+          </div>
+          <div className="bg-white/10 p-6 rounded-xl">
+            <h3 className="text-lg font-semibold">Abonnés</h3>
+            <p className="text-3xl font-bold mt-2">0</p>
+          </div>
+          <div className="bg-white/10 p-6 rounded-xl">
+            <h3 className="text-lg font-semibold">Messages</h3>
+            <p className="text-3xl font-bold mt-2">0</p>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white/5 p-6 rounded-xl">
+          <h2 className="text-xl font-bold mb-4">Bienvenue dans l'espace admin</h2>
+          <p className="text-gray-400">
+            Vous êtes connecté en tant qu'administrateur.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

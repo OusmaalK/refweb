@@ -5,13 +5,20 @@ import type { NextRequest } from 'next/server';
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Protection des routes admin (toutes les langues)
+  // ✅ Protection des routes admin (statiques)
+  if (pathname.startsWith('/admin/') && !pathname.startsWith('/admin/login')) {
+    const token = request.cookies.get('admin-token');
+
+    if (!token) {
+      return NextResponse.redirect(new URL('/admin/login', request.url));
+    }
+  }
+
+  // ✅ Protection des routes admin dynamiques (fr/en/ar)
   if (pathname.match(/^\/(fr|en|ar)\/admin\/(?!login).*$/)) {
     const token = request.cookies.get('admin-token');
 
-    // Si pas de token, rediriger vers la page de login
     if (!token) {
-      // Déterminer la langue depuis l'URL
       const locale = pathname.split('/')[1] || 'fr';
       return NextResponse.redirect(new URL(`/${locale}/admin/login`, request.url));
     }
@@ -20,7 +27,6 @@ export function proxy(request: NextRequest) {
   return NextResponse.next();
 }
 
-// On définit quelles routes sont surveillées
 export const config = {
-  matcher: ['/(fr|en|ar)/admin/:path*'],
+  matcher: ['/admin/:path*', '/(fr|en|ar)/admin/:path*'],
 };
