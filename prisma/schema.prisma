@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")  // ← Utilise l'URL de Turso ou file:./dev.db
+  url      = "file:./dev.db"   // ← Utiliser l'URL en dur
 }
 
 model Article {

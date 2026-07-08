@@ -1,103 +1,243 @@
 "use client";
+
 import { useState, useEffect } from 'react';
+import { Plus, Edit, Trash2 } from 'lucide-react';
+
+interface Article {
+  id: number;
+  slug: string;
+  title: string;
+  subtitle: string;
+  content: string;
+  imagePath: string;
+  author: string;
+  category: string;
+  lang: string;
+  createdAt: string;
+}
 
 export default function ArticlesManager() {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState({
-    title: '', slug: '', subtitle: '', content: '', imagePath: '', author: '', category: '', lang: 'fr'
+    title: '',
+    subtitle: '',
+    content: '',
+    category: '',
+    lang: 'fr',
   });
 
-  useEffect(() => { fetchArticles(); }, []);
+  useEffect(() => {
+    fetchArticles();
+  }, []);
 
   const fetchArticles = async () => {
     try {
+      setLoading(true);
+      setError(null);
+      
+      console.log('📝 ArticlesManager: Fetching articles...');
       const res = await fetch('/api/admin/articles');
+      
+      console.log(`📝 Response status: ${res.status}`);
+      
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        console.error('❌ Erreur API:', errorData);
+        setError(errorData.error || `Erreur ${res.status}`);
+        setArticles([]);
+        return;
+      }
+      
       const data = await res.json();
-      setArticles(data);
-    } catch (error) {
-      console.error("Erreur chargement:", error);
+      console.log(`✅ ${data.length} articles chargés`);
+      setArticles(Array.isArray(data) ? data : []);
+      
+    } catch (err) {
+      console.error('❌ Erreur fetchArticles:', err);
+      setError(err instanceof Error ? err.message : 'Erreur inconnue');
+      setArticles([]);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await fetch('/api/admin/articles', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-    // Réinitialiser le formulaire
-    setFormData({ title: '', slug: '', subtitle: '', content: '', imagePath: '', author: '', category: '', lang: 'fr' });
-    fetchArticles();
+  const handleCreate = async () => {
+    try {
+      const res = await fetch('/api/admin/articles', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          slug: formData.title.toLowerCase().replace(/\s/g, '-'),
+          author: 'Admin',
+          imagePath: '/images/default.jpg',
+        }),
+      });
+      
+      if (res.ok) {
+        await fetchArticles();
+        setIsCreating(false);
+        setFormData({ title: '', subtitle: '', content: '', category: '', lang: 'fr' });
+      } else {
+        const errorData = await res.json();
+        setError(errorData.error || 'Erreur création');
+      }
+    } catch (err) {
+      console.error('Erreur création:', err);
+      setError('Erreur lors de la création');
+    }
   };
 
-  const deleteArticle = async (id: number) => {
-    if (!confirm("Êtes-vous sûr de vouloir supprimer cet article ?")) return;
-    
-    await fetch(`/api/admin/articles?id=${id}`, { method: 'DELETE' });
-    fetchArticles();
+  const handleDelete = async (id: number) => {
+    if (!confirm('Supprimer cet article ?')) return;
+    try {
+      const res = await fetch(`/api/admin/articles?id=${id}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        await fetchArticles();
+      } else {
+        const errorData = await res.json();
+        setError(errorData.error || 'Erreur suppression');
+      }
+    } catch (err) {
+      console.error('Erreur suppression:', err);
+      setError('Erreur lors de la suppression');
+    }
   };
+
+  if (loading) {
+    return (
+      <div className="p-6 text-center text-gray-500" suppressHydrationWarning>
+        Chargement des articles...
+      </div>
+    );
+  }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 p-6">
-      {/* Formulaire de création */}
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 space-y-6">
-        <h3 className="text-2xl font-bold text-[#0a1628] border-b pb-4">Ajouter un article</h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-gray-600">Titre</label>
-            <input className="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-[#eab308] outline-none transition" onChange={e => setFormData({...formData, title: e.target.value})} value={formData.title} required />
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-gray-600">Slug (URL)</label>
-            <input className="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-[#eab308] outline-none transition" onChange={e => setFormData({...formData, slug: e.target.value})} value={formData.slug} required />
-          </div>
-          <div className="space-y-2 col-span-full">
-            <label className="text-sm font-semibold text-gray-600">Sous-titre</label>
-            <input className="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-[#eab308] outline-none transition" onChange={e => setFormData({...formData, subtitle: e.target.value})} value={formData.subtitle} />
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-gray-600">Auteur</label>
-            <input className="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-[#eab308] outline-none transition" onChange={e => setFormData({...formData, author: e.target.value})} value={formData.author} />
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-gray-600">Catégorie</label>
-            <input className="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-[#eab308] outline-none transition" onChange={e => setFormData({...formData, category: e.target.value})} value={formData.category} />
-          </div>
-          <div className="space-y-2 col-span-full">
-            <label className="text-sm font-semibold text-gray-600">Contenu</label>
-            <textarea className="w-full border-gray-300 border rounded-lg p-3 h-40 focus:ring-2 focus:ring-[#eab308] outline-none transition" onChange={e => setFormData({...formData, content: e.target.value})} value={formData.content} required />
-          </div>
-        </div>
-        
-        <button type="submit" className="w-full bg-[#0a1628] text-white py-3 rounded-lg font-bold hover:bg-[#1a2d4a] transition-all transform hover:scale-[1.01]">
-          Publier l'article
+    <div className="p-6" suppressHydrationWarning>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold text-[#0a1628]">Gestion des Articles</h2>
+        <button
+          onClick={() => setIsCreating(!isCreating)}
+          className="flex items-center gap-2 bg-[#eab308] text-white px-4 py-2 rounded-lg hover:bg-[#ca8a04] transition"
+        >
+          <Plus className="w-4 h-4" />
+          Nouvel article
         </button>
-      </form>
+      </div>
 
-      {/* Liste des articles avec bouton de suppression */}
-      <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-        <h3 className="text-xl font-bold text-[#0a1628] mb-6">Articles publiés</h3>
-        <div className="space-y-3">
-          {articles.map((art: any) => (
-            <div key={art.id} className="p-4 border border-gray-200 rounded-lg flex justify-between items-center hover:border-[#eab308] transition">
-              <div>
-                <p className="font-bold text-gray-800">{art.title}</p>
-                <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">{art.category}</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">{new Date(art.createdAt).toLocaleDateString('fr-FR')}</span>
-                <button 
-                  onClick={() => deleteArticle(art.id)}
-                  className="text-red-500 hover:text-red-700 text-sm font-bold transition"
-                >
-                  Supprimer
-                </button>
-              </div>
-            </div>
-          ))}
+      {error && (
+        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+          <p className="text-red-600 font-medium">❌ Erreur: {error}</p>
+          <button
+            onClick={fetchArticles}
+            className="mt-2 text-sm text-blue-600 hover:underline"
+          >
+            Réessayer
+          </button>
         </div>
+      )}
+
+      {isCreating && (
+        <div className="bg-white p-6 rounded-xl shadow border border-gray-200 mb-6">
+          <h3 className="font-bold mb-4">Créer un article</h3>
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Titre"
+              className="w-full p-2 border rounded-lg"
+              value={formData.title}
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            />
+            <input
+              type="text"
+              placeholder="Sous-titre"
+              className="w-full p-2 border rounded-lg"
+              value={formData.subtitle}
+              onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
+            />
+            <textarea
+              placeholder="Contenu"
+              rows={4}
+              className="w-full p-2 border rounded-lg"
+              value={formData.content}
+              onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+            />
+            <div className="flex gap-4">
+              <input
+                type="text"
+                placeholder="Catégorie"
+                className="flex-1 p-2 border rounded-lg"
+                value={formData.category}
+                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+              />
+              <select
+                className="p-2 border rounded-lg"
+                value={formData.lang}
+                onChange={(e) => setFormData({ ...formData, lang: e.target.value })}
+              >
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+              </select>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={handleCreate}
+                className="px-4 py-2 bg-[#eab308] text-white rounded-lg hover:bg-[#ca8a04]"
+              >
+                Publier
+              </button>
+              <button
+                onClick={() => setIsCreating(false)}
+                className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+              >
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="bg-white rounded-xl shadow border border-gray-200 p-6">
+        <h3 className="text-xl font-bold text-[#0a1628] mb-6">Articles publiés</h3>
+        {articles.length === 0 ? (
+          <p className="text-gray-400 text-center py-8">
+            {error ? '⚠️ ' : '📝 '} Aucun article publié
+          </p>
+        ) : (
+          <div className="space-y-3">
+            {articles.map((art: Article) => (
+              <div
+                key={art.id}
+                className="p-4 border border-gray-200 rounded-lg flex justify-between items-center hover:border-[#eab308] transition"
+              >
+                <div>
+                  <p className="font-bold text-gray-800">{art.title}</p>
+                  <p className="text-sm text-gray-500">{art.subtitle}</p>
+                  <span className="text-xs text-gray-400">
+                    {art.category} • {new Date(art.createdAt).toLocaleDateString()}
+                  </span>
+                </div>
+                <div className="flex gap-2">
+                  <button className="p-2 text-blue-500 hover:bg-blue-50 rounded-lg transition">
+                    <Edit className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(art.id)}
+                    className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

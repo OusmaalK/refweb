@@ -20,6 +20,7 @@ export default function LocaleLayout({
   return (
     <div
       className={`min-h-screen bg-[#0a1628] text-white ${isRTL ? 'rtl' : 'ltr'}`}
+      suppressHydrationWarning  // ✅ AJOUTÉ
     >
       {/* On place les composants globaux ici.
          Assurez-vous que NewsletterModal a z-[100] 

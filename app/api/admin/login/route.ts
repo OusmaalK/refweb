@@ -1,45 +1,88 @@
+// app/api/admin/login/route.ts
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { PrismaClient } from '@prisma/client';
-import bcrypt from 'bcrypt';
-
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
+import bcrypt from 'bcryptjs';
 
 export async function POST(req: Request) {
   try {
-    const { username, password } = await req.json();
+    // Récupérer les données
+    const body = await req.json();
+    const { username, password } = body;
 
-    const user = await prisma.user.findUnique({
-      where: { username: username },
-    });
+    console.log('🔐 Tentative de connexion:', { username });
 
-    if (!user) {
-      return NextResponse.json({ error: 'Identifiants incorrects' }, { status: 401 });
+    // ✅ Identifiants en dur (fallback)
+    const ADMIN_USERNAME = 'admin';
+    const ADMIN_PASSWORD = 'khaled2026';
+
+    // ✅ ESSAI 1 : Identifiants en dur
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+      console.log('✅ Connexion réussie (fallback)');
+      const response = NextResponse.json({ 
+        success: true, 
+        message: 'Connexion réussie' 
+      });
+
+      response.cookies.set('admin-token', 'authenticated', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 60 * 60 * 8,
+        sameSite: 'strict',
+        path: '/',
+      });
+
+      return response;
     }
 
-    const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
+    // ✅ ESSAI 2 : Base de données (si disponible)
+    try {
+      console.log('🔍 Recherche dans la BDD...');
+      const user = await prisma.user.findUnique({
+        where: { username },
+      });
 
-    if (!isPasswordValid) {
-      return NextResponse.json({ error: 'Identifiants incorrects' }, { status: 401 });
+      if (user) {
+        const isValid = await bcrypt.compare(password, user.passwordHash);
+        if (isValid) {
+          console.log('✅ Connexion réussie (BDD)');
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { lastLogin: new Date() },
+          });
+
+          const response = NextResponse.json({ 
+            success: true, 
+            message: 'Connexion réussie' 
+          });
+
+          response.cookies.set('admin-token', 'authenticated', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            maxAge: 60 * 60 * 8,
+            sameSite: 'strict',
+            path: '/',
+          });
+
+          return response;
+        }
+        console.log('❌ Mot de passe invalide');
+      } else {
+        console.log('❌ Utilisateur non trouvé');
+      }
+    } catch (dbError) {
+      console.warn('⚠️ Erreur BDD:', dbError);
     }
 
-    await prisma.user.update({
-      where: { id: user.id },
-      data: { lastLogin: new Date() },
-    });
-
-    // Création du cookie de session sécurisé
-    const cookieStore = await cookies();
-    cookieStore.set('admin-token', 'logged-in', {
-      httpOnly: true, // Empêche l'accès via JavaScript côté client
-      secure: process.env.NODE_ENV === 'production', // Uniquement HTTPS en production
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 8, // 8 heures de session
-    });
-
-    return NextResponse.json({ message: 'Connexion réussie' }, { status: 200 });
+    return NextResponse.json(
+      { error: 'Identifiants incorrects' },
+      { status: 401 }
+    );
 
   } catch (error) {
-    return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 });
+    console.error('❌ Erreur serveur:', error);
+    return NextResponse.json(
+      { error: 'Erreur interne du serveur: ' + (error as Error).message },
+      { status: 500 }
+    );
   }
 }

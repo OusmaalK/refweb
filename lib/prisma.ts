@@ -4,7 +4,6 @@ import { PrismaLibSql } from '@prisma/adapter-libsql';
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
-// ✅ Utiliser une fonction pour créer le client
 function createPrismaClient() {
   if (process.env.DATABASE_URL?.includes('turso')) {
     const adapter = new PrismaLibSql({
@@ -13,12 +12,11 @@ function createPrismaClient() {
     });
     return new PrismaClient({ adapter });
   }
-  // SQLite local
   return new PrismaClient();
 }
 
-// ✅ Exporter directement le client
 export const prisma = globalForPrisma.prisma ?? createPrismaClient();
+export const db = prisma;  // ← Ajouter alias
 
 if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma;
