@@ -29,27 +29,31 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // 1. Envoi du message de contact (Logique existante)
-    console.log('Message envoyé:', formData);
+    try {
+      // Envoi des données à l'API que nous venons de créer
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // 2. Si inscrit à la newsletter, on appelle l'API d'abonnement
-    if (formData.subscribe) {
-      try {
-        await fetch('/api/newsletter/subscribe', {
-          method: 'POST',
-          body: JSON.stringify({ email: formData.email }),
-          headers: { 'Content-Type': 'application/json' }
-        });
-      } catch (err) {
-        console.error("Erreur inscription newsletter");
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi');
       }
-    }
 
-    setFormStatus('success');
-    setTimeout(() => {
-      setFormStatus('idle');
-      setFormData({ name: '', email: '', phone: '', message: '', subscribe: false });
-    }, 3000);
+      // Si tout est OK, on affiche le succès
+      setFormStatus('success');
+      setTimeout(() => {
+        setFormStatus('idle');
+        setFormData({ name: '', email: '', phone: '', message: '', subscribe: false });
+      }, 3000);
+
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert("Une erreur s'est produite. Veuillez réessayer.");
+    }
   };
 
   return (

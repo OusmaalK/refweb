@@ -530,7 +530,7 @@ const translations = {
     faq_1_q: 'What are your opening hours?',
     faq_1_a: 'We are open Sunday to Thursday from 8:30 AM to 5:30 PM.',
     faq_2_q: 'How can I get a quote?',
-    faq_2_a: 'You can fill out the contact form or call us at +213 775 22 18 69.',
+    faq_2_a: 'You can fill out the contact form or call us at +213 7 70 41 75 01.',
     faq_3_q: 'Which sectors do you cover?',
     faq_3_a: 'We cover industry, oil & gas, construction and services.',
     faq_4_q: 'Do you offer audit services?',
@@ -538,7 +538,7 @@ const translations = {
     faq_5_q: 'Can I cancel my contract at any time?',
     faq_5_a: 'Yes, subject to the conditions provided in your contract.',
     faq_6_q: 'How can I contact technical support?',
-    faq_6_a: 'By email at support@rfc-assurance.dz or by WhatsApp at +213 775 22 18 69.',
+    faq_6_a: 'By email at support@rfc-assurance.dz or by WhatsApp at +213 7 70 41 75 01.',
   },
   blog: {
     title: 'News & Expertise',

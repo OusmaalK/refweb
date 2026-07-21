@@ -35,9 +35,9 @@ export default function Footer() {
   ];
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'contact@rfc-assurance.dz' },
-    { icon: Phone, label: 'Téléphone', value: '+213 775 22 18 69' },
-    { icon: MessageCircle, label: 'WhatsApp', value: '+213 775 22 18 69' },
+    { icon: Mail, label: 'Email', value: 'contact@rfc.dz' },
+    { icon: Phone, label: 'Mobile ', value: '+213 7 70 41 75 01' },
+    { icon: MessageCircle, label: 'Fixe ', value: '+213 23 35 09 49' },
     { icon: MapPin, label: 'Adresse', value: '21, Rue Claud Debussy, Alger, Algérie' },
   ];
 

@@ -529,7 +529,7 @@ const translations = {
     faq_1_q: 'Quels sont les horaires d\'ouverture ?',
     faq_1_a: 'Nous sommes ouverts du dimanche au jeudi de 8h30 à 17h30.',
     faq_2_q: 'Comment obtenir un devis ?',
-    faq_2_a: 'Vous pouvez remplir le formulaire de contact ou nous appeler au +213 775 22 18 69.',
+    faq_2_a: 'Vous pouvez remplir le formulaire de contact ou nous appeler au + 213 7 70 41 75 01.',
     faq_3_q: 'Quels secteurs couvrez-vous ?',
     faq_3_a: 'Nous couvrons l\'industrie, le pétrole & gaz, la construction et les services.',
     faq_4_q: 'Proposez-vous des services d\'audit ?',
@@ -537,7 +537,7 @@ const translations = {
     faq_5_q: 'Puis-je résilier mon contrat à tout moment ?',
     faq_5_a: 'Oui, sous réserve des conditions prévues dans votre contrat.',
     faq_6_q: 'Comment contacter le support technique ?',
-    faq_6_a: 'Par email à support@rfc-assurance.dz ou par WhatsApp au +213 775 22 18 69.',
+    faq_6_a: 'Par email à support@rfc-assurance.dz ou par WhatsApp au +213 7 70 41 75 01.',
   },
   blog: {
     title: 'Actualités & Expertise',
