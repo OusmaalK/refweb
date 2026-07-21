@@ -77,7 +77,7 @@ export default function AdminLoginComponent() {
             <input 
               type="text" 
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#eab308] outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#eab308] outline-none text-black placeholder-gray-400"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="admin"
@@ -89,7 +89,7 @@ export default function AdminLoginComponent() {
             <input 
               type="password" 
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#eab308] outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#eab308] outline-none text-black placeholder-gray-400"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
