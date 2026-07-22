@@ -113,6 +113,7 @@ export default function ArticlesManager() {
 
   // --- ÉDITION (MISE À JOUR) ---
   const startEdit = (article: Article) => {
+    console.log('✏️ Modification de l\'article:', article.title); // Pour le débogage
     setEditingArticle(article);
     setFormData({
       title: article.title,
@@ -246,7 +247,7 @@ export default function ArticlesManager() {
         </div>
       )}
 
-      {/* Liste des articles */}
+      {/* Liste des articles - AVEC LES CLÉS UNIQUES AJOUTÉES */}
       <div className="bg-white rounded-xl shadow border border-gray-200 p-6">
         <h3 className="text-xl font-bold text-[#0a1628] mb-6">Articles publiés</h3>
         {articles.length === 0 ? (
@@ -261,10 +262,21 @@ export default function ArticlesManager() {
                   <span className="text-xs text-gray-400">{art.category} • {new Date(art.createdAt).toLocaleDateString()}</span>
                 </div>
                 <div className="flex gap-2">
-                  <button onClick={() => startEdit(art)} className="p-2 text-blue-500 hover:bg-blue-50 rounded-lg transition">
+                  {/* ✅ SOLUTION: Ajout de la clé unique pour forcer React à reconnaître le bouton */}
+                  <button 
+                    key={`edit-${art.id}`} 
+                    onClick={() => startEdit(art)} 
+                    className="p-2 text-blue-500 hover:bg-blue-50 rounded-lg transition"
+                  >
                     <Edit className="w-4 h-4" />
                   </button>
-                  <button onClick={() => handleDelete(art.id)} className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition">
+                  
+                  {/* ✅ Même chose pour la suppression */}
+                  <button 
+                    key={`delete-${art.id}`} 
+                    onClick={() => handleDelete(art.id)} 
+                    className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition"
+                  >
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
