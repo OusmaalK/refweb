@@ -111,6 +111,56 @@ export async function POST(req: Request) {
   }
 }
 
+export async function PUT(req: Request) {
+  try {
+    if (!db) {
+      return NextResponse.json({ error: 'Base de données non disponible' }, { status: 500 });
+    }
+
+    const formData = await req.formData();
+    const id = parseInt(formData.get('id') as string);
+    const title = formData.get('title') as string;
+    const subtitle = formData.get('subtitle') as string;
+    const content = formData.get('content') as string;
+    const category = formData.get('category') as string;
+    const lang = formData.get('lang') as string;
+    const imageFile = formData.get('image') as File | null;
+
+    let imagePath = undefined; // On ne change l'image que si une nouvelle est fournie
+
+    if (imageFile && imageFile.size > 0) {
+      // Logique d'upload d'image (identique à celle du POST)
+      const bytes = await imageFile.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+      const timestamp = Date.now();
+      const ext = path.extname(imageFile.name);
+      const filename = `${timestamp}${ext}`;
+      const publicDir = path.join(process.cwd(), 'public', 'images', 'blog');
+      if (!existsSync(publicDir)) await mkdir(publicDir, { recursive: true });
+      const filePath = path.join(publicDir, filename);
+      await writeFile(filePath, buffer);
+      imagePath = `/images/blog/${filename}`;
+    }
+
+    const updatedArticle = await db.article.update({
+      where: { id },
+      data: {
+        title,
+        subtitle,
+        content,
+        category,
+        lang,
+        ...(imagePath && { imagePath }), // Mise à jour conditionnelle de l'image
+      },
+    });
+
+    return NextResponse.json(updatedArticle);
+  } catch (error) {
+    console.error('❌ Erreur mise à jour:', error);
+    return NextResponse.json({ error: 'Erreur mise à jour' }, { status: 500 });
+  }
+}
+
 export async function DELETE(req: Request) {
   try {
     if (!db) {
