@@ -42,13 +42,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <span>•</span>
           <span>{new Date(post.createdAt).toLocaleDateString('fr-FR')}</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-[#0a1628] leading-tight">{post.title}</h1>
-        <p className="text-xl text-gray-600 mt-6 italic font-light">{post.subtitle}</p>
-        <div className="mt-4 text-sm text-gray-500">Par {post.author}</div>
+        {/* 🔥 CORRECTION ICI : Passage du titre en BLANC */}
+        <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">{post.title}</h1>
+        
+        {/* 🔥 CORRECTION ICI : Sous-titre en GRIS TRÈS CLAIR */}
+        <p className="text-xl text-gray-300 mt-6 italic font-light">{post.subtitle}</p>
+        
+        {/* 🔥 CORRECTION ICI : Auteur en GRIS CLAIR */}
+        <div className="mt-4 text-sm text-gray-400">Par {post.author}</div>
       </header>
       
       {/* Contenu principal */}
-      <div className="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      {/* 🔥 CORRECTION ICI : Le texte du contenu en BLANC avec un interlignage aéré */}
+      <div className="prose prose-lg max-w-none text-gray-200 leading-relaxed">
         <div style={{ whiteSpace: 'pre-line' }}>{post.content}</div>
       </div>
     </article>
