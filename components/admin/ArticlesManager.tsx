@@ -144,26 +144,26 @@ export default function ArticlesManager() {
 
       {isCreating && (
         <div className="bg-white p-6 rounded-xl shadow border border-gray-200 mb-6">
-          <h3 className="font-bold mb-4">Créer un article</h3>
+          <h3 className="font-bold text-gray-800 mb-4">Créer un article</h3>
           <div className="space-y-4">
             <input
               type="text"
               placeholder="Titre"
-              className="w-full p-2 border rounded-lg"
+              className="w-full p-2 border rounded-lg text-black placeholder-gray-400"
               value={formData.title}
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
             />
             <input
               type="text"
               placeholder="Sous-titre"
-              className="w-full p-2 border rounded-lg"
+              className="w-full p-2 border rounded-lg text-black placeholder-gray-400"
               value={formData.subtitle}
               onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
             />
             <textarea
               placeholder="Contenu"
               rows={4}
-              className="w-full p-2 border rounded-lg"
+              className="w-full p-2 border rounded-lg text-black placeholder-gray-400"
               value={formData.content}
               onChange={(e) => setFormData({ ...formData, content: e.target.value })}
             />
@@ -171,12 +171,12 @@ export default function ArticlesManager() {
               <input
                 type="text"
                 placeholder="Catégorie"
-                className="flex-1 p-2 border rounded-lg"
+                className="flex-1 p-2 border rounded-lg text-black placeholder-gray-400"
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
               />
               <select
-                className="p-2 border rounded-lg"
+                className="p-2 border rounded-lg text-black"
                 value={formData.lang}
                 onChange={(e) => setFormData({ ...formData, lang: e.target.value })}
               >
@@ -194,7 +194,7 @@ export default function ArticlesManager() {
               </button>
               <button
                 onClick={() => setIsCreating(false)}
-                className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-700"
               >
                 Annuler
               </button>
