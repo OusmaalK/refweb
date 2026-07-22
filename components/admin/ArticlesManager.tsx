@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { Plus, Edit, Trash2 } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Plus, Edit, Trash2, Image as ImageIcon } from 'lucide-react';
 
 interface Article {
   id: number;
@@ -21,6 +21,10 @@ export default function ArticlesManager() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isCreating, setIsCreating] = useState(false);
+  
+  // Ajout d'une variable pour stocker le fichier image
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
   const [formData, setFormData] = useState({
     title: '',
     subtitle: '',
@@ -66,20 +70,29 @@ export default function ArticlesManager() {
 
   const handleCreate = async () => {
     try {
+      // Création de l'objet FormData pour envoyer le texte ET l'image
+      const formDataToSend = new FormData();
+      formDataToSend.append('title', formData.title);
+      formDataToSend.append('subtitle', formData.subtitle);
+      formDataToSend.append('content', formData.content);
+      formDataToSend.append('category', formData.category);
+      formDataToSend.append('lang', formData.lang);
+      formDataToSend.append('author', 'Admin');
+      
+      // Si un fichier image a été sélectionné, on l'ajoute au FormData
+      if (selectedFile) {
+        formDataToSend.append('image', selectedFile);
+      }
+
       const res = await fetch('/api/admin/articles', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          slug: formData.title.toLowerCase().replace(/\s/g, '-'),
-          author: 'Admin',
-          imagePath: '/images/default.jpg',
-        }),
+        body: formDataToSend, // PAS de 'Content-Type': 'application/json' ici !
       });
       
       if (res.ok) {
         await fetchArticles();
         setIsCreating(false);
+        setSelectedFile(null); // Réinitialisation du fichier
         setFormData({ title: '', subtitle: '', content: '', category: '', lang: 'fr' });
       } else {
         const errorData = await res.json();
@@ -167,6 +180,33 @@ export default function ArticlesManager() {
               value={formData.content}
               onChange={(e) => setFormData({ ...formData, content: e.target.value })}
             />
+            
+            {/* NOUVEAU CHAMP : Téléchargement de l'image */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Image de l'article
+              </label>
+              <div className="flex items-center gap-4">
+                <input 
+                  type="file" 
+                  accept="image/*"
+                  className="w-full p-2 border rounded-lg text-black file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-[#eab308] file:text-white hover:file:bg-[#ca8a04]"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) setSelectedFile(file);
+                  }}
+                />
+                {selectedFile && (
+                  <span className="text-sm text-green-600 font-medium">
+                    ✓ {selectedFile.name}
+                  </span>
+                )}
+              </div>
+              <p className="text-xs text-gray-400 mt-1">
+                Sélectionnez une image depuis votre ordinateur.
+              </p>
+            </div>
+
             <div className="flex gap-4">
               <input
                 type="text"
