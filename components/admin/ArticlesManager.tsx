@@ -114,6 +114,12 @@ export default function ArticlesManager() {
   // --- ÉDITION (MISE À JOUR) ---
   const startEdit = (article: Article) => {
     console.log('✏️ Modification de l\'article:', article.title); // Pour le débogage
+    
+    // 🔥 ÉTAPE CRUCIALE : Forcer la fermeture puis la réouverture
+    setIsEditing(false); 
+    setEditingArticle(null);
+
+    // Ensuite on prépare les nouvelles données
     setEditingArticle(article);
     setFormData({
       title: article.title,
@@ -123,8 +129,10 @@ export default function ArticlesManager() {
       lang: article.lang,
     });
     setEditFile(null);
+    
+    // Et on ré-ouvre le formulaire
     setIsEditing(true);
-    setIsCreating(false); // Fermer la création si ouverte
+    setIsCreating(false);
   };
 
   const cancelEdit = () => {
