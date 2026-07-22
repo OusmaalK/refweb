@@ -1,5 +1,6 @@
 // app/[locale]/blog/page.tsx
 import { prisma } from '@/lib/prisma';
+export const revalidate = 0; // Force le rechargement des données à chaque visite
 import Link from 'next/link';
 import Image from 'next/image';
 
