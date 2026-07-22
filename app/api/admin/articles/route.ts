@@ -117,8 +117,15 @@ export async function PUT(req: Request) {
       return NextResponse.json({ error: 'Base de données non disponible' }, { status: 500 });
     }
 
+    // ✅ CORRECTION : On récupère l'ID depuis l'URL (comme pour le DELETE)
+    const { searchParams } = new URL(req.url);
+    const id = parseInt(searchParams.get('id') || '0');
+
+    if (!id) {
+      return NextResponse.json({ error: 'ID requis' }, { status: 400 });
+    }
+
     const formData = await req.formData();
-    const id = parseInt(formData.get('id') as string);
     const title = formData.get('title') as string;
     const subtitle = formData.get('subtitle') as string;
     const content = formData.get('content') as string;
@@ -135,7 +142,6 @@ export async function PUT(req: Request) {
 
     // ✅ 2. Si une nouvelle image a été uploadée, on la sauvegarde et on met à jour le chemin
     if (imageFile && imageFile.size > 0) {
-      // Logique d'upload d'image (identique à celle du POST)
       const bytes = await imageFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
       const timestamp = Date.now();
@@ -145,10 +151,10 @@ export async function PUT(req: Request) {
       if (!existsSync(publicDir)) await mkdir(publicDir, { recursive: true });
       const filePath = path.join(publicDir, filename);
       await writeFile(filePath, buffer);
-      imagePath = `/images/blog/${filename}`; // On met à jour le chemin avec la nouvelle image
+      imagePath = `/images/blog/${filename}`;
     }
 
-    // ✅ 3. On met à jour l'article dans la base de données avec le nouveau chemin d'image
+    // ✅ 3. On met à jour l'article dans la base de données
     const updatedArticle = await db.article.update({
       where: { id },
       data: {
@@ -157,7 +163,7 @@ export async function PUT(req: Request) {
         content,
         category,
         lang,
-        imagePath, // C'est ici que l'image est mise à jour !
+        imagePath,
       },
     });
 

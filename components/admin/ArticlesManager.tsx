@@ -155,8 +155,9 @@ export default function ArticlesManager() {
       formDataToSend.append('id', editingArticle.id.toString());
       if (editFile) formDataToSend.append('image', editFile);
 
-      const res = await fetch('/api/admin/articles', {
-        method: 'PUT', // Utilisation de PUT pour la mise à jour
+
+      const res = await fetch(`/api/admin/articles?id=${editingArticle.id}`, {
+        method: 'PUT',
         body: formDataToSend,
       });
       
