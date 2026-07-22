@@ -152,10 +152,10 @@ export default function ArticlesManager() {
       formDataToSend.append('category', formData.category);
       formDataToSend.append('lang', formData.lang);
       formDataToSend.append('author', 'Admin');
-      formDataToSend.append('id', editingArticle.id.toString());
+      // ❌ LIGNE SUPPRIMÉE : formDataToSend.append('id', editingArticle.id.toString());
       if (editFile) formDataToSend.append('image', editFile);
 
-
+      // ✅ L'ID est déjà dans l'URL
       const res = await fetch(`/api/admin/articles?id=${editingArticle.id}`, {
         method: 'PUT',
         body: formDataToSend,
