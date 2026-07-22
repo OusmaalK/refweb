@@ -126,8 +126,14 @@ export async function PUT(req: Request) {
     const lang = formData.get('lang') as string;
     const imageFile = formData.get('image') as File | null;
 
-    let imagePath = undefined; // On ne change l'image que si une nouvelle est fournie
+    // ✅ 1. On récupère d'abord l'article existant pour connaître son ancienne image
+    const existingArticle = await db.article.findUnique({
+      where: { id }
+    });
 
+    let imagePath = existingArticle?.imagePath; // On garde l'ancienne image par défaut
+
+    // ✅ 2. Si une nouvelle image a été uploadée, on la sauvegarde et on met à jour le chemin
     if (imageFile && imageFile.size > 0) {
       // Logique d'upload d'image (identique à celle du POST)
       const bytes = await imageFile.arrayBuffer();
@@ -139,9 +145,10 @@ export async function PUT(req: Request) {
       if (!existsSync(publicDir)) await mkdir(publicDir, { recursive: true });
       const filePath = path.join(publicDir, filename);
       await writeFile(filePath, buffer);
-      imagePath = `/images/blog/${filename}`;
+      imagePath = `/images/blog/${filename}`; // On met à jour le chemin avec la nouvelle image
     }
 
+    // ✅ 3. On met à jour l'article dans la base de données avec le nouveau chemin d'image
     const updatedArticle = await db.article.update({
       where: { id },
       data: {
@@ -150,7 +157,7 @@ export async function PUT(req: Request) {
         content,
         category,
         lang,
-        ...(imagePath && { imagePath }), // Mise à jour conditionnelle de l'image
+        imagePath, // C'est ici que l'image est mise à jour !
       },
     });
 
