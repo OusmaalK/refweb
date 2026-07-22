@@ -29,7 +29,7 @@ export default function BlogCard({ slug, category, title, excerpt, date, image }
       </div>
 
       {/* Contenu de la carte */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col grow">
         {/* Catégorie */}
         <div className="mb-3">
           <span className="inline-block bg-[#0a1628]/5 text-[#0a1628] text-[10px] md:text-xs font-bold uppercase tracking-widest px-2 py-1 rounded">
@@ -43,7 +43,7 @@ export default function BlogCard({ slug, category, title, excerpt, date, image }
         </h3>
 
         {/* Extrait */}
-        <p className="text-gray-600 text-sm md:text-base mb-6 flex-grow">
+        <p className="text-gray-600 text-sm md:text-base mb-6 grow">
           {excerpt}
         </p>
 
