@@ -11,7 +11,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Sujet et contenu requis' }, { status: 400 });
     }
 
-    // 1. Récupérer tous les emails des abonnés depuis la base de données
+    // 1. Récupérer tous les emails des abonnés
     const subscribers = await prisma.subscriber.findMany({
       select: { email: true }
     });
@@ -22,28 +22,57 @@ export async function POST(req: Request) {
 
     const emails = subscribers.map(sub => sub.email);
 
-    // 2. Définition du template HTML enveloppant votre contenu
+    // 2. Template HTML enrichi avec logo, styles, et mise en page professionnelle
     const htmlTemplate = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px;">
-        <div style="text-align: center; margin-bottom: 20px;">
-          <h1 style="color: #0a1628;">RFC Assurance</h1>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RFC Assurance Newsletter</title>
+        <style>
+          /* Styles de base pour la compatibilité email */
+          body { margin: 0; padding: 0; min-width: 100%; background-color: #f4f4f9; font-family: Arial, sans-serif; }
+          .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+          .header { text-align: center; border-bottom: 2px solid #eab308; padding-bottom: 20px; margin-bottom: 30px; }
+          .logo { max-width: 150px; height: auto; display: block; margin: 0 auto; }
+          .content { color: #333333; line-height: 1.6; font-size: 16px; }
+          .content h1, .content h2, .content h3 { color: #0a1628; }
+          .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; font-size: 12px; color: #999999; }
+          .cta-button { display: inline-block; background-color: #eab308; color: #0a1628; text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: bold; margin: 20px 0; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <!-- Header avec Logo -->
+          <div class="header">
+            <!-- ✅ Utilisation de l'URL publique de votre logo -->
+            <img src="https://www.rfc.dz/static/logo.png" alt="RFC Assurance" class="logo" />
+            <h1 style="color: #0a1628; margin-top: 10px; font-size: 24px;">RFC Assurance</h1>
+          </div>
+
+          <!-- Contenu du message -->
+          <div class="content">
+            ${content}
+          </div>
+
+          <!-- Pied de page -->
+          <div class="footer">
+            <p>© 2026 RFC Assurance - Alger, Algérie</p>
+            <p>Pour vous désabonner, <a href="#" style="color: #eab308;">cliquez ici</a>.</p>
+          </div>
         </div>
-        <div style="line-height: 1.6; color: #333;">
-          ${content}
-        </div>
-        <div style="margin-top: 40px; font-size: 12px; color: #777; text-align: center;">
-          © 2026 RFC Assurance - Alger, Algérie
-        </div>
-      </div>
+      </body>
+      </html>
     `;
 
-    // 3. Configurer le transporteur nodemailer avec votre serveur cPanel
+    // 3. Configurer le transporteur nodemailer
     const transporter = nodemailer.createTransport({
       host: 'mail.rfc.dz',
       port: 465,
-      secure: true, // SSL/TLS
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // contact@rfc.dz
+        user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
@@ -51,13 +80,17 @@ export async function POST(req: Request) {
     // 4. Envoyer la newsletter
     await transporter.sendMail({
       from: '"RFC Assurance" <contact@rfc.dz>',
-      to: 'contact@rfc.dz', // On envoie à nous-mêmes en premier
-      bcc: emails, // Les abonnés sont en copie cachée
+      to: 'contact@rfc.dz',
+      bcc: emails,
       subject: subject,
       html: htmlTemplate,
     });
 
-    return NextResponse.json({ success: true, message: `Newsletter envoyée à ${emails.length} abonnés` });
+    // ✅ Retour de succès
+    return NextResponse.json({ 
+      success: true, 
+      message: `Newsletter envoyée à ${emails.length} abonnés` 
+    });
 
   } catch (error) {
     console.error("Erreur serveur:", error);
