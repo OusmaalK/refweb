@@ -1,9 +1,7 @@
+// app/api/admin/newsletter/send/route.ts
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { Resend } from 'resend';
-
-// Initialisation de Resend avec votre clé API
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
@@ -39,26 +37,27 @@ export async function POST(req: Request) {
       </div>
     `;
 
-    // 3. Envoi via Resend
-    // Note : Pour de très grandes listes, considérez l'utilisation de l'API "Batch" de Resend
-    // 3. Envoi via Resend
-    const { data, error } = await resend.emails.send({
-        // --- MODE TEST (À décommenter si le domaine n'est pas encore vérifié) ---
-        from: 'onboarding@resend.dev',
-        
-        // --- MODE PRODUCTION (À décommenter une fois le domaine activé dans Resend) ---
-        // from: 'RFC Assurance <newsletter@rfc-assurance.dz>', 
-        
-        to: emails,
-        subject: subject,
-        html: htmlTemplate,
-      });
-    if (error) {
-      console.error("Erreur Resend:", error);
-      return NextResponse.json({ error: 'Erreur lors de l\'envoi via Resend' }, { status: 500 });
-    }
+    // 3. Configurer le transporteur nodemailer avec votre serveur cPanel
+    const transporter = nodemailer.createTransport({
+      host: 'mail.rfc.dz',
+      port: 465,
+      secure: true, // SSL/TLS
+      auth: {
+        user: process.env.EMAIL_USER, // contact@rfc.dz
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-    return NextResponse.json({ success: true, message: 'Newsletter envoyée avec succès' });
+    // 4. Envoyer la newsletter
+    await transporter.sendMail({
+      from: '"RFC Assurance" <contact@rfc.dz>',
+      to: 'contact@rfc.dz', // On envoie à nous-mêmes en premier
+      bcc: emails, // Les abonnés sont en copie cachée
+      subject: subject,
+      html: htmlTemplate,
+    });
+
+    return NextResponse.json({ success: true, message: `Newsletter envoyée à ${emails.length} abonnés` });
 
   } catch (error) {
     console.error("Erreur serveur:", error);
