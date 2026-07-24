@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[40vh] sm:min-h-[45vh] md:min-h-[50vh] lg:min-h-screen overflow-hidden">
+    <section className="relative min-h-[60vh] sm:min-h-[45vh] md:min-h-[50vh] lg:min-h-screen overflow-hidden">
       {/* Image de fond */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -57,7 +57,7 @@ export default function Hero() {
           </p>
 
           {/* Bloc des boutons d'action */}
-          <div className={`flex flex-col sm:flex-row gap-2 animate-fade-in-up animation-delay-600 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
+          <div className={`flex flex-col sm:flex-row flex-wrap gap-2 relative z-20 animate-fade-in-up animation-delay-600 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
             <Link
               href={`/${locale}/#contact`}
               className="bg-white hover:bg-gray-50 text-[#ef4444] font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 md:py-3 rounded-md transition transform hover:scale-105 text-center text-[10px] sm:text-xs md:text-sm"
@@ -70,19 +70,18 @@ export default function Hero() {
             >
               {t.hero?.cta_services || 'Découvrir nos prestations'}
             </Link>
-            {/* Bouton Blog - CORRIGÉ */}
             <Link
               href={`/${locale}/blog`}
               className="border border-white/30 hover:bg-white/20 text-white font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 md:py-3 rounded-md transition text-center text-[10px] sm:text-xs md:text-sm backdrop-blur-sm"
             >
-              {t.hero?.cta_blog || 'Actualités & Expertise'}  {/* ← MODIFICATION ICI */}
+              {t.hero?.cta_blog || 'Actualités & Expertise'}
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Vague décorative en bas */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
+      {/* Vague décorative en bas - CORRIGÉE POUR NE PAS BLOQUER LES CLICS */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
         <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path d="M0 50 Q360 20 720 50 Q1080 80 1440 50 L1440 100 L0 100 Z" fill="#0a1628"/>
         </svg>
