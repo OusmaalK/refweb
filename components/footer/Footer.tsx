@@ -36,8 +36,8 @@ export default function Footer() {
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'contact@rfc.dz' },
-    { icon: Phone, label: 'Mobile ', value: '+213 7 70 41 75 01' },
-    { icon: MessageCircle, label: 'Fixe ', value: '+213 20 10 17 84' },
+    { icon: Phone, label: 'Mobile ', value: '213+ (0) 501 417 770' },
+    { icon: MessageCircle, label: 'Fixe ', value: ' 84 17 10 20 +213' },
     { icon: MapPin, label: 'Adresse', value: '21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger 16000 Algérie' },
   ];
 
