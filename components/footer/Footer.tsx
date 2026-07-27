@@ -16,15 +16,17 @@ export default function Footer() {
     { icon: Twitter, href: 'https://twitter.com/rfcassurance', label: 'Twitter' },
   ];
 
+  // ✅ CORRECTION ICI : Utilisation des clés de traduction
   const quickLinks = [
-    { label: 'Accueil', href: `/${locale}` },
-    { label: 'À propos', href: `/${locale}/about` },
-    { label: 'Prestations', href: `/${locale}/service` },
-    { label: 'Secteurs', href: `/${locale}/sectors` },
-    { label: 'Organisation', href: `/${locale}/organization` },
-    { label: 'Contact', href: `/${locale}/#contact` },
+    { label: t.footer?.links?.home || 'Accueil', href: `/${locale}` },
+    { label: t.footer?.links?.about || 'À propos', href: `/${locale}/about` },
+    { label: t.footer?.links?.services || 'Prestations', href: `/${locale}/service` },
+    { label: t.footer?.links?.sectors || 'Secteurs', href: `/${locale}/sectors` },
+    { label: t.footer?.links?.organization || 'Organisation', href: `/${locale}/organization` },
+    { label: t.footer?.links?.contact || 'Contact', href: `/${locale}/#contact` },
   ];
 
+  // ✅ Ces lignes sont déjà bien traduites, vous pouvez les garder
   const legalLinks = [
     { label: t.footer?.legal?.mentions || 'Mentions légales', href: `/${locale}/legal` },
     { label: t.footer?.legal?.privacy || 'Politique de confidentialité', href: `/${locale}/privacy` },
@@ -34,11 +36,12 @@ export default function Footer() {
     { label: t.footer?.legal?.faq || 'FAQ', href: `/${locale}/faq` },
   ];
 
+  // ✅ Liste des contacts (Les valeurs comme les numéros ne changent pas, mais le label "Email", "Adresse", etc. doit être traduit)
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'contact@rfc.dz' },
-    { icon: Phone, label: 'Mobile ', value: '501 417 770 (0) 213+' },
-    { icon: MessageCircle, label: 'Fixe ', value: ' 84 17 10 20 213+' },
-    { icon: MapPin, label: 'Adresse', value: '21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger 16000 Algérie' },
+    { icon: Mail, label: t.footer?.contact?.email || 'Email', value: 'contact@rfc.dz' },
+    { icon: Phone, label: t.footer?.contact?.mobile || 'Mobile', value: '+213 (0) 770 417 501' },
+    { icon: MessageCircle, label: t.footer?.contact?.landline || 'Fixe', value: '+213 20 10 17 84' },
+    { icon: MapPin, label: t.footer?.contact?.address || 'Adresse', value: '21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger 16000 Algérie' },
   ];
 
   return (

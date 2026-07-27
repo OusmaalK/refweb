@@ -372,17 +372,22 @@ const translations = {
   footer: {
     description: 'Votre partenaire de confiance pour la protection de vos actifs et la gestion de vos risques.',
     quick_links: 'Liens rapides',
-    contact_info: 'Informations de contact',
-    legal_info: 'Informations légales',
     links: {
       home: 'Accueil',
-      products: 'Produits',
-      logistics: 'Logistique',
-      quality: 'Qualité & Certification',
       about: 'À propos',
+      services: 'Prestations',
+      sectors: 'Secteurs',
+      organization: 'Organisation',
       contact: 'Contact',
-      team: 'Équipe',
     },
+    contact_info: 'Informations de contact',
+    contact: {
+      email: 'Email',
+      mobile: 'Mobile',
+      landline: 'Fixe',
+      address: 'Adresse',
+    },
+    legal_info: 'Informations légales',
     legal: {
       mentions: 'Mentions légales',
       privacy: 'Politique de confidentialité',
