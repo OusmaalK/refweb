@@ -272,7 +272,7 @@ const translations = {
       title: 'Contact & Localisation',
       address: '21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger Centre 16000 Algérie',
       phone: '+213 (0) 770 417 501',
-      email: 'contact@rfc-assurance.dz',
+      email: 'contact@rfc.dz',
     },
   },
   references: {
