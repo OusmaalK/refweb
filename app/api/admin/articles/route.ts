@@ -5,7 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 
 // Initialisation du client Supabase pour le storage
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_URL_2!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
