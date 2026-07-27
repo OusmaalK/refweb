@@ -123,7 +123,7 @@ export default function TeamSection() {
         <div className="mt-20 pt-12 border-t border-white/10">
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 ${isRTL ? 'rtl' : 'ltr'}`}>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-[#ffffff] group-hover:scale-110 transition-transform duration-300">15+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#ffffff] group-hover:scale-110 transition-transform duration-300">12+</div>
               <p className="text-gray-400 text-sm mt-2">{t.team?.stat_1 || 'Années d\'expérience'}</p>
             </div>
             <div className="text-center group">
