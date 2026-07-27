@@ -25,7 +25,7 @@ const translations = {
   about: {
     page_title: 'À propos de nous',
     tag: 'Qui sommes-nous ?',
-    title: 'À propos de RFC Assurance',
+    title: 'À propos de RFC',
     summary: 'Fondée en 2014, RFC Assurance est une société de courtage d\'assurance et de conseil en gestion des risques. Nous accompagnons les entreprises dans la protection de leurs actifs et la prévention des risques industriels.',
     cta: 'En savoir plus',
     full_description: 'RFC Assurance est une entreprise algérienne spécialisée dans le courtage d\'assurance et le conseil en gestion des risques industriels. Avec plus de 10 ans d\'expérience, nous accompagnons les entreprises de tous secteurs dans la protection de leurs actifs.',
@@ -270,8 +270,8 @@ const translations = {
     },
     contact: {
       title: 'Contact & Localisation',
-      address: '21 rue Debussy, Alger Centre',
-      phone: '+213 775 22 18 69',
+      address: '21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger Centre 16000 Algérie',
+      phone: '+213 (0) 770 417 501',
       email: 'contact@rfc-assurance.dz',
     },
   },
@@ -410,10 +410,10 @@ const translations = {
       <p>Le directeur de la publication est <strong>M. Khalidou S.</strong></p>
       
       <h3>3. Siège social</h3>
-      <p>21, Rue Claud Debussy, Alger, Algérie.</p>
+      <p>21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger Centre 16000 Algérie.</p>
       
       <h3>4. Contact</h3>
-      <p>Email : contact@rfc-assurance.dz<br>Téléphone : +213 775 22 18 69</p>
+      <p>Email : contact@rfc.dz<br>Téléphone : +213 (0) 770 417 501</p>
       
       <h3>5. Hébergement</h3>
       <p>Le site est hébergé par Vercel Inc.</p>

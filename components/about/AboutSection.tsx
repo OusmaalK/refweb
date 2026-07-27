@@ -27,7 +27,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'rtl' : 'ltr'}`}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
-            {t.about?.title || 'À propos de RFC Assurance'}
+            {t.about?.title || 'À propos de RFC'}
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
             {t.about?.summary || 'Fondée en 2014, RFC Assurance est une société de courtage d\'assurance et de conseil en gestion des risques. Nous accompagnons les entreprises dans la protection de leurs actifs et la prévention des risques industriels.'}

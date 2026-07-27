@@ -112,7 +112,7 @@ export default function AboutPage() {
   <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
     {[
       { val: "2014", title: t.about?.stat_1_title || "Création" },
-      { val: "15+", title: t.about?.stat_2_title || "Années" },
+      { val: "12+", title: t.about?.stat_2_title || "Années" },
       { val: "100+", title: t.about?.stat_3_title || "Partenaires" },
       { val: "4", title: t.about?.stat_4_title || "Pôles" }
     ].map((stat, i) => (

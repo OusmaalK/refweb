@@ -81,7 +81,7 @@ export default function OrganizationPage() {
   ];
 
   const stats = [
-    { value: '15+', label: 'years_experience' },
+    { value: '12+', label: 'years_experience' },
     { value: '200+', label: 'clients' },
     { value: '50+', label: 'partners' },
     { value: '98%', label: 'satisfaction' },

@@ -25,7 +25,7 @@ const translations = {
   about: {
     page_title: 'About Us',
     tag: 'Who are we?',
-    title: 'About RFC Assurance',
+    title: 'About RFC',
     summary: 'Founded in 2014, RFC Assurance is an insurance brokerage and risk management consulting firm. We support companies in protecting their assets and preventing industrial risks.',
     cta: 'Learn more',
     full_description: 'RFC Assurance is an Algerian company specializing in insurance brokerage and industrial risk management consulting. With over 10 years of experience, we support companies across all sectors in protecting their assets.',
@@ -270,9 +270,9 @@ const translations = {
     },
     contact: {
       title: 'Contact & Location',
-      address: '21 rue Debussy, Algiers Center',
-      phone: '+213 775 22 18 69',
-      email: 'contact@rfc-assurance.dz',
+      address: '21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger Centre 16000 Algérie',
+      phone: '+213 (0) 770 417 501',
+      email: 'contact@rfc.dz',
     },
   },
   references: {
@@ -411,10 +411,10 @@ const translations = {
       <p>The publication director is <strong>Mr. Khalidou S.</strong></p>
       
       <h3>3. Headquarters</h3>
-      <p>21, Rue Claud Debussy, Algiers, Algeria.</p>
+      <p>21, Avenue Mustapha Sayed El Ouali Lot N°11 Alger Centre 16000 Algérie.</p>
       
       <h3>4. Contact</h3>
-      <p>Email: contact@rfc-assurance.dz<br>Phone: +213 775 22 18 69</p>
+      <p>Email: contact@rfc.dz<br>Phone: +213 775 22 18 69</p>
       
       <h3>5. Hosting</h3>
       <p>The site is hosted by Vercel Inc.</p>
